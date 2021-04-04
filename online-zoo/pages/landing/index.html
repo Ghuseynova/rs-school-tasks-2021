@@ -12,8 +12,19 @@
 <body class="page">
   <div class="page__header">
     <header class="header">
-      <div class="header__inner container">
-        <div class="logo header__logo"><img src="../../assets/images/logo.svg" alt="logo"></div>
+      <div class="header__inner container"><a class="logo header__logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo.svg" alt="logo"></a>
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link nav__link--is-active" href="../landing/index.html">About</a></li>
+            <li class="nav__item"><a class="nav__link" href="../zoo-map/zoo-map.html">Map</a></li>
+            <li class="nav__item"><a class="nav__link" href="../zoo-translation/zoo-translation.html">Zoos</a></li>
+            <li class="nav__item"><a class="nav__link" href="../404/404.html">Contact us</a></li>
+            <li class="nav__item"><a class="nav__link" href="https://www.figma.com/file/74wXlorl9mZQP0uhqDg83j/Online-Zoo">Design</a></li>
+          </ul>
+        </nav>
+        <div class="user header__user"><svg class="user__icon">
+            <use href="../../assets/icons/sprite.svg#profile_icon"></use>
+          </svg></div>
       </div>
     </header>
   </div>
