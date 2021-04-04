@@ -378,7 +378,7 @@ html {
 }
 
 .container--small {
-  padding: 0 18rem;
+  padding: 0 18.5rem;
 }
 
 ul {
@@ -422,21 +422,50 @@ ul {
           justify-content: center;
   background: none;
   border: 0;
-  -webkit-transition: opacity time;
-  transition: opacity time;
+  border-radius: 0.5rem;
+  padding: 2rem 7.5rem;
+  font-family: 'Rubik', serif;
+  text-decoration: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
   cursor: pointer;
-}
-
-.button:hover {
-  opacity: 0.8;
 }
 
 .button--theme-light {
   border: 2px solid #fcfcfc;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 0.5rem;
   color: #fcfcfc;
+}
+
+.button--theme-light:hover {
+  opacity: 0.8;
+}
+
+.button--primary {
+  background: #0f0049;
+  color: #fff;
+}
+
+.button--primary:hover {
+  background-color: #080029;
+}
+
+.button--primary:active {
+  background-color: #150068;
+}
+
+.button--secondary {
+  border: 2px solid #0f0049;
+  color: #0f0049;
+}
+
+.button--secondary:hover {
+  border-color: #080029;
+}
+
+.button--secondary:active {
+  border-color: #3888ff;
 }
 
 .button--size-lg {
@@ -764,6 +793,55 @@ ul {
   line-height: 2.3rem;
 }
 
+.h1--hidden {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.h2 {
+  color: #080029;
+  font-family: 'Merriweather';
+  font-weight: bold;
+  font-size: 8.4rem;
+  line-height: 10.6rem;
+}
+
+.h2--red {
+  position: relative;
+  display: inline-block;
+}
+
+.h2--red::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 1.4rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: #d00000;
+}
+
+.h3 {
+  font-family: 'Merriweather';
+  font-weight: bold;
+  font-size: 3.6rem;
+  line-height: 5.2rem;
+}
+
+.h3--theme-dark {
+  color: #080029;
+}
+
 .h4 {
   font-size: 2.2rem;
   font-weight: normal;
@@ -782,6 +860,10 @@ ul {
 
 .text--theme-light {
   color: #bcbcbc;
+}
+
+.text--theme-dark {
+  color: #747474;
 }
 
 .donation__title, .donation__desc {
@@ -832,4 +914,140 @@ ul {
 .courses__icon {
   width: 100%;
   height: 100%;
+}
+
+.fav-animal {
+  padding: 2.5rem 0;
+}
+
+.fav-animal__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fav-animal__col {
+  width: calc((100% - 40px) / 2);
+}
+
+.fav-animal__col--left {
+  padding: 8rem 0 10.5rem;
+}
+
+.fav-animal__img {
+  position: relative;
+  padding-bottom: 96.8%;
+}
+
+.fav-animal__img-file {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fav-animal-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fav-animal-info__subtitle {
+  margin-bottom: 3rem;
+}
+
+.fav-animal-info__title {
+  margin-bottom: 6rem;
+}
+
+.fav-animal-info__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fav-animal-info__btn {
+  margin-right: 6.2rem;
+}
+
+.fav-animal-info__btn:last-child {
+  margin-right: 0;
+}
+
+.zoo-online {
+  padding: 11rem 0;
+}
+
+.zoo-online__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.zoo-online__col--left {
+  width: calc((100% - 40px) / 2 - 184px);
+}
+
+.zoo-online__img {
+  position: relative;
+  padding-bottom: 149%;
+}
+
+.zoo-online__img-file {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.zoo-online__col--right {
+  width: calc((100% - 40px) / 2);
+}
+
+.zoo-online-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.zoo-online-info__subtitle {
+  margin-bottom: 5rem;
+}
+
+.zoo-online-info__title {
+  margin-bottom: 4rem;
+}
+
+.zoo-online-info__desc {
+  margin-bottom: 6rem;
 }
