@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Rubik:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -381,6 +381,14 @@ html {
   padding: 0 18.5rem;
 }
 
+.container--medium {
+  padding: 0 18.5rem;
+}
+
+.container--large {
+  padding: 0 0 0 18.5rem;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -480,8 +488,10 @@ ul {
 }
 
 .header {
+  position: relative;
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 
 .header__inner {
@@ -631,14 +641,27 @@ ul {
 }
 
 .page__col--left {
-  position: relative;
+  position: absolute;
   top: -9rem;
   left: 0;
-  z-index: -1;
+  right: 0;
+  bottom: 4rem;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .page__col--right {
-  margin: 0 -3.125%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .page__footer {
@@ -658,7 +681,7 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: rgba(252, 252, 252, 0.02);
+  background: #fff;
   border: 2px solid #f0f0f0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -861,6 +884,16 @@ ul {
   color: #fcfcfc;
 }
 
+.h5 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.h5--theme-light {
+  color: #fcfcfc;
+}
+
 .text {
   font-size: 1.8rem;
   line-height: 2.8rem;
@@ -924,6 +957,78 @@ ul {
   height: 100%;
 }
 
+.link {
+  font-family: Rubik;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  text-decoration: none;
+}
+
+.link--theme-light {
+  color: #fcfcfc;
+}
+
+.link--with-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.link__icon {
+  display: inline-block;
+  width: 2.1rem;
+  height: 1.4rem;
+  margin-left: 1.8rem;
+}
+
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.controls__arrow {
+  width: 6.5rem;
+  height: 6.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 6.4rem;
+  border: 0;
+  border-radius: 100%;
+  background-color: #0f0049;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.controls__arrow:last-child {
+  margin-right: 0;
+}
+
+.controls__arrow:hover {
+  background-color: #080029;
+}
+
+.controls__arrow--theme-dark {
+  margin-right: 2rem;
+}
+
+.controls__icon {
+  width: 2.8rem;
+  height: 1.6rem;
+}
+
 .fav-animal {
   padding: 2.5rem 0;
 }
@@ -938,6 +1043,7 @@ ul {
 }
 
 .fav-animal__col {
+  position: relative;
   width: calc((100% - 40px) / 2);
 }
 
@@ -1010,6 +1116,10 @@ ul {
           justify-content: space-between;
 }
 
+.zoo-online__col {
+  position: relative;
+}
+
 .zoo-online__col--left {
   width: calc((100% - 40px) / 2 - 184px);
 }
@@ -1058,4 +1168,275 @@ ul {
 
 .zoo-online-info__desc {
   margin-bottom: 6rem;
+}
+
+.famous-pets {
+  padding: 10rem 0 6rem;
+  background-color: #d9e8ff;
+}
+
+.famous-pets__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.famous-pets__col {
+  position: relative;
+}
+
+.famous-pets__col--left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 326px;
+          flex: 0 0 326px;
+  margin-right: 4.2rem;
+  padding-top: 20.5rem;
+}
+
+.famous-pets__col--right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.famous-pets-info__subtitle {
+  margin-bottom: 5rem;
+}
+
+.famous-pets-info__title {
+  margin-bottom: 5.5rem;
+}
+
+.f-slider {
+  overflow: hidden;
+  max-width: 106.4rem;
+}
+
+.f-slider__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.f-slider__col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 32.8rem;
+          flex: 0 0 32.8rem;
+  margin-right: 4rem;
+}
+
+.f-slider__pet-card {
+  margin-bottom: 4rem;
+}
+
+.pet-card {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.pet-card:hover .pet-card__more {
+  width: 238px;
+  height: 238px;
+  bottom: 60px;
+}
+
+.pet-card:hover .pet-card__plus {
+  opacity: 0;
+}
+
+.pet-card:hover .pet-card__title {
+  opacity: 0;
+}
+
+.pet-card:hover .pet-card__detail {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pet-card:hover .pet-card__desc {
+  -webkit-transform: scale(1) translateY(0);
+          transform: scale(1) translateY(0);
+}
+
+.pet-card:hover .pet-card__link {
+  opacity: 1;
+}
+
+.pet-card__img {
+  position: relative;
+  padding-bottom: 100%;
+  border-radius: 0.5rem;
+}
+
+.pet-card__img-file {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.pet-card__more {
+  position: absolute;
+  left: 50%;
+  bottom: 9rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 7.6rem;
+  height: 7.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0.6;
+  border-radius: 50%;
+  border: 2px solid #fcfcfc;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.pet-card__plus {
+  color: #fcfcfc;
+  font-weight: 300;
+  font-size: 4.4rem;
+  line-height: 6.4rem;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.pet-card__title {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-transform: capitalize;
+  z-index: 1;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.pet-card__detail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.pet-card__desc {
+  position: absolute;
+  right: 7rem;
+  left: 6.5rem;
+  bottom: 14.8rem;
+  text-align: center;
+  -webkit-transform: scale(5) translateY(2rem);
+          transform: scale(5) translateY(2rem);
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.pet-card__link {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.pay-feed {
+  padding: 10rem 0;
+}
+
+.pay-feed__inner {
+  position: relative;
+}
+
+.pay-feed__title {
+  margin-left: 18.5rem;
+  margin-bottom: 3rem;
+}
+
+.pay-feed__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pay-feed__item {
+  margin-bottom: 6rem;
+}
+
+.pay-feed__item--1 {
+  margin-left: 18.5rem;
+}
+
+.pay-feed__item--2 {
+  margin-right: 7.2rem;
+  margin-left: auto;
+}
+
+.pay-feed__arrow {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pay-feed__arrow--1 {
+  top: 31.8rem;
+  left: 84rem;
+  width: 19.7rem;
+  height: 9.7rem;
+  background-image: url("../../assets/images/illus-arrow-1.svg");
+}
+
+.pay-feed__arrow--2 {
+  top: 56.5rem;
+  left: 64rem;
+  width: 24rem;
+  height: 19.5rem;
+  background-image: url("../../assets/images/illus-arrow-2.svg");
+}
+
+.pay-feed-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pay-feed-item__illustration {
+  margin-right: 5.6rem;
+}
+
+.pay-feed-item__info {
+  max-width: 45.6rem;
+}
+
+.pay-feed-item__title {
+  margin-bottom: 3rem;
 }
