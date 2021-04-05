@@ -12,18 +12,260 @@
 <body class="page">
   <div class="page__header">
     <header class="header">
-      <div class="header__inner container">
-        <div class="logo header__logo"><img src="../../assets/images/logo.svg" alt="logo"></div>
+      <div class="header__inner container"><a class="logo header__logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo.svg" alt="logo"></a>
+        <h1 class="h1 h1--hidden">Online Zoo</h1>
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link nav__link--is-active" href="../landing/index.html">About</a></li>
+            <li class="nav__item"><a class="nav__link" href="../zoo-map/zoo-map.html">Map</a></li>
+            <li class="nav__item"><a class="nav__link" href="../zoo-translation/zoo-translation.html">Zoos</a></li>
+            <li class="nav__item"><a class="nav__link" href="../404/404.html">Contact us</a></li>
+            <li class="nav__item"><a class="nav__link" href="https://www.figma.com/file/74wXlorl9mZQP0uhqDg83j/Online-Zoo">Design</a></li>
+          </ul>
+        </nav>
+        <div class="user header__user"><svg class="user__icon">
+            <use href="../../assets/icons/sprite.svg#profile_icon"></use>
+          </svg></div>
       </div>
     </header>
   </div>
   <div class="page__row">
-    <div class="page__col page__col--left">
-      <aside class="page__aside"></aside>
+    <div class="page__col page__col--left container">
+      <aside class="sidebar page__aside">
+        <div class="sidebar__logo"><a class="logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo.svg" alt="logo"></a></div>
+        <div class="sidebar__socials">
+          <div class="socials"><a class="socials__link socials__link--instagram" href="https://www.instagram.com/"><svg class="socials__icon">
+                <use href="../../assets/icons/sprite.svg#social-instagram"></use>
+              </svg></a><a class="socials__link socials__link--facebook" href="https://www.facebook.com/"><svg class="socials__icon">
+                <use href="../../assets/icons/sprite.svg#social-facebook"></use>
+              </svg></a><a class="socials__link socials__link--twitter" href="https://twitter.com/"><svg class="socials__icon">
+                <use href="../../assets/icons/sprite.svg#social-twitter"></use>
+              </svg></a></div>
+        </div>
+        <div class="sidebar__up"><button class="back-to-up"><svg class="back-to-up__icon">
+              <use href="../../assets/icons/sprite.svg#arrow-up"></use>
+            </svg></button></div>
+      </aside>
     </div>
     <div class="page__col page__col--right">
-      <main class="content page__content"></main>
+      <main class="content page__content">
+        <section class="fav-animal">
+          <div class="container container--small fav-animal__row">
+            <div class="fav-animal__col fav-animal__col--left">
+              <div class="fav-animal-info fav-animal__info">
+                <h4 class="h4 h4--theme-dark fav-animal-info__subtitle">Wild park</h4>
+                <h2 class="h2 h2--theme-dark fav-animal-info__title">Watch your favorite
+                  animal
+                  onl<span class="h2--red">i</span>ne</h2>
+                <div class="fav-animal-info__btns"><a class="button button--primary fav-animal-info__btn" href="../zoo-map/zoo-map.html"><span class="button__text">Choose zoo</span></a><a class="button button--secondary fav-animal-info__btn" href="../zoo-translation/zoo-translation.html"><span class="button__text">Watch online</span></a></div>
+              </div>
+            </div>
+            <div class="fav-animal__col fav-animal__col--right">
+              <div class="fav-animal__img"><img class="fav-animal__img-file" src="../../assets/images/panda-1.png" alt="favourite animal"></div>
+            </div>
+          </div>
+        </section>
+        <section class="zoo-online">
+          <div class="container container--small zoo-online__row">
+            <div class="zoo-online__col zoo-online__col--left">
+              <div class="zoo-online__img"><img class="zoo-online__img-file" src="../../assets/images/l-second-img.png" alt="animal for online watch"></div>
+            </div>
+            <div class="zoo-online__col zoo-online__col--right">
+              <div class="zoo-online-info zoo-online__info">
+                <h4 class="h4 h4--theme-dark zoo-online-info__subtitle">How Zoo online works</h4>
+                <h3 class="h3 h3--theme-dark zoo-online-info__title">Our service will give you an unforgettable experience of observing and interacting with animals remotely</h3>
+                <p class="text text--theme-dark zoo-online-info__desc">Zoo Online is a web application with which you can watch live cages of different animals in nature reserves and zoos online and, if you wish, donate to the needs of the animal you like</p><a class="button button--primary zoo-online-info__btn" href="../zoo-translation/zoo-translation.html"><span class="button__text">Try now</span></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="famous-pets">
+          <div class="container container--small famous-pets__row">
+            <div class="famous-pets__col famous-pets__col--left">
+              <div class="famous-pets-info famous-pets__info">
+                <h4 class="h4 h4--theme-dark famous-pets-info__subtitle">Famous pets</h4>
+                <h3 class="h3 h3--theme-dark famous-pets-info__title">You can choose <br>any animal <br>you like</h3>
+              </div>
+              <div class="controls controls--dark famous-pets__controls"><button class="controls__arrow controls__arrow--prev controls__arrow--theme-dark"><svg class="controls__icon">
+                    <use href="../../assets/icons/sprite.svg#arrow-left"></use>
+                  </svg></button><button class="controls__arrow controls__arrow--next controls__arrow--theme-dark"><svg class="controls__icon">
+                    <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                  </svg></button></div>
+            </div>
+            <div class="famous-pets__col famous-pets__col--right">
+              <div class="f-slider famous-pets__slider">
+                <div class="f-slider__row">
+                  <div class="f-slider__col">
+                    <div class="pet-card f-slider__pet-card">
+                      <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/little-panda.png" alt="little panda" /></div>
+                      <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                      <h5 class="h5 h5--theme-light pet-card__title">Little panda</h5>
+                      <div class="pet-card__detail">
+                        <p class="text text--theme-light pet-card__desc">North America, islands near Los Angeles</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                            <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                    <div class="pet-card f-slider__pet-card">
+                      <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/panda.png" alt="panda" /></div>
+                      <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                      <h5 class="h5 h5--theme-light pet-card__title">panda</h5>
+                      <div class="pet-card__detail">
+                        <p class="text text--theme-light pet-card__desc">Western central China</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                            <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="f-slider__col">
+                    <div class="pet-card f-slider__pet-card">
+                      <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/penguin.png" alt="penguin" /></div>
+                      <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                      <h5 class="h5 h5--theme-light pet-card__title">penguin</h5>
+                      <div class="pet-card__detail">
+                        <p class="text text--theme-light pet-card__desc">In the sea of the Southern Hemisphere, Antarctic waters</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                            <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                    <div class="pet-card f-slider__pet-card">
+                      <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/eagle.png" alt="eagle" /></div>
+                      <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                      <h5 class="h5 h5--theme-light pet-card__title">eagle</h5>
+                      <div class="pet-card__detail">
+                        <p class="text text--theme-light pet-card__desc">North America, islands near Los Angeles</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                            <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="f-slider__col">
+                    <div class="pet-card f-slider__pet-card">
+                      <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/squirrel.png" alt="squirrel" /></div>
+                      <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                      <h5 class="h5 h5--theme-light pet-card__title">squirrel</h5>
+                      <div class="pet-card__detail">
+                        <p class="text text--theme-light pet-card__desc">Russia, forests in the Orenburg region,</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                            <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                    <div class="pet-card f-slider__pet-card">
+                      <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/gorilla.png" alt="gorilla" /></div>
+                      <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                      <h5 class="h5 h5--theme-light pet-card__title">gorilla</h5>
+                      <div class="pet-card__detail">
+                        <p class="text text--theme-light pet-card__desc">Equatorial forests of western and central Africa</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                            <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="f-slider__col">
+                    <div class="pet-card f-slider__pet-card">
+                      <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/tiger.png" alt="tiger" /></div>
+                      <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                      <h5 class="h5 h5--theme-light pet-card__title">tiger</h5>
+                      <div class="pet-card__detail">
+                        <p class="text text--theme-light pet-card__desc">Russia, Amur region</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                            <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                    <div class="pet-card f-slider__pet-card">
+                      <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/crocodile.png" alt="crocodile" /></div>
+                      <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                      <h5 class="h5 h5--theme-light pet-card__title">crocodile</h5>
+                      <div class="pet-card__detail">
+                        <p class="text text--theme-light pet-card__desc">American state of Florida</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                            <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pay-feed">
+          <div class="container container--large pay-feed__inner">
+            <h4 class="h4 h4--theme-dark pay-feed__title">Pay & feed</h4>
+            <div class="pay-feed__items">
+              <div class="pay-feed__item pay-feed__item--1">
+                <div class="pay-feed-item">
+                  <div class="pay-feed-item__illustration"><img class="pay-feed-item__illustration-file" src="../../assets/images/illus-1.svg" alt="" /></div>
+                  <div class="pay-feed-item__info">
+                    <h3 class="h3 h3--theme-dark pay-feed-item__title">Pay with VISA card</h3>
+                    <p class="text text--theme-dark pay-feed-item__desc">On the payment page, you need to enter the details of your &quot;Visa&quot; card and make a transfer. The operation will not take more than ~2 minutes.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pay-feed__item pay-feed__item--2">
+                <div class="pay-feed-item">
+                  <div class="pay-feed-item__illustration"><img class="pay-feed-item__illustration-file" src="../../assets/images/illus-2.svg" alt="" /></div>
+                  <div class="pay-feed-item__info">
+                    <h3 class="h3 h3--theme-dark pay-feed-item__title">Payment goes to the zoo</h3>
+                    <p class="text text--theme-dark pay-feed-item__desc">Payment goes to the account of the zoo and volunteers with employees receive a notification about the donation.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pay-feed__item pay-feed__item--3">
+                <div class="pay-feed-item">
+                  <div class="pay-feed-item__illustration"><img class="pay-feed-item__illustration-file" src="../../assets/images/illus-3.svg" alt="" /></div>
+                  <div class="pay-feed-item__info">
+                    <h3 class="h3 h3--theme-dark pay-feed-item__title">The selected animal receives a treat</h3>
+                    <p class="text text--theme-dark pay-feed-item__desc">The staff takes the food you need for your chosen animal and delivers it to the animal. With your help, the animal is happy!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pay-feed__arrows">
+              <div class="pay-feed__arrow pay-feed__arrow--1"></div>
+              <div class="pay-feed__arrow pay-feed__arrow--2"></div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
+  </div>
+  <div class="page__footer">
+    <footer class="footer">
+      <div class="footer__row footer__row--top container container--medium">
+        <div class="footer__col footer__col--left"><a class="logo logo--large footer__logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo-footer.svg" alt="logo"></a>
+          <div class="courses footer__courses">
+            <div class="courses__link courses__link--yem" title="Yem Digital"><img class="courses__icon" src="../../assets/images/yem_digital.svg" alt="logo"></div>
+            <div class="courses__link courses__link--rs" title="Rolling Scopes School"><img class="courses__icon" src="../../assets/images/rs_school_js.svg" alt="logo"></div>
+          </div>
+        </div>
+        <div class="footer__col footer__col--center">
+          <h4 class="h4 h4--theme-light footer__title">Navigation</h4>
+          <nav class="nav nav--footer footer__nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link nav__link--light" href="#watch-online">Watch online</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="#how-it-works">How it works</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="#famous-pets">Famous pets</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="#pay-feed">Pay & feed</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="#testimonials">Testimonials</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="#zoogeography">Zoogeography</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__col footer__col--right">
+          <div class="donation footer__donation">
+            <h4 class="h4 h4--theme-light donation__title">Support of volunteers</h4>
+            <p class="text text--theme-light donation__desc">You can thank the volunteers for their work. For example, caring for animals and sincere love for them.</p><button class="button button--theme-light button--size-lg donation__btn"><span class="button__text">Donate for volunteers</span></button>
+          </div>
+          <div class="socials socials--footer footer__socials"><a class="socials__link socials__link--text" href="https://www.instagram.com/">Instagram</a><a class="socials__link socials__link--text" href="https://www.facebook.com/">Facebook</a><a class="socials__link socials__link--text" href="https://twitter.com/">Twitter</a></div>
+        </div>
+      </div>
+      <div class="footer__row footer__row--bottom container container--medium">
+        <div class="footer__wrap">
+          <div class="footer__copyright">Copyright ©RSSchool and ©Yem Digital 2020 - 2021</div>
+          <div class="footer__designed">Designed by Vladislav Chernov</div>
+        </div>
+      </div>
+    </footer>
   </div>
 </body>
 
