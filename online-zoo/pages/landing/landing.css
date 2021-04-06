@@ -577,6 +577,7 @@ ul {
 
 .nav__link--is-active {
   font-weight: 500;
+  pointer-events: none;
 }
 
 .nav__link--light {
