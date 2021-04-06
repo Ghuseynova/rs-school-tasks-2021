@@ -347,6 +347,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -437,6 +438,10 @@ ul {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button--theme-light {
@@ -873,6 +878,10 @@ ul {
   color: #080029;
 }
 
+.h3--theme-light {
+  color: #fcfcfc;
+}
+
 .h4 {
   font-size: 2.2rem;
   font-weight: normal;
@@ -882,6 +891,13 @@ ul {
 
 .h4--theme-light {
   color: #fcfcfc;
+}
+
+.h4--small {
+  color: #0b0b0b;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 3.2rem;
 }
 
 .h5 {
@@ -969,6 +985,14 @@ ul {
   color: #fcfcfc;
 }
 
+.link--theme-dark {
+  color: #3888ff;
+}
+
+.link--theme-dark .link__icon {
+  margin-left: 1rem;
+}
+
 .link--with-arrow {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1007,6 +1031,7 @@ ul {
   border: 0;
   border-radius: 100%;
   background-color: #0f0049;
+  color: #fcfcfc;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   cursor: pointer;
@@ -1022,6 +1047,17 @@ ul {
 
 .controls__arrow--theme-dark {
   margin-right: 2rem;
+}
+
+.controls__arrow--simple {
+  margin-right: 2rem;
+  background-color: #fcfcfc;
+  color: #0b0b0b;
+}
+
+.controls__arrow--simple:hover {
+  background-color: #150068;
+  color: #fcfcfc;
 }
 
 .controls__icon {
@@ -1439,4 +1475,234 @@ ul {
 
 .pay-feed-item__title {
   margin-bottom: 3rem;
+}
+
+.testimonials {
+  padding: 10rem 0;
+  background-color: #080029;
+}
+
+.testimonials__row {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.testimonials__col--left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 51.2rem;
+          flex: 0 0 51.2rem;
+  margin-right: 4rem;
+}
+
+.testimonials__col--right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.testimonials-info__subtitle {
+  margin-bottom: 6.2rem;
+}
+
+.testimonials-info__title {
+  margin-bottom: 4rem;
+}
+
+.testimonials-info__desc {
+  margin-bottom: 6rem;
+}
+
+.testimonial {
+  padding: 4rem 4rem 7.2rem 4rem;
+  background: #fcfcfc;
+  border-radius: 1.5rem;
+}
+
+.testimonial__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3rem;
+}
+
+.testimonial__avatar {
+  width: 4.6rem;
+  height: 4.6rem;
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+
+.testimonial__avatar-file {
+  border-radius: 50%;
+}
+
+.t-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.t-slider__link {
+  margin-bottom: 2.5rem;
+}
+
+.t-slider__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.t-slider__col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 51.2rem;
+          flex: 0 0 51.2rem;
+  margin-right: 4rem;
+}
+
+.zoogeography {
+  padding: 5rem 0 11.2rem;
+}
+
+.zoogeography__row {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.zoogeography__col--left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 34.4rem;
+          flex: 0 0 34.4rem;
+  margin-right: 2.4rem;
+}
+
+.zoogeography__subtitle {
+  margin-top: 5rem;
+  margin-bottom: 6.2rem;
+}
+
+.zoogeography__col--right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.zoogeography__map {
+  min-height: 70rem;
+  margin-right: 2.5rem;
+}
+
+.pet {
+  background: #fcfcfc;
+  -webkit-box-shadow: 4px 12px 22px rgba(0, 0, 0, 0.06);
+          box-shadow: 4px 12px 22px rgba(0, 0, 0, 0.06);
+  border-radius: 1.5rem;
+}
+
+.pet__img {
+  position: relative;
+  padding-bottom: 63.4%;
+}
+
+.pet__img-file {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.pet__content {
+  padding: 2rem 4rem 4rem 4rem;
+  text-align: center;
+}
+
+.pet__title {
+  margin-bottom: 2rem;
+}
+
+.pet__desc {
+  margin-bottom: 5.2rem;
+}
+
+.pet__link {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.map {
+  position: relative;
+}
+
+.map--small {
+  background: url("../../assets/images/world.png") no-repeat center center;
+  background-size: cover;
+}
+
+.markers__item {
+  position: absolute;
+}
+
+.markers__item:hover svg {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.markers__item:hover .markers__icon-path {
+  stroke-width: 2;
+  stroke: #609fff;
+}
+
+.markers__item--active {
+  pointer-events: none;
+}
+
+.markers__item--small-eagle {
+  left: 128px;
+  top: 164px;
+}
+
+.markers__item--small-gorilla {
+  left: 591px;
+  top: 343px;
+}
+
+.markers__item--small-panda {
+  left: 909px;
+  top: 204px;
+}
+
+.markers__item--small-alligator {
+  left: 273px;
+  top: 216px;
+}
+
+.markers__icon {
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.markers__icon-path {
+  -webkit-transition: stroke 0.4s;
+  transition: stroke 0.4s;
 }
