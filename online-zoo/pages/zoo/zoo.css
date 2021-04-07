@@ -1383,3 +1383,82 @@ ul {
   font-size: 2.6rem;
   line-height: 3.8rem;
 }
+
+.pay-feed {
+  padding: 10rem 0;
+}
+
+.pay-feed__inner {
+  position: relative;
+}
+
+.pay-feed__title {
+  margin-left: 18.5rem;
+  margin-bottom: 3rem;
+}
+
+.pay-feed__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pay-feed__item {
+  margin-bottom: 6rem;
+}
+
+.pay-feed__item--1 {
+  margin-left: 18.5rem;
+}
+
+.pay-feed__item--2 {
+  margin-right: 7.2rem;
+  margin-left: auto;
+}
+
+.pay-feed__arrow {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pay-feed__arrow--1 {
+  top: 31.8rem;
+  left: 84rem;
+  width: 19.7rem;
+  height: 9.7rem;
+  background-image: url("../../assets/images/illus-arrow-1.svg");
+}
+
+.pay-feed__arrow--2 {
+  top: 56.5rem;
+  left: 64rem;
+  width: 24rem;
+  height: 19.5rem;
+  background-image: url("../../assets/images/illus-arrow-2.svg");
+}
+
+.pay-feed-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pay-feed-item__illustration {
+  margin-right: 5.6rem;
+}
+
+.pay-feed-item__info {
+  max-width: 45.6rem;
+}
+
+.pay-feed-item__title {
+  margin-bottom: 3rem;
+}
