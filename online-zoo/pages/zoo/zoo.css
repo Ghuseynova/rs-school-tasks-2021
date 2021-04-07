@@ -998,6 +998,11 @@ ul {
   margin-left: 1rem;
 }
 
+.link--theme-blue {
+  color: #609fff;
+  text-decoration: underline;
+}
+
 .link--with-arrow {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1460,5 +1465,100 @@ ul {
 }
 
 .pay-feed-item__title {
+  margin-bottom: 3rem;
+}
+
+.i-facts {
+  padding-bottom: 10.5rem;
+}
+
+.i-facts__inner {
+  position: relative;
+}
+
+.i-facts__info {
+  max-width: 51.2rem;
+  margin-bottom: 4.6rem;
+}
+
+.i-facts-info__title {
+  margin-bottom: 3rem;
+}
+
+.i-accerdion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.i-accerdion__item {
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.i-accerdion-item--is-open .i-accerdion-item__icon::after {
+  background-color: #609fff;
+  -webkit-transform: translate(-50%, 0%) rotate(90deg);
+          transform: translate(-50%, 0%) rotate(90deg);
+}
+
+.i-accerdion-item--is-open .i-accerdion-item__title {
+  color: #609fff;
+}
+
+.i-accerdion-item__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2.8rem 0;
+}
+
+.i-accerdion-item__title {
+  font-size: 26px;
+  font-weight: normal;
+  line-height: 3.8rem;
+}
+
+.i-accerdion-item__icon {
+  position: relative;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.i-accerdion-item__icon::before, .i-accerdion-item__icon::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  border-radius: 1px;
+  background-color: #0f0049;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.i-accerdion-item__icon::before {
+  top: 50%;
+  width: 2.2rem;
+  height: 0.2rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.i-accerdion-item__icon::after {
+  left: 50%;
+  height: 2.2rem;
+  width: 0.2rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.i-accerdion-item__desc {
   margin-bottom: 3rem;
 }
