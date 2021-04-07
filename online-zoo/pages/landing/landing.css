@@ -998,6 +998,11 @@ ul {
   margin-left: 1rem;
 }
 
+.link--theme-blue {
+  color: #609fff;
+  text-decoration: underline;
+}
+
 .link--with-arrow {
   display: -webkit-box;
   display: -ms-flexbox;
