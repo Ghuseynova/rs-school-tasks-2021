@@ -1070,267 +1070,45 @@ ul {
   height: 1.6rem;
 }
 
-.fav-animal {
-  padding: 2.5rem 0;
-}
-
-.fav-animal__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.fav-animal__col {
+.s-slider {
   position: relative;
-  width: calc((100% - 40px) / 2);
+  padding: 7.5rem 0;
 }
 
-.fav-animal__col--left {
-  padding: 8rem 0 10.5rem;
-}
-
-.fav-animal__img {
-  position: relative;
-  padding-bottom: 96.8%;
-}
-
-.fav-animal__img-file {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.fav-animal-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.fav-animal-info__subtitle {
-  margin-bottom: 3rem;
-}
-
-.fav-animal-info__title {
-  margin-bottom: 6rem;
-}
-
-.fav-animal-info__btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.fav-animal-info__btn {
-  margin-right: 6.2rem;
-}
-
-.fav-animal-info__btn:last-child {
-  margin-right: 0;
-}
-
-.zoo-online {
-  padding: 11rem 0;
-}
-
-.zoo-online__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.zoo-online__col {
-  position: relative;
-}
-
-.zoo-online__col--left {
-  width: calc((100% - 40px) / 2 - 184px);
-}
-
-.zoo-online__img {
-  position: relative;
-  padding-bottom: 149%;
-}
-
-.zoo-online__img-file {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.zoo-online__col--right {
-  width: calc((100% - 40px) / 2);
-}
-
-.zoo-online-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.zoo-online-info__subtitle {
-  margin-bottom: 5rem;
-}
-
-.zoo-online-info__title {
-  margin-bottom: 4rem;
-}
-
-.zoo-online-info__desc {
-  margin-bottom: 6rem;
-}
-
-.famous-pets {
-  padding: 10rem 0 6rem;
-  background-color: #d9e8ff;
-}
-
-.famous-pets__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.famous-pets__col {
-  position: relative;
-}
-
-.famous-pets__col--left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 326px;
-          flex: 0 0 326px;
-  margin-right: 4.2rem;
-  padding-top: 20.5rem;
-}
-
-.famous-pets__col--right {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.famous-pets-info__subtitle {
-  margin-bottom: 5rem;
-}
-
-.famous-pets-info__title {
-  margin-bottom: 5.5rem;
-}
-
-.f-slider {
-  overflow: hidden;
-  max-width: 106.4rem;
-}
-
-.f-slider__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.f-slider__col {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 32.8rem;
-          flex: 0 0 32.8rem;
-  margin-right: 4rem;
-}
-
-.f-slider__pet-card {
-  margin-bottom: 4rem;
-}
-
-.pet-card {
-  position: relative;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
-.pet-card:hover .pet-card__more {
-  width: 238px;
-  height: 238px;
-  bottom: 60px;
-}
-
-.pet-card:hover .pet-card__plus {
-  opacity: 0;
-}
-
-.pet-card:hover .pet-card__title {
-  opacity: 0;
-}
-
-.pet-card:hover .pet-card__detail {
-  opacity: 1;
-  visibility: visible;
-}
-
-.pet-card:hover .pet-card__desc {
-  -webkit-transform: scale(1) translateY(0);
-          transform: scale(1) translateY(0);
-}
-
-.pet-card:hover .pet-card__link {
-  opacity: 1;
-}
-
-.pet-card__img {
-  position: relative;
-  padding-bottom: 100%;
-  border-radius: 0.5rem;
-}
-
-.pet-card__img-file {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 0.5rem;
-}
-
-.pet-card__more {
+.s-slider__arrow {
   position: absolute;
   left: 50%;
-  bottom: 9rem;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 7.6rem;
-  height: 7.6rem;
+  width: 1.5rem;
+  height: 1rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.s-slider__arrow--prev {
+  top: 0;
+}
+
+.s-slider__icon {
+  width: 100%;
+  height: 100%;
+}
+
+.s-slider__arrow--next {
+  bottom: 0;
+}
+
+.s-slider__item {
+  margin-bottom: 4rem;
+}
+
+.s-slider__item:last-child {
+  margin-bottom: 0;
+}
+
+.s-slider__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1340,67 +1118,270 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  opacity: 0.6;
-  border-radius: 50%;
-  border: 2px solid #fcfcfc;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 2px solid #d9e8ff;
+  border-radius: 3rem;
+  text-decoration: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
-.pet-card__plus {
-  color: #fcfcfc;
-  font-weight: 300;
-  font-size: 4.4rem;
-  line-height: 6.4rem;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
+.s-slider__link:hover {
+  border-color: #609fff;
 }
 
-.pet-card__title {
-  position: absolute;
-  left: 50%;
-  bottom: 2rem;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  text-transform: capitalize;
-  z-index: 1;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
+.s-slider__link--is-active {
+  border-color: #609fff;
+  pointer-events: none;
 }
 
-.pet-card__detail {
+.s-slider__link--question {
+  color: #0f0049;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.s-slider__panda {
+  width: 3.4rem;
+  height: 2.6rem;
+}
+
+.s-slider__alligator {
+  width: 2.8rem;
+  height: 3.5rem;
+}
+
+.s-slider__eagle {
+  width: 2.6rem;
+  height: 3.3rem;
+}
+
+.s-slider__gorilla {
+  width: 3rem;
+  height: 3.6rem;
+}
+
+.main-cam {
+  padding: 7rem 0 0;
+}
+
+.main-cam__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-cam__col {
+  position: relative;
+}
+
+.main-cam__col--left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 4rem;
+}
+
+.main-cam__iframe {
+  width: 100%;
+  min-height: 60rem;
+  border-radius: 0.5rem;
+  border: 0;
+}
+
+.main-cam__col--right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 51.2rem;
+          flex: 0 0 51.2rem;
+}
+
+.main-cam__zoo {
+  padding-bottom: 3.6rem;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.main-cam__info {
+  margin-right: -5rem;
+  padding-top: 5rem;
+}
+
+.main-cam-info__title {
+  margin-bottom: 3.5rem;
+}
+
+.main-cam-info__desc {
+  max-width: 33.6rem;
+  margin-bottom: 4rem;
+}
+
+.zoo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.zoo__avatar {
+  width: 7rem;
+  height: 7rem;
+  margin-right: 2rem;
+  border-radius: 6rem;
+}
+
+.zoo__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.zoo__title {
+  color: #0b0b0b;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+}
+
+.zoo__watching {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.zoo__icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.8rem;
+  fill: transparent;
+}
+
+.zoo__text {
+  line-height: 2.8rem;
+}
+
+.other-cams {
+  padding: 6rem 0;
+}
+
+.other-cams__inner {
+  position: relative;
+}
+
+.other-cams__title {
+  margin-bottom: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.other-cams__icon {
+  display: inline-block;
+  width: 1.7rem;
+  height: 1.3rem;
+  margin-left: 1.2rem;
+}
+
+.other-cams__controls {
+  margin-top: 4rem;
+}
+
+.cams {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cams__item {
+  position: relative;
+  margin-right: 4rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.cams__item:hover::after {
+  opacity: 0.4;
+  visibility: visible;
+}
+
+.cams__item:hover .cams__info {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cams__item:last-child {
+  margin-right: 0;
+}
+
+.cams__item::after {
+  content: '';
+  display: inline-block;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 1;
+  border-radius: 0.5rem;
+  background: #0b0b0b;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  opacity: 0;
   visibility: hidden;
-  opacity: 0;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
 }
 
-.pet-card__desc {
-  position: absolute;
-  right: 7rem;
-  left: 6.5rem;
-  bottom: 14.8rem;
-  text-align: center;
-  -webkit-transform: scale(5) translateY(2rem);
-          transform: scale(5) translateY(2rem);
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
+.cams__iframe {
+  min-height: 18.4rem;
+  border-radius: 0.5rem;
+  border: 0;
 }
 
-.pet-card__link {
+.cams__info {
   position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
   left: 50%;
-  bottom: 2rem;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 0;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
+  visibility: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.cams__title {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #fcfcfc;
+  color: #fcfcfc;
+  font-family: Merriweather;
+  font-weight: bold;
+  font-size: 2.6rem;
+  line-height: 3.8rem;
 }
 
 .pay-feed {
@@ -1480,234 +1461,4 @@ ul {
 
 .pay-feed-item__title {
   margin-bottom: 3rem;
-}
-
-.testimonials {
-  padding: 10rem 0;
-  background-color: #080029;
-}
-
-.testimonials__row {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.testimonials__col--left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 51.2rem;
-          flex: 0 0 51.2rem;
-  margin-right: 4rem;
-}
-
-.testimonials__col--right {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.testimonials-info__subtitle {
-  margin-bottom: 6.2rem;
-}
-
-.testimonials-info__title {
-  margin-bottom: 4rem;
-}
-
-.testimonials-info__desc {
-  margin-bottom: 6rem;
-}
-
-.testimonial {
-  padding: 4rem 4rem 7.2rem 4rem;
-  background: #fcfcfc;
-  border-radius: 1.5rem;
-}
-
-.testimonial__top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 3rem;
-}
-
-.testimonial__avatar {
-  width: 4.6rem;
-  height: 4.6rem;
-  margin-right: 2rem;
-  border-radius: 50%;
-}
-
-.testimonial__avatar-file {
-  border-radius: 50%;
-}
-
-.t-slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  overflow: hidden;
-}
-
-.t-slider__link {
-  margin-bottom: 2.5rem;
-}
-
-.t-slider__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 3rem;
-}
-
-.t-slider__col {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 51.2rem;
-          flex: 0 0 51.2rem;
-  margin-right: 4rem;
-}
-
-.zoogeography {
-  padding: 5rem 0 11.2rem;
-}
-
-.zoogeography__row {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.zoogeography__col--left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 34.4rem;
-          flex: 0 0 34.4rem;
-  margin-right: 2.4rem;
-}
-
-.zoogeography__subtitle {
-  margin-top: 5rem;
-  margin-bottom: 6.2rem;
-}
-
-.zoogeography__col--right {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.zoogeography__map {
-  min-height: 70rem;
-  margin-right: 2.5rem;
-}
-
-.pet {
-  background: #fcfcfc;
-  -webkit-box-shadow: 4px 12px 22px rgba(0, 0, 0, 0.06);
-          box-shadow: 4px 12px 22px rgba(0, 0, 0, 0.06);
-  border-radius: 1.5rem;
-}
-
-.pet__img {
-  position: relative;
-  padding-bottom: 63.4%;
-}
-
-.pet__img-file {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 1.5rem 1.5rem 0 0;
-}
-
-.pet__content {
-  padding: 2rem 4rem 4rem 4rem;
-  text-align: center;
-}
-
-.pet__title {
-  margin-bottom: 2rem;
-}
-
-.pet__desc {
-  margin-bottom: 5.2rem;
-}
-
-.pet__link {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.map {
-  position: relative;
-}
-
-.map--small {
-  background: url("../../assets/images/world.png") no-repeat center center;
-  background-size: cover;
-}
-
-.markers__item {
-  position: absolute;
-}
-
-.markers__item:hover svg {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
-}
-
-.markers__item:hover .markers__icon-path {
-  stroke-width: 2;
-  stroke: #609fff;
-}
-
-.markers__item--active {
-  pointer-events: none;
-}
-
-.markers__item--small-eagle {
-  left: 128px;
-  top: 164px;
-}
-
-.markers__item--small-gorilla {
-  left: 591px;
-  top: 343px;
-}
-
-.markers__item--small-panda {
-  left: 909px;
-  top: 204px;
-}
-
-.markers__item--small-alligator {
-  left: 273px;
-  top: 216px;
-}
-
-.markers__icon {
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
-  transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s;
-}
-
-.markers__icon-path {
-  -webkit-transition: stroke 0.4s;
-  transition: stroke 0.4s;
 }
