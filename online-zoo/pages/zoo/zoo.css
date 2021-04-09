@@ -499,6 +499,14 @@ ul {
   z-index: 1;
 }
 
+.header--contact .header__inner {
+  border: 0;
+}
+
+.header--contact .header__logo {
+  border: 0;
+}
+
 .header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -507,7 +515,7 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   padding-right: 9.2rem;
-  background: rgba(252, 252, 252, 0.02);
+  background: #fff;
   border: 2px solid #f0f0f0;
   border-left: 0;
   -webkit-box-sizing: border-box;
@@ -639,6 +647,10 @@ ul {
   min-height: 100vh;
 }
 
+.page--map .page__col--left {
+  z-index: 1;
+}
+
 .page__row {
   position: relative;
   display: -webkit-box;
@@ -668,6 +680,10 @@ ul {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.page__content {
+  width: 100%;
 }
 
 .page__footer {
