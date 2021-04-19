@@ -598,6 +598,13 @@ ul {
 }
 
 @media screen and (max-width: 1199px) {
+  .header {
+    -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 1px 0px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@media screen and (max-width: 1199px) {
   .header--map .header__inner {
     -webkit-box-shadow: none;
             box-shadow: none;
@@ -613,12 +620,7 @@ ul {
 
 .header--contact .header__inner {
   border: 0;
-}
-
-@media screen and (max-width: 1919px) {
-  .header--contact .header__inner {
-    padding-right: 0;
-  }
+  padding-right: 0;
 }
 
 @media screen and (max-width: 639px) {
@@ -673,8 +675,6 @@ ul {
             justify-content: space-between;
     padding-right: 0;
     border: none;
-    -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.04);
-            box-shadow: 0 1px 0px rgba(0, 0, 0, 0.04);
     -webkit-backdrop-filter: none;
             backdrop-filter: none;
   }
