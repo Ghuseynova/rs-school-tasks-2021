@@ -605,9 +605,14 @@ ul {
 }
 
 @media screen and (max-width: 1199px) {
-  .header--map .header__inner {
+  .header--map {
     -webkit-box-shadow: none;
             box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .header--map .header__inner {
     background: transparent;
     -webkit-backdrop-filter: initial;
             backdrop-filter: initial;
