@@ -601,6 +601,18 @@ ul {
   border: 0;
 }
 
+@media screen and (max-width: 1919px) {
+  .header--contact .header__inner {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .header--contact .header__inner {
+    padding: 0 1rem;
+  }
+}
+
 .header--contact .header__logo {
   border: 0;
 }
@@ -1134,7 +1146,6 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
 }
 
 .page__col--left {
@@ -1571,8 +1582,18 @@ ul {
 }
 
 @media screen and (max-width: 639px) {
+  .footer__copyright, .footer__designed {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
   .footer__copyright {
-    margin-bottom: 0.8rem;
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+    margin-top: 0.8rem;
   }
 }
 

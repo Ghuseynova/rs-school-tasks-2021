@@ -601,6 +601,18 @@ ul {
   border: 0;
 }
 
+@media screen and (max-width: 1919px) {
+  .header--contact .header__inner {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .header--contact .header__inner {
+    padding: 0 1rem;
+  }
+}
+
 .header--contact .header__logo {
   border: 0;
 }
@@ -1134,7 +1146,6 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
 }
 
 .page__col--left {
@@ -1571,8 +1582,18 @@ ul {
 }
 
 @media screen and (max-width: 639px) {
+  .footer__copyright, .footer__designed {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
   .footer__copyright {
-    margin-bottom: 0.8rem;
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+    margin-top: 0.8rem;
   }
 }
 
@@ -2025,6 +2046,24 @@ ul {
 }
 
 .not-found {
+  padding: 2rem 0 8rem;
+  font-family: Merriweather;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1919px) {
+  .not-found {
+    padding: 6rem 0 8rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .not-found {
+    padding: 2rem 0 5rem;
+  }
+}
+
+.not-found__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2035,15 +2074,33 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2rem 0 8rem;
-  font-family: Merriweather;
-  font-weight: bold;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 639px) {
+  .not-found__inner {
+    padding: 0 1rem;
+  }
 }
 
 .not-found__title {
   color: #d9e8ff;
   font-size: 14.4rem;
   line-height: 18.1rem;
+}
+
+@media screen and (max-width: 1919px) {
+  .not-found__title {
+    font-size: 12rem;
+    line-height: 15.1rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .not-found__title {
+    font-size: 9.6rem;
+    line-height: 12.1rem;
+  }
 }
 
 .not-found__subtitle {
@@ -2056,15 +2113,96 @@ ul {
   line-height: 5.2rem;
 }
 
+@media screen and (max-width: 1919px) {
+  .not-found__subtitle {
+    margin-top: -5.4rem;
+    font-size: 2.8rem;
+    line-height: 4rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .not-found__subtitle {
+    margin-top: -4.4rem;
+    margin-bottom: 2.5rem;
+    font-size: 2.6rem;
+    line-height: 3.8rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .not-found__subtitle {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+
 .not-found__desc {
   font-size: 2.4rem;
   line-height: 3.7rem;
   text-align: center;
 }
 
+@media screen and (max-width: 1919px) {
+  .not-found__desc {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .not-found__desc {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .not-found__desc {
+    max-width: 30rem;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
+
+.not-found__desc span br {
+  display: none;
+}
+
+@media screen and (max-width: 639px) {
+  .not-found__desc span br {
+    display: inline-block;
+  }
+}
+
 .not-found__btn {
   margin-top: 5rem;
   margin-bottom: 8rem;
+}
+
+@media screen and (max-width: 1919px) {
+  .not-found__btn {
+    margin-top: 4rem;
+    padding: 1.6rem 6rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .not-found__btn {
+    margin-top: 3.5rem;
+    margin-bottom: 7rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .not-found__btn {
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .not-found__btn .button__text {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
 }
 
 .not-found__iframe {
@@ -2074,8 +2212,60 @@ ul {
   border-radius: 0.5rem;
 }
 
+@media screen and (max-width: 1919px) {
+  .not-found__iframe {
+    width: 83.2rem;
+    height: 46.9rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .not-found__iframe {
+    width: 60rem;
+    height: 33.8rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .not-found__iframe {
+    width: 30rem;
+    height: 16.9rem;
+  }
+}
+
 .not-found__text {
   max-width: 42.5rem;
   margin-top: 6rem;
   text-align: center;
+}
+
+@media screen and (max-width: 1199px) {
+  .not-found__text {
+    max-width: 44.5rem;
+    margin-top: 4rem;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .not-found__text {
+    max-width: 30rem;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .not-found__text .link {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .not-found__text .link {
+    display: inline-block;
+    font-size: inherit;
+    line-height: inherit;
+  }
 }
