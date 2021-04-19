@@ -605,9 +605,14 @@ ul {
 }
 
 @media screen and (max-width: 1199px) {
-  .header--map .header__inner {
+  .header--map {
     -webkit-box-shadow: none;
             box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .header--map .header__inner {
     background: transparent;
     -webkit-backdrop-filter: initial;
             backdrop-filter: initial;
@@ -1203,16 +1208,17 @@ ul {
   .page__aside {
     position: fixed;
     bottom: 2rem;
-    left: 2rem;
-    right: 2rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: calc(100% - 4rem);
     max-width: 60rem;
   }
 }
 
 @media screen and (max-width: 639px) {
   .page__aside {
-    left: 1rem;
-    right: 1rem;
+    width: calc(100% - 2rem);
   }
 }
 
