@@ -1236,9 +1236,12 @@ ul {
 }
 
 @media screen and (max-width: 1199px) {
-  .page__col--left-map {
+  .page__col--left-map, .page__col--left--zoo {
     display: block;
-    position: static;
+    position: relative;
+    width: 0;
+    padding: 0;
+    z-index: 99;
   }
 }
 
