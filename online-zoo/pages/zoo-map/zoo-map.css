@@ -563,6 +563,12 @@ ul {
   }
 }
 
+@media screen and (max-width: 639px) {
+  .button {
+    padding: 1.4rem 5.5rem;
+  }
+}
+
 .button:focus {
   outline: none;
 }
@@ -1751,6 +1757,13 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .h2 {
+    font-size: 4.2rem;
+    line-height: 5.3rem;
+  }
+}
+
 .h2--red {
   position: relative;
   display: inline-block;
@@ -1775,6 +1788,14 @@ ul {
     top: 0.8rem;
     width: 1rem;
     height: 1rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .h2--red::before {
+    top: 0.65rem;
+    width: 0.7rem;
+    height: 0.7rem;
   }
 }
 
@@ -1864,6 +1885,22 @@ ul {
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 2.1rem;
+}
+
+@media screen and (max-width: 1199px) {
+  .h5 {
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .h5 {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
 }
 
 .h5--theme-light {
@@ -2224,6 +2261,27 @@ ul {
   }
 }
 
+.s-slider--zoogeography {
+  padding: 1.2rem 3rem;
+}
+
+.s-slider--zoogeography .s-slider__arrow--prev {
+  left: 1rem;
+}
+
+.s-slider--zoogeography .s-slider__arrow--next {
+  right: 0;
+}
+
+.s-slider--zoogeography .s-slider__item:last-child {
+  display: inline-block;
+}
+
+.s-slider--zoogeography .s-slider__link {
+  width: 5rem;
+  height: 5rem;
+}
+
 .s-slider__arrow {
   position: absolute;
   left: 50%;
@@ -2526,6 +2584,13 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .markers__item--small-eagle {
+    left: 6rem;
+    top: 7.6rem;
+  }
+}
+
 .markers__item--small-gorilla {
   left: 59.1rem;
   top: 34.3rem;
@@ -2535,6 +2600,13 @@ ul {
   .markers__item--small-gorilla {
     left: 31rem;
     top: 17.2rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .markers__item--small-gorilla {
+    left: 27.3rem;
+    top: 15rem;
   }
 }
 
@@ -2550,6 +2622,13 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .markers__item--small-panda {
+    left: 44.2rem;
+    top: 9.8rem;
+  }
+}
+
 .markers__item--small-alligator {
   left: 27.3rem;
   top: 21.6rem;
@@ -2559,6 +2638,13 @@ ul {
   .markers__item--small-alligator {
     left: 15rem;
     top: 12.2rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .markers__item--small-alligator {
+    left: 13.4rem;
+    top: 10.5rem;
   }
 }
 
@@ -2757,6 +2843,12 @@ ul {
 @media screen and (max-width: 1919px) {
   .pet__desc {
     margin-bottom: 4.4rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .pet__desc {
+    margin-bottom: 3.2rem;
   }
 }
 
