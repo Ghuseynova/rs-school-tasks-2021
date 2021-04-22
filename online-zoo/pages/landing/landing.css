@@ -563,6 +563,12 @@ ul {
   }
 }
 
+@media screen and (max-width: 639px) {
+  .button {
+    padding: 1.4rem 5.5rem;
+  }
+}
+
 .button:focus {
   outline: none;
 }
@@ -1751,6 +1757,13 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .h2 {
+    font-size: 4.2rem;
+    line-height: 5.3rem;
+  }
+}
+
 .h2--red {
   position: relative;
   display: inline-block;
@@ -1775,6 +1788,14 @@ ul {
     top: 0.8rem;
     width: 1rem;
     height: 1rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .h2--red::before {
+    top: 0.65rem;
+    width: 0.7rem;
+    height: 0.7rem;
   }
 }
 
@@ -1864,6 +1885,22 @@ ul {
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 2.1rem;
+}
+
+@media screen and (max-width: 1199px) {
+  .h5 {
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .h5 {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
 }
 
 .h5--theme-light {
@@ -2211,6 +2248,18 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .fav-animal {
+    padding: 6rem 0;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .fav-animal {
+    padding: 7rem 0 6rem;
+  }
+}
+
 .fav-animal__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2225,6 +2274,15 @@ ul {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .fav-animal__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -2244,20 +2302,51 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .fav-animal__col--left {
+    width: 31.6rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .fav-animal__col--left {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1919px) {
   .fav-animal__col--right {
     width: calc((100% - 17.5rem) / 2);
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .fav-animal__col--right {
+    width: 26.3rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .fav-animal__col--right {
+    display: none;
+  }
+}
+
 .fav-animal__img {
   position: relative;
   padding-bottom: 96.8%;
+  border-radius: 0.5rem;
 }
 
 @media screen and (max-width: 1919px) {
   .fav-animal__img {
     padding-bottom: 114%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .fav-animal__img {
+    padding-bottom: 124%;
   }
 }
 
@@ -2271,6 +2360,7 @@ ul {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 .fav-animal-info {
@@ -2287,6 +2377,21 @@ ul {
   margin-bottom: 3rem;
 }
 
+@media screen and (max-width: 1199px) {
+  .fav-animal-info__subtitle {
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .fav-animal-info__subtitle {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    letter-spacing: 0.115em;
+    text-align: center;
+  }
+}
+
 .fav-animal-info__title {
   margin-bottom: 6rem;
 }
@@ -2297,18 +2402,57 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .fav-animal-info__title {
+    margin-bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .fav-animal-info__title {
+    text-align: center;
+  }
+}
+
 .fav-animal-info__btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+@media screen and (max-width: 639px) {
+  .fav-animal-info__btns {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .fav-animal-info__btn {
   margin-right: 6.2rem;
 }
 
+@media screen and (max-width: 1199px) {
+  .fav-animal-info__btn {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .fav-animal-info__btn {
+    margin-right: 0;
+  }
+}
+
 .fav-animal-info__btn:last-child {
   margin-right: 0;
+}
+
+@media screen and (max-width: 1199px) {
+  .fav-animal-info__btn:last-child {
+    display: none;
+  }
 }
 
 .zoo-online {
@@ -2318,6 +2462,18 @@ ul {
 @media screen and (max-width: 1919px) {
   .zoo-online {
     padding: 10rem 0;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .zoo-online {
+    padding: 6rem 0 8rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .zoo-online {
+    padding: 0 0 6rem;
   }
 }
 
@@ -2331,6 +2487,15 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (max-width: 1199px) {
+  .zoo-online__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .zoo-online__col {
@@ -2347,14 +2512,46 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .zoo-online__col--left {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    width: 39rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .zoo-online__col--left {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    width: 100%;
+    margin-bottom: 6rem;
+  }
+}
+
 .zoo-online__img {
   position: relative;
   padding-bottom: 149%;
+  border-radius: 0.5rem;
 }
 
 @media screen and (max-width: 1919px) {
   .zoo-online__img {
     padding-bottom: 146%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .zoo-online__img {
+    padding-bottom: 99%;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .zoo-online__img {
+    padding-bottom: 98%;
   }
 }
 
@@ -2368,6 +2565,7 @@ ul {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 .zoo-online__col--right {
@@ -2377,6 +2575,19 @@ ul {
 @media screen and (max-width: 1919px) {
   .zoo-online__col--right {
     width: calc((100% - 3rem) / 2 + 7.2rem);
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .zoo-online__col--right {
+    width: 100%;
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .zoo-online__col--right {
+    margin-bottom: 0;
   }
 }
 
@@ -2393,6 +2604,15 @@ ul {
           align-items: flex-start;
 }
 
+@media screen and (max-width: 1199px) {
+  .zoo-online-info {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+}
+
 .zoo-online-info__subtitle {
   margin-bottom: 5rem;
 }
@@ -2400,6 +2620,14 @@ ul {
 @media screen and (max-width: 1919px) {
   .zoo-online-info__subtitle {
     margin-bottom: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .zoo-online-info__subtitle {
+    margin-bottom: 3.2rem;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
   }
 }
 
@@ -2413,6 +2641,23 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .zoo-online-info__title {
+    max-width: 55rem;
+    margin-bottom: 3rem;
+    font-size: 2.6rem;
+    line-height: 3.8rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .zoo-online-info__title {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+
 .zoo-online-info__desc {
   margin-bottom: 6rem;
 }
@@ -2420,6 +2665,23 @@ ul {
 @media screen and (max-width: 1919px) {
   .zoo-online-info__desc {
     margin-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .zoo-online-info__desc {
+    max-width: 55rem;
+    margin-bottom: 4rem;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .zoo-online-info__desc {
+    max-width: 27.6rem;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
   }
 }
 
@@ -2440,10 +2702,31 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .famous-pets {
+    padding: 6rem 0 8rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .famous-pets {
+    padding-bottom: 4rem;
+  }
+}
+
 .famous-pets__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 1199px) {
+  .famous-pets__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .famous-pets__col {
@@ -2467,6 +2750,33 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .famous-pets__col--left {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-right: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 7rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .famous-pets__col--left {
+    margin-bottom: 5rem;
+  }
+}
+
 .famous-pets__col--right {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -2477,11 +2787,39 @@ ul {
   margin-bottom: 5rem;
 }
 
+@media screen and (max-width: 1199px) {
+  .famous-pets-info__subtitle {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .famous-pets-info__subtitle {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+}
+
 .famous-pets-info__title {
   margin-bottom: 5.5rem;
 }
 
 @media screen and (max-width: 1919px) {
+  .famous-pets-info__title {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .famous-pets-info__title {
+    margin-bottom: 3.5rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 639px) {
   .famous-pets-info__title {
     margin-bottom: 3rem;
   }
@@ -2495,6 +2833,12 @@ ul {
 @media screen and (max-width: 1919px) {
   .f-slider {
     max-width: 54.6rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .f-slider {
+    max-width: 100%;
   }
 }
 
@@ -2520,6 +2864,24 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .f-slider__col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 18rem;
+            flex: 0 0 18rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .f-slider__col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 14rem;
+            flex: 0 0 14rem;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
 .f-slider__pet-card {
   margin-bottom: 4rem;
 }
@@ -2527,6 +2889,12 @@ ul {
 @media screen and (max-width: 1919px) {
   .f-slider__pet-card {
     margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .f-slider__pet-card {
+    margin-bottom: 2rem;
   }
 }
 
@@ -2547,6 +2915,21 @@ ul {
     width: 18.5rem;
     height: 18.5rem;
     bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .pet-card:hover .pet-card__more {
+    width: 12.9rem;
+    height: 12.9rem;
+    bottom: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .pet-card:hover .pet-card__more {
+    width: 10rem;
+    height: 10rem;
   }
 }
 
@@ -2623,6 +3006,14 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .pet-card__more {
+    bottom: 4.7rem;
+    width: 4.1rem;
+    height: 4.1rem;
+  }
+}
+
 .pet-card__plus {
   color: #fcfcfc;
   font-weight: 300;
@@ -2649,6 +3040,12 @@ ul {
   z-index: 1;
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
+}
+
+@media screen and (max-width: 1199px) {
+  .pet-card__title {
+    bottom: 1rem;
+  }
 }
 
 .pet-card__detail {
@@ -2687,6 +3084,26 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .pet-card__desc {
+    right: 3rem;
+    left: 3rem;
+    bottom: 6rem;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .pet-card__desc {
+    right: 3rem;
+    left: 3rem;
+    bottom: 5rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}
+
 .pet-card__link {
   position: absolute;
   left: 50%;
@@ -2696,6 +3113,12 @@ ul {
   opacity: 0;
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
+}
+
+@media screen and (max-width: 1199px) {
+  .pet-card__link {
+    bottom: 1rem;
+  }
 }
 
 .pay-feed {
@@ -2909,6 +3332,12 @@ ul {
   }
 }
 
+@media screen and (max-width: 639px) {
+  .pay-feed-item__title {
+    max-width: 28rem;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .pay-feed-item__desc {
     font-size: 1.8rem;
@@ -2918,7 +3347,7 @@ ul {
 
 @media screen and (max-width: 639px) {
   .pay-feed-item__desc {
-    max-width: 30rem;
+    max-width: 29rem;
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
@@ -2935,11 +3364,32 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .testimonials {
+    padding: 8rem 0 10rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .testimonials {
+    padding: 6rem 0;
+  }
+}
+
 .testimonials__row {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 1199px) {
+  .testimonials__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .testimonials__col--left {
@@ -2958,15 +3408,57 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .testimonials__col--left {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-right: 0;
+    margin-bottom: 8rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .testimonials__col--left {
+    margin-bottom: 5rem;
+  }
+}
+
 .testimonials__col--right {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
+@media screen and (max-width: 1199px) {
+  .testimonials__col--right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 @media screen and (max-width: 1919px) {
   .testimonials__slider {
     max-width: 45.4rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .testimonials-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -2980,12 +3472,55 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .testimonials-info__subtitle {
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .testimonials-info__subtitle {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+  }
+}
+
 .testimonials-info__title {
   margin-bottom: 4rem;
 }
 
+@media screen and (max-width: 1199px) {
+  .testimonials-info__title {
+    font-size: 2.8rem;
+    line-height: 4.1rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .testimonials-info__title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+
 .testimonials-info__desc {
   margin-bottom: 6rem;
+}
+
+@media screen and (max-width: 1199px) {
+  .testimonials-info__desc {
+    max-width: 39.2rem;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .testimonials-info__desc {
+    max-width: 30rem;
+    margin-bottom: 4rem;
+  }
 }
 
 .testimonials-info__btn {
@@ -2997,6 +3532,13 @@ ul {
   line-height: 2.1rem;
 }
 
+@media screen and (max-width: 639px) {
+  .testimonials-info__btn .button__text {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+}
+
 .testimonial {
   padding: 4rem 4rem 7.2rem 4rem;
   background: #fcfcfc;
@@ -3006,6 +3548,12 @@ ul {
 @media screen and (max-width: 1919px) {
   .testimonial {
     padding: 3rem 3rem 6rem 3rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .testimonial {
+    padding-bottom: 3.6rem;
   }
 }
 
@@ -3025,6 +3573,12 @@ ul {
   }
 }
 
+@media screen and (max-width: 639px) {
+  .testimonial__top {
+    margin-bottom: 2rem;
+  }
+}
+
 .testimonial__avatar {
   width: 4.6rem;
   height: 4.6rem;
@@ -3036,8 +3590,23 @@ ul {
   border-radius: 50%;
 }
 
+@media screen and (max-width: 639px) {
+  .testimonial__title {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    letter-spacing: 0;
+  }
+}
+
 .testimonial__desc {
   color: #181818;
+}
+
+@media screen and (max-width: 639px) {
+  .testimonial__desc {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
 }
 
 .t-slider {
@@ -3051,8 +3620,28 @@ ul {
   overflow: hidden;
 }
 
+@media screen and (max-width: 1199px) {
+  .t-slider {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .t-slider__link {
   margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 639px) {
+  .t-slider__link {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+  .t-slider__link .link__icon {
+    width: 1.2rem;
+    height: 1rem;
+  }
 }
 
 .t-slider__row {
@@ -3060,6 +3649,14 @@ ul {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 1199px) {
+  .t-slider__row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .t-slider__col {
@@ -3077,6 +3674,26 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .t-slider__col {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .t-slider__col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30rem;
+            flex: 0 0 30rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .t-slider__col:last-child {
+    display: none;
+  }
+}
+
 .zoogeography {
   padding: 5rem 0 11.2rem;
 }
@@ -3087,11 +3704,32 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .zoogeography {
+    padding: 8rem 0;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .zoogeography {
+    padding: 6rem 0;
+  }
+}
+
 .zoogeography__row {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 1199px) {
+  .zoogeography__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .zoogeography__col--left {
@@ -3110,6 +3748,25 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .zoogeography__col--left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-right: 0;
+    margin-bottom: -7.8rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .zoogeography__col--left {
+    margin-bottom: 4rem;
+  }
+}
+
 .zoogeography__subtitle {
   margin-top: 5rem;
   margin-bottom: 6.2rem;
@@ -3119,6 +3776,18 @@ ul {
   .zoogeography__subtitle {
     margin-top: 0;
     margin-bottom: 6rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .zoogeography__subtitle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .zoogeography__pet {
+    max-width: 25rem;
   }
 }
 
@@ -3134,6 +3803,14 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .zoogeography__col--right {
+    padding-top: 0;
+    position: relative;
+    z-index: -1;
+  }
+}
+
 .zoogeography__map {
   min-height: 70rem;
   margin-right: 2.5rem;
@@ -3143,6 +3820,28 @@ ul {
   .zoogeography__map {
     min-height: 39rem;
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .zoogeography__map {
+    min-height: 34.6rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .zoogeography__map {
+    display: none;
+  }
+}
+
+.zoogeography__slider {
+  display: none;
+}
+
+@media screen and (max-width: 639px) {
+  .zoogeography__slider {
+    display: block;
   }
 }
 
@@ -3250,6 +3949,12 @@ ul {
 @media screen and (max-width: 1919px) {
   .pet__desc {
     margin-bottom: 4.4rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .pet__desc {
+    margin-bottom: 3.2rem;
   }
 }
 
@@ -3380,6 +4085,13 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .markers__item--small-eagle {
+    left: 6rem;
+    top: 7.6rem;
+  }
+}
+
 .markers__item--small-gorilla {
   left: 59.1rem;
   top: 34.3rem;
@@ -3389,6 +4101,13 @@ ul {
   .markers__item--small-gorilla {
     left: 31rem;
     top: 17.2rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .markers__item--small-gorilla {
+    left: 27.3rem;
+    top: 15rem;
   }
 }
 
@@ -3404,6 +4123,13 @@ ul {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .markers__item--small-panda {
+    left: 44.2rem;
+    top: 9.8rem;
+  }
+}
+
 .markers__item--small-alligator {
   left: 27.3rem;
   top: 21.6rem;
@@ -3413,6 +4139,13 @@ ul {
   .markers__item--small-alligator {
     left: 15rem;
     top: 12.2rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .markers__item--small-alligator {
+    left: 13.4rem;
+    top: 10.5rem;
   }
 }
 
@@ -3505,4 +4238,229 @@ ul {
 .markers__icon-path {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+}
+
+.s-slider {
+  position: relative;
+  padding: 7.5rem 0;
+}
+
+@media screen and (max-width: 1919px) {
+  .s-slider {
+    padding: 3.5rem 0;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .s-slider {
+    padding: 1.5rem 3.5rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .s-slider {
+    padding: 1.2rem 2rem;
+  }
+}
+
+.s-slider--zoogeography {
+  padding: 1.2rem 3rem;
+}
+
+.s-slider--zoogeography .s-slider__arrow--prev {
+  left: 1rem;
+}
+
+.s-slider--zoogeography .s-slider__arrow--next {
+  right: 0;
+}
+
+.s-slider--zoogeography .s-slider__item:last-child {
+  display: inline-block;
+}
+
+.s-slider--zoogeography .s-slider__link {
+  width: 5rem;
+  height: 5rem;
+}
+
+.s-slider__arrow {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 1.5rem;
+  height: 1rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1199px) {
+  .s-slider__arrow {
+    top: 45%;
+    left: auto;
+    -webkit-transform: rotate(-90deg) translateY(-50%);
+            transform: rotate(-90deg) translateY(-50%);
+  }
+}
+
+.s-slider__arrow--prev {
+  top: 0;
+}
+
+@media screen and (max-width: 1199px) {
+  .s-slider__arrow--prev {
+    top: 45%;
+    left: 0;
+  }
+}
+
+.s-slider__icon {
+  width: 100%;
+  height: 100%;
+}
+
+.s-slider__arrow--next {
+  bottom: 0;
+}
+
+@media screen and (max-width: 1199px) {
+  .s-slider__arrow--next {
+    bottom: auto;
+    right: -1rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .s-slider__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.s-slider__item {
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 1919px) {
+  .s-slider__item {
+    margin-bottom: 7.8rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .s-slider__item {
+    margin-bottom: 0;
+  }
+}
+
+.s-slider__item:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1919px) {
+  .s-slider__item:last-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1919px) {
+  .s-slider__item:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+}
+
+.s-slider__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 2px solid #d9e8ff;
+  border-radius: 3rem;
+  text-decoration: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 1919px) {
+  .s-slider__link {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+.s-slider__link:hover {
+  border-color: #609fff;
+}
+
+.s-slider__link--is-active {
+  border-color: #609fff;
+  pointer-events: none;
+}
+
+.s-slider__link--question {
+  color: #0f0049;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.s-slider__panda {
+  width: 3.4rem;
+  height: 2.6rem;
+}
+
+@media screen and (max-width: 1919px) {
+  .s-slider__panda {
+    width: 2.8rem;
+    height: 2.1rem;
+  }
+}
+
+.s-slider__alligator {
+  width: 2.8rem;
+  height: 3.5rem;
+}
+
+@media screen and (max-width: 1919px) {
+  .s-slider__alligator {
+    width: 2.3rem;
+    height: 2.9rem;
+  }
+}
+
+.s-slider__eagle {
+  width: 2.6rem;
+  height: 3.3rem;
+}
+
+@media screen and (max-width: 1919px) {
+  .s-slider__eagle {
+    width: 2.1rem;
+    height: 2.7rem;
+  }
+}
+
+.s-slider__gorilla {
+  width: 3rem;
+  height: 3.6rem;
+}
+
+@media screen and (max-width: 1919px) {
+  .s-slider__gorilla {
+    width: 2.5rem;
+    height: 2.8rem;
+  }
 }
