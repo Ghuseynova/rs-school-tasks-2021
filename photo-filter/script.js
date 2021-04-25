@@ -1,9 +1,10 @@
 const filters = document.querySelector('.js-filter');
 const imgEl = document.querySelector('.js-img');
-const btnReset = document.querySelector('.btn-reset');
-const btnNext = document.querySelector('.btn-next');
-const btnLoad = document.querySelector('#btnInput');
-const btnSave = document.querySelector('.btn-save');
+const btnReset = document.querySelector('.js-reset');
+const btnNext = document.querySelector('.js-next');
+const btnLoad = document.querySelector('.js-load');
+const btnSave = document.querySelector('.js-save');
+const fullScreenBtn = document.querySelector('.js-fullscreen');
 let imgNum = 1;
 
 function setRootProperty(element, property, value) {
@@ -100,7 +101,18 @@ function hadleLoad() {
   reader.readAsDataURL(file);
 }
 
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
 filters.addEventListener('input', handleUpdate);
 btnReset.addEventListener('click', handleReset);
 btnNext.addEventListener('click', handleNext);
 btnLoad.addEventListener('change', hadleLoad);
+fullScreenBtn.addEventListener('click', toggleFullScreen);
