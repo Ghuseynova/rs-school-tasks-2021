@@ -91,9 +91,16 @@ function handleNext(e) {
   }, 1000);
 }
 
+function hadleLoad() {
+  const file = this.files[0];
+  const reader = new FileReader();
+  reader.onload = () => {
+    imgEl.src = reader.result;
+  };
+  reader.readAsDataURL(file);
+}
+
 filters.addEventListener('input', handleUpdate);
 btnReset.addEventListener('click', handleReset);
 btnNext.addEventListener('click', handleNext);
-btnLoad.addEventListener('click', function (e) {
-  console.log(e);
-});
+btnLoad.addEventListener('change', hadleLoad);
