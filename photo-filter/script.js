@@ -1,5 +1,5 @@
 const filters = document.querySelector('.js-filter');
-const img = document.querySelector('.js-img');
+const imgEl = document.querySelector('.js-img');
 const btnReset = document.querySelector('.btn-reset');
 const btnNext = document.querySelector('.btn-next');
 const btnLoad = document.querySelector('#btnInput');
@@ -25,6 +25,14 @@ function getTimeOfDay() {
   } else {
     return 'night';
   }
+}
+
+function viewBgImage(src) {
+  const img = new Image();
+  img.src = src;
+  img.onload = () => {
+    imgEl.src = src;
+  };
 }
 
 function handleUpdate(e) {
@@ -63,20 +71,29 @@ function handleReset(e) {
   });
 }
 
-function handleNext() {
+function handleNext(e) {
+  const _this = this;
   const imgSrc = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${
     imgNum < 10 ? `0${imgNum}` : imgNum
   }.jpg`;
 
-  img.src = imgSrc;
+  viewBgImage(imgSrc);
 
   if (imgNum === 20) {
     imgNum = 1;
     return;
   }
   imgNum++;
+
+  _this.disabled = true;
+  setTimeout(function () {
+    _this.disabled = false;
+  }, 1000);
 }
 
 filters.addEventListener('input', handleUpdate);
 btnReset.addEventListener('click', handleReset);
 btnNext.addEventListener('click', handleNext);
+btnLoad.addEventListener('click', function (e) {
+  console.log(e);
+});
