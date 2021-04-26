@@ -72,7 +72,7 @@ function handleReset(e) {
   });
 }
 
-function handleNext(e) {
+function handleNext() {
   const _this = this;
   const imgSrc = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${
     imgNum < 10 ? `0${imgNum}` : imgNum
@@ -111,8 +111,32 @@ function toggleFullScreen() {
   }
 }
 
+function drawImage() {
+  const img = new Image();
+  img.setAttribute('crossOrigin', 'anonymous');
+  img.src = imgEl.src;
+
+  img.onload = function () {
+    const canvas = document.createElement('canvas');
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext('2d');
+
+    ctx.filter = window.getComputedStyle(imgEl).getPropertyValue('filter');
+    ctx.drawImage(img, 0, 0);
+
+    const downloadLink = document.createElement('a');
+    downloadLink.download = 'gul';
+    downloadLink.setAttribute('href', canvas.toDataURL('image/png'));
+
+    downloadLink.click();
+    downloadLink.delete;
+  };
+}
+
 filters.addEventListener('input', handleUpdate);
 btnReset.addEventListener('click', handleReset);
 btnNext.addEventListener('click', handleNext);
 btnLoad.addEventListener('change', hadleLoad);
+btnSave.addEventListener('click', drawImage);
 fullScreenBtn.addEventListener('click', toggleFullScreen);
