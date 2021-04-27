@@ -1,5 +1,6 @@
 const filters = document.querySelector('.js-filter');
 const imgEl = document.querySelector('.js-img');
+const btns = document.querySelectorAll('.btn');
 const btnReset = document.querySelector('.js-reset');
 const btnNext = document.querySelector('.js-next');
 const btnLoad = document.querySelector('.js-load');
@@ -9,6 +10,13 @@ let imgNum = 1;
 
 function setRootProperty(element, property, value) {
   element.style.setProperty(property, value);
+}
+
+function addActiveClass(el) {
+  if (!el.classList.contains('btn-active')) {
+    btns.forEach((btn) => btn.classList.remove('btn-active'));
+    el.classList.add('btn-active');
+  }
 }
 
 function getTimeOfDay() {
@@ -52,6 +60,7 @@ function handleUpdate(e) {
 function handleReset(e) {
   e.stopPropagation();
 
+  addActiveClass(e.target);
   setRootProperty(document.documentElement, '--blur', '0px');
   setRootProperty(document.documentElement, '--invert', '0%');
   setRootProperty(document.documentElement, '--sepia', '0%');
@@ -72,7 +81,8 @@ function handleReset(e) {
   });
 }
 
-function handleNext() {
+function handleNext(e) {
+  addActiveClass(e.target);
   const _this = this;
   const imgSrc = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${
     imgNum < 10 ? `0${imgNum}` : imgNum
@@ -93,6 +103,7 @@ function handleNext() {
 }
 
 function hadleLoad(e) {
+  addActiveClass(e.target);
   const file = this.files[0];
   const reader = new FileReader();
   reader.onload = () => {
@@ -113,14 +124,14 @@ function toggleFullScreen() {
   }
 }
 
-function drawImage() {
+function drawImage(e) {
+  addActiveClass(e.target);
   const img = new Image();
   img.setAttribute('crossOrigin', 'anonymous');
   img.src = imgEl.src;
-  console.log(img.width, img.height, imgEl.clientHeight, imgEl.clientWidth);
+
   img.onload = function () {
     const canvas = document.createElement('canvas');
-    console.log(img.width, img.height, imgEl.clientHeight, imgEl.clientWidth);
     const ct = Math.round(img.height / imgEl.clientHeight);
     canvas.width = img.width;
     canvas.height = img.height;
