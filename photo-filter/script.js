@@ -92,13 +92,15 @@ function handleNext() {
   }, 1000);
 }
 
-function hadleLoad() {
+function hadleLoad(e) {
   const file = this.files[0];
   const reader = new FileReader();
   reader.onload = () => {
     imgEl.src = reader.result;
   };
   reader.readAsDataURL(file);
+
+  e.target.value = null;
 }
 
 function toggleFullScreen() {
