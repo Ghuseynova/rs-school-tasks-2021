@@ -92,13 +92,15 @@ function handleNext() {
   }, 1000);
 }
 
-function hadleLoad() {
+function hadleLoad(e) {
   const file = this.files[0];
   const reader = new FileReader();
   reader.onload = () => {
     imgEl.src = reader.result;
   };
   reader.readAsDataURL(file);
+
+  e.target.value = null;
 }
 
 function toggleFullScreen() {
@@ -115,18 +117,29 @@ function drawImage() {
   const img = new Image();
   img.setAttribute('crossOrigin', 'anonymous');
   img.src = imgEl.src;
-
+  console.log(img.width, img.height, imgEl.clientHeight, imgEl.clientWidth);
   img.onload = function () {
     const canvas = document.createElement('canvas');
+    console.log(img.width, img.height, imgEl.clientHeight, imgEl.clientWidth);
+    const ct = Math.round(img.height / imgEl.clientHeight);
     canvas.width = img.width;
     canvas.height = img.height;
     const ctx = canvas.getContext('2d');
-
-    ctx.filter = window.getComputedStyle(imgEl).getPropertyValue('filter');
+    ctx.filter = `blur(${
+      parseInt(window.getComputedStyle(imgEl).getPropertyValue('--blur')) * ct
+    }px) invert(${window
+      .getComputedStyle(imgEl)
+      .getPropertyValue('--invert')}) sepia(${window
+      .getComputedStyle(imgEl)
+      .getPropertyValue('--sepia')}) saturate(${window
+      .getComputedStyle(imgEl)
+      .getPropertyValue('--saturate')}) hue-rotate(${window
+      .getComputedStyle(imgEl)
+      .getPropertyValue('--hue')})`;
     ctx.drawImage(img, 0, 0);
 
     const downloadLink = document.createElement('a');
-    downloadLink.download = 'gul';
+    downloadLink.download = 'download';
     downloadLink.setAttribute('href', canvas.toDataURL('image/png'));
 
     downloadLink.click();
