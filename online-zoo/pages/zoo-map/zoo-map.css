@@ -584,6 +584,18 @@ ul {
   opacity: 0.8;
 }
 
+.button--theme-dark {
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #171717;
+  color: #fcfcfc;
+}
+
+.button--theme-dark:hover {
+  opacity: 0.8;
+}
+
 .button--primary {
   background: #0f0049;
   color: #fff;
@@ -618,6 +630,11 @@ ul {
   .button--size-lg {
     padding: 1.8rem 6.4rem;
   }
+}
+
+.button--is-disable {
+  background: #d3d3d3;
+  pointer-events: none;
 }
 
 .button__text {
