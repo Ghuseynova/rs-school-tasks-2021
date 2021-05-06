@@ -2846,6 +2846,10 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: -webkit-transform 1s ease-in;
+  transition: -webkit-transform 1s ease-in;
+  transition: transform 1s ease-in;
+  transition: transform 1s ease-in, -webkit-transform 1s ease-in;
 }
 
 .f-slider__col {
@@ -2853,6 +2857,11 @@ ul {
       -ms-flex: 0 0 32.8rem;
           flex: 0 0 32.8rem;
   margin-right: 4rem;
+}
+
+.f-slider__col.fade {
+  -webkit-animation: fade 0.5s;
+          animation: fade 0.5s;
 }
 
 @media screen and (max-width: 1919px) {
@@ -2895,6 +2904,30 @@ ul {
 @media screen and (max-width: 639px) {
   .f-slider__pet-card {
     margin-bottom: 2rem;
+  }
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
