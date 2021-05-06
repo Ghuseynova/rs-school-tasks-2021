@@ -28,14 +28,10 @@
 
   function setPet(pet) {
     const petCom = `<div class="pet pet--map zoo-map__pet">
-    <div class="pet__img"><img class="pet__img-file" src="../../assets/images/${
-      pet.image
-    }" alt="eagle"></div>
+    <div class="pet__img"><img class="pet__img-file" src="../../assets/images/${pet.image}" alt="eagle"></div>
     <div class="pet__content">
       <h3 class="h3 h3--theme-dark pet__title">${pet.name}</h3>
-      <p class="text text--theme-dark pet__desc">${
-        pet.desc
-      }</p><a class="link link--theme-dark link--with-arrow pet__link" href="../zoo/${pet.name.toLowerCase()}.html">Watch now<svg class="link__icon">
+      <p class="text text--theme-dark pet__desc">${pet.desc}</p><a class="link link--theme-dark link--with-arrow pet__link">Watch now<svg class="link__icon">
           <use href="../../assets/icons/sprite.svg#arrow-right"></use>
         </svg></a>
     </div>
