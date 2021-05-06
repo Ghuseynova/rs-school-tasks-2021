@@ -3536,6 +3536,13 @@ ul {
           transform: translateX(-50%);
 }
 
+.i-accerdion-item__body {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
 @media screen and (max-width: 639px) {
   .i-accerdion-item__body {
     max-width: 30rem;
