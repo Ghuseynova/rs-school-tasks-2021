@@ -243,7 +243,7 @@
                 <div class="testimonials-info testimonials__info">
                   <h4 class="h4 h4--theme-light h4--size-sm testimonials-info__subtitle">Testimonials</h4>
                   <h3 class="h3 h3--theme-light testimonials-info__title">You can make us smile</h3>
-                  <p class="text text--theme-light testimonials-info__desc">We want to make animal observation and interaction accessible. You can leave your wishes on how to make the service more convenient, and most importantly, more interesting for you.</p><button class="button button--theme-light testimonials-info__btn"><span class="button__text">Leave feedback</span></button>
+                  <p class="text text--theme-light testimonials-info__desc">We want to make animal observation and interaction accessible. You can leave your wishes on how to make the service more convenient, and most importantly, more interesting for you.</p><button class="button button--theme-light testimonials-info__btn js-popup"><span class="button__text">Leave feedback</span></button>
                 </div>
               </div>
               <div class="testimonials__col testimonials__col--right">
@@ -416,6 +416,19 @@
         </div>
       </div>
     </footer>
+  </div>
+  <div class="popups">
+    <div class="popup popup--feedback">
+      <div class="popup__overlay"></div>
+      <div class="popup__container"><button class="popup__close"></button>
+        <form class="f-form popup__form">
+          <h2 class="f-form__title">Your feedback</h2>
+          <div class="f-form__group"><label class="f-form__label" for="name">Your name:</label><input class="f-form__input" type="text" name="name" id="name" placeholder="Ellie Coward"></div>
+          <div class="f-form__group"><label class="f-form__label" for="email">Your e-mail:</label><input class="f-form__input" type="email" name="email" id="email" placeholder="example@gmail.com"></div>
+          <div class="f-form__group"><label class="f-form__label" for="message">Your review:</label><textarea class="f-form__textarea" id="message"></textarea></div><button class="button button--theme-dark button--size-lg button--is-disable f-form__btn"><span class="button__text">Send for moderation</span></button>
+        </form>
+      </div>
+    </div>
   </div>
   <script src="landing.js"></script>
 </body>

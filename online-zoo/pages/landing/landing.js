@@ -99,3 +99,45 @@
     });
   });
 })();
+
+(function () {
+  const openPopupBtn = document.querySelector('.js-popup');
+  const popup = document.querySelector('.popup');
+  const popupOverlay = document.querySelector('.popup__overlay');
+
+  openPopupBtn.addEventListener('click', () => {
+    popup.classList.add('popup--is-open');
+  });
+
+  popupOverlay.addEventListener('click', () => {
+    popup.classList.remove('popup--is-open');
+  });
+})();
+
+(function () {
+  const popup = document.querySelector('.popup');
+  const form = document.querySelector('.f-form');
+  const name = document.querySelector('#name');
+  const email = document.querySelector('#email');
+  const message = document.querySelector('#message');
+  const sendBtn = document.querySelector('.f-form__btn');
+
+  form.addEventListener('input', () => {
+    console.log('clicked');
+
+    if (
+      name.value.length > 0 &&
+      email.value.length > 0 &&
+      message.value.length > 0
+    ) {
+      sendBtn.classList.remove('button--is-disable');
+    } else {
+      sendBtn.classList.add('button--is-disable');
+    }
+  });
+
+  sendBtn.addEventListener('click', () => {
+    popup.classList.remove('popup--is-open');
+    alert('Thank you for your feedback');
+  });
+})();
