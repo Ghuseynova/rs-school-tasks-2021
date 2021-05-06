@@ -3697,6 +3697,7 @@ ul {
       -ms-flex: 0 0 51.2rem;
           flex: 0 0 51.2rem;
   margin-right: 4rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1919px) {
