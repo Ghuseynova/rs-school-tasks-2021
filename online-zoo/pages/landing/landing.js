@@ -176,12 +176,9 @@
   });
 
   function handleMarker() {
-    console.log(this.dataset.an);
     const animal = animals.filter(
       (animal) => animal.name.toLowerCase() === this.dataset.animal
     )[0];
-
-    console.log(animal);
 
     if (!this.classList.contains('markers__item--active')) {
       markers.forEach((el) => el.classList.remove('markers__item--active'));

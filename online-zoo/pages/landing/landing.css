@@ -4050,6 +4050,7 @@ ul {
   transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
   transition: transform 0.4s, -webkit-transform 0.4s;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1919px) {
@@ -4204,9 +4205,8 @@ ul {
 }
 
 .markers__item--lg-eagle {
-  left: 12.8rem;
+  left: 14.8rem;
   top: 16.4rem;
-  display: none;
 }
 
 @media screen and (max-width: 1919px) {
