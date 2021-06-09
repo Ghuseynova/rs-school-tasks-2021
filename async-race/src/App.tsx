@@ -1,9 +1,17 @@
 import React from 'react';
+import Header from './components/header';
 
-function App() {
+import Garage from './pages/garage';
+import Winners from './pages/winners';
+
+function App(): JSX.Element {
+  const currentPage: unknown = 'winners';
+
   return (
     <div className="App">
-      <h1>Welcome to Async-race task</h1>
+      <Header />
+
+      {currentPage === 'garage' ? <Garage /> : <Winners />}
     </div>
   );
 }

@@ -29,6 +29,7 @@ module.exports = {
   rules: {
     'linebreak-style': 'off',
     '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'prettier/prettier': [
       'error',
       {
@@ -44,4 +45,12 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': ['error'],
+      },
+    },
+  ],
 };
