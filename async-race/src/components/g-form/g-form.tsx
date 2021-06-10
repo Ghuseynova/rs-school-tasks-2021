@@ -14,6 +14,7 @@ const GForm = (): JSX.Element => {
         <Button
           className="button--md button--lightblue g-form__btn"
           text="Create"
+          callback={() => {}}
         />
       </div>
       <div className="g-form__group">
@@ -22,20 +23,24 @@ const GForm = (): JSX.Element => {
         <Button
           className="button--md button--lightblue g-form__btn"
           text="Update"
+          callback={() => {}}
         />
       </div>
       <div className="g-form__group">
         <Button
           className="button--md button--lightgreen g-form__btn"
           text="Race"
+          callback={() => {}}
         />
         <Button
           className="button--md button--lightgreen g-form__btn"
           text="Reset"
+          callback={() => {}}
         />
         <Button
           className="button--md button--lightblue g-form__btn"
           text="Generate Cars"
+          callback={() => {}}
         />
       </div>
     </form>

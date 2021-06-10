@@ -1,17 +1,17 @@
-// const url = 'https://dog.ceo/api/breeds/list/all';
+const url = 'https://dog.ceo/api/breeds/list/all';
 
-// class Api {
-//   static async fetchDogs() {
-//     const response = await fetch(url);
+class Api {
+  static async fetchDogs() {
+    const response = await fetch(url);
 
-//     if (response.ok) {
-//       const json = await response.json();
+    if (response.ok) {
+      const json = await response.json();
 
-//       return json;
-//     }
+      return json;
+    }
 
-//     return null;
-//   }
-// }
+    return null;
+  }
+}
 
-// export default Api;
+export default Api;

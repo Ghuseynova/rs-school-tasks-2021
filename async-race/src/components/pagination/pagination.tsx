@@ -13,10 +13,12 @@ const Pagination = ({ className }: PaginationTypes): JSX.Element => {
       <Button
         className="button button--md button--lightviolet pagination__btn pagination__btn--prev"
         text="prev"
+        callback={() => {}}
       />
       <Button
         className="button button--md button--lightviolet pagination__btn pagination__btn--next"
         text="next"
+        callback={() => {}}
       />
     </div>
   );

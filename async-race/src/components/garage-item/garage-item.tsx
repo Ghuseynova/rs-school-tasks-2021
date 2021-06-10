@@ -16,10 +16,12 @@ const GarageItem = ({ className, name }: GarageItemTypes): JSX.Element => {
         <Button
           className=" button button--sm button--lightblue garage-item__btn"
           text="Select"
+          callback={() => {}}
         />
         <Button
           className=" button button--sm button--lightblue garage-item__btn"
           text="Remove"
+          callback={() => {}}
         />
         <span className="garage-item__name">{name}</span>
       </div>
@@ -27,11 +29,13 @@ const GarageItem = ({ className, name }: GarageItemTypes): JSX.Element => {
         <Button
           className=" button button--engine garage-item__engine garage-item__engine--start"
           text="A"
+          callback={() => {}}
         />
 
         <Button
           className=" button button--engine button--disable garage-item__engine garage-item__engine--stop"
           text="B"
+          callback={() => {}}
         />
 
         <CarIcon color="red" className="garage-item__car" />
