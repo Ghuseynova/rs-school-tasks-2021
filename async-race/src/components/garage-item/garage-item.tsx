@@ -7,9 +7,14 @@ import './garage-item.scss';
 type GarageItemTypes = {
   className: string;
   name: string;
+  color: string;
 };
 
-const GarageItem = ({ className, name }: GarageItemTypes): JSX.Element => {
+const GarageItem = ({
+  className,
+  name,
+  color,
+}: GarageItemTypes): JSX.Element => {
   return (
     <div className={`garage-item ${className}`}>
       <div className="garage-item__top">
@@ -38,7 +43,7 @@ const GarageItem = ({ className, name }: GarageItemTypes): JSX.Element => {
           callback={() => {}}
         />
 
-        <CarIcon color="red" className="garage-item__car" />
+        <CarIcon color={color} className="garage-item__car" />
 
         <svg
           className="garage-item__flag"

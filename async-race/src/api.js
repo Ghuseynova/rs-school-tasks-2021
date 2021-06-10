@@ -1,13 +1,17 @@
-const url = 'https://dog.ceo/api/breeds/list/all';
+const url = 'http://127.0.0.1:3000';
 
 class Api {
-  static async fetchDogs() {
-    const response = await fetch(url);
+  static async fetchCars(pageNumber) {
+    const response = await fetch(`${url}/garage?_page=${pageNumber}&_limit=7`);
 
     if (response.ok) {
       const json = await response.json();
+      const total = response.headers.get('X-Total-Count');
 
-      return json;
+      return {
+        data: json,
+        count: total,
+      };
     }
 
     return null;

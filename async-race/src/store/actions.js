@@ -1,8 +1,10 @@
-import { DOGS_REQUEST } from './types';
-const getDogs = () => {
+import { CARS_REQUEST } from './types';
+
+const getCars = pageNumber => {
   return {
-    type: DOGS_REQUEST,
+    type: CARS_REQUEST,
+    pageNumber,
   };
 };
 
-export { getDogs };
+export default getCars;

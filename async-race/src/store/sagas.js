@@ -1,20 +1,21 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import Api from '../api';
-import { DOGS_REQUEST, DOGS_SUCCESS, DOGS_ERROR } from './types';
+import { CARS_REQUEST, CARS_SUCCESS, CARS_ERROR } from './types';
 
-function* fetchDogs() {
+function* fetchCars(action) {
   try {
-    const dogs = yield call(Api.fetchDogs);
-    // console.log(dogs);
-    yield put({ type: DOGS_SUCCESS, dogs });
+    const cars = yield call(Api.fetchCars, action.pageNumber);
+    console.log(cars);
+    yield put({ type: CARS_SUCCESS, cars });
+    console.log(cars);
   } catch (e) {
     // console.log(e);
-    yield put({ type: DOGS_ERROR, message: e.message });
+    yield put({ type: CARS_ERROR, message: e.message });
   }
 }
 
 function* rootSaga() {
-  yield takeEvery(DOGS_REQUEST, fetchDogs);
+  yield takeEvery(CARS_REQUEST, fetchCars);
 }
 
 export default rootSaga;
