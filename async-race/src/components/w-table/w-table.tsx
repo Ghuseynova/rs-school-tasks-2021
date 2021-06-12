@@ -1,47 +1,71 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getWinners } from '../../store/actions';
 import CarIcon from '../car';
 
 import './w-table.scss';
 
-const winners = [
-  {
-    id: 1,
-    name: 'tesla',
-    color: '#fff',
-    wins: 2,
-    time: 2.09,
-  },
-  {
-    id: 2,
-    name: 'bmw',
-    color: '#fafafa',
-    wins: 1,
-    time: 0.09,
-  },
-  {
-    id: 3,
-    name: 'mercedes',
-    color: '#ccc',
-    wins: 3,
-    time: 2,
-  },
-  {
-    id: 4,
-    name: 'jaguar',
-    color: '#cacaca',
-    wins: 1,
-    time: 1.09,
-  },
-  {
-    id: 5,
-    name: 'toyoto',
-    color: '#0c0c0c',
-    wins: 4,
-    time: 3,
-  },
-];
+const selectWinners = (state: {
+  winners: {
+    id: number;
+    wins: number;
+    time: number;
+    color: string;
+    name: string;
+  }[];
+}) => state.winners;
+
+// const winners = [
+//   {
+//     id: 1,
+//     name: 'tesla',
+//     color: '#fff',
+//     wins: 2,
+//     time: 2.09,
+//   },
+//   {
+//     id: 2,
+//     name: 'bmw',
+//     color: '#fafafa',
+//     wins: 1,
+//     time: 0.09,
+//   },
+//   {
+//     id: 3,
+//     name: 'mercedes',
+//     color: '#ccc',
+//     wins: 3,
+//     time: 2,
+//   },
+//   {
+//     id: 4,
+//     name: 'jaguar',
+//     color: '#cacaca',
+//     wins: 1,
+//     time: 1.09,
+//   },
+//   {
+//     id: 5,
+//     name: 'toyoto',
+//     color: '#0c0c0c',
+//     wins: 4,
+//     time: 3,
+//   },
+// ];
 
 const WinnersTable = (): JSX.Element => {
+  const dispatch = useDispatch();
+  const winners = useSelector(selectWinners);
+  const pageNumber = useSelector(
+    (state: { winnersPageNumber: number }) => state.winnersPageNumber,
+  );
+
+  console.log(winners);
+
+  useEffect(() => {
+    dispatch(getWinners(pageNumber));
+  }, [pageNumber, dispatch]);
+
   return (
     <table className="w-table">
       <thead className="w-table__head">
@@ -80,7 +104,7 @@ const WinnersTable = (): JSX.Element => {
             <td className="w-table__col">
               <CarIcon color={item.color} className="w-table__car" />
             </td>
-            <td className="w-table__col">{item.name}</td>
+            <td className="w-table__col">{item.name.toLowerCase()}</td>
             <td className="w-table__col">{item.wins}</td>
             <td className="w-table__col">{item.time}</td>
           </tr>

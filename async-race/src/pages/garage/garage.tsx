@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import GForm from '../../components/g-form';
 import GarageItem from '../../components/garage-item';
 import Pagination from '../../components/pagination';
-import getCars from '../../store/actions';
+import { getCars } from '../../store/actions';
 
 import './garage.scss';
 
@@ -15,7 +15,7 @@ const Garage = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const cars = useSelector(selectCars);
-  const count = useSelector((state: { count: number }) => state.count);
+  const count = useSelector((state: { carsCount: number }) => state.carsCount);
   const pageNumber = useSelector(
     (state: { garagePageNumber: number }) => state.garagePageNumber,
   );

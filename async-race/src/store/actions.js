@@ -1,4 +1,4 @@
-import { CARS_REQUEST } from './types';
+import { CARS_REQUEST, WINNERS_REQUEST } from './types';
 
 const getCars = pageNumber => {
   return {
@@ -7,4 +7,11 @@ const getCars = pageNumber => {
   };
 };
 
-export default getCars;
+const getWinners = pageNumber => {
+  return {
+    type: WINNERS_REQUEST,
+    pageNumber,
+  };
+};
+
+export { getCars, getWinners };
