@@ -3,6 +3,8 @@ import {
   WINNERS_REQUEST,
   CAR_CREATED,
   CAR_DELETED,
+  CAR_SELECTED,
+  CAR_UPTADED,
 } from './types';
 
 const getCars = pageNumber => {
@@ -29,4 +31,17 @@ const deleteCar = id => ({
   id,
 });
 
-export { getCars, getWinners, addNewCar, deleteCar };
+const selectCar = selectedCar => ({
+  type: CAR_SELECTED,
+  selectedCar,
+});
+
+const updateCar = car => {
+  console.log('between');
+  return {
+    type: CAR_UPTADED,
+    car,
+  };
+};
+
+export { getCars, getWinners, addNewCar, deleteCar, selectCar, updateCar };

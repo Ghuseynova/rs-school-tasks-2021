@@ -86,6 +86,37 @@ class Api {
     return null;
   }
 
+  static async updateCar(data) {
+    const { color, name, id } = data;
+
+    const car = {
+      name,
+      color,
+    };
+
+    const config = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(car),
+    };
+
+    const response = await fetch(`${url}/garage/${id}`, config);
+
+    if (response.ok) {
+      const json = await response.json();
+      const total = response.headers.get('X-Total-Count');
+
+      return {
+        data: json,
+        count: total,
+      };
+    }
+
+    return null;
+  }
+
   static async deleteCarFromGarage(id) {
     const response = await fetch(`${url}/garage/${id}`, { method: 'DELETE' });
 

@@ -9,6 +9,7 @@ import {
   WINNERS_ERROR,
   CAR_CREATED,
   CAR_DELETED,
+  CAR_UPTADED,
 } from './types';
 
 function* fetchCars(action) {
@@ -39,8 +40,17 @@ function* createCar(action) {
   }
 }
 
+function* updateCar(action) {
+  try {
+    yield call(Api.updateCar, action.car);
+    const cars = yield call(Api.fetchCars, action.pageNumber);
+    yield put({ type: CARS_SUCCESS, cars });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 function* deleteCarFromGarage(action) {
-  console.log(action.id);
   try {
     yield call(Api.deleteCarFromGarage, action.id);
     const cars = yield call(Api.fetchCars, action.pageNumber);
@@ -51,7 +61,6 @@ function* deleteCarFromGarage(action) {
 }
 
 function* deleteCarFromWinners(action) {
-  console.log(action.id);
   try {
     yield call(Api.deleteCarFromWinners, action.id);
     const winners = yield call(Api.fetchWinners, action.pageNumber);
@@ -73,6 +82,10 @@ function* watchCreateCar() {
   yield takeEvery(CAR_CREATED, createCar);
 }
 
+function* watchUpdateCar() {
+  yield takeEvery(CAR_UPTADED, updateCar);
+}
+
 function* watchDeleteCarFromGarage() {
   yield takeEvery(CAR_DELETED, deleteCarFromGarage);
 }
@@ -86,6 +99,7 @@ function* rootSaga() {
     watchFetchCars(),
     watchFetchWinners(),
     watchCreateCar(),
+    watchUpdateCar(),
     watchDeleteCarFromGarage(),
     watchDeleteCarFromWinners(),
   ]);

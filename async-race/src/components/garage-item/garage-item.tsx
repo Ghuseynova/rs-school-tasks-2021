@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import Button from '../button';
 import CarIcon from '../car';
-import { deleteCar } from '../../store/actions';
+import { deleteCar, selectCar } from '../../store/actions';
 
 import './garage-item.scss';
 
@@ -27,7 +27,10 @@ const GarageItem = ({
         <Button
           className=" button button--sm button--lightblue garage-item__btn"
           text="Select"
-          callback={() => {}}
+          callback={() => {
+            console.log('i clicked');
+            dispatch(selectCar({ id, name, color }));
+          }}
         />
         <Button
           className=" button button--sm button--lightblue garage-item__btn"
