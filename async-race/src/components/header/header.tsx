@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import Button from '../button';
 import { PAGE_CHANGED } from '../../store/types';
-import { getWinners } from '../../store/actions';
 
 import './header.scss';
 

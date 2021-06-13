@@ -1,4 +1,9 @@
-import { CARS_REQUEST, WINNERS_REQUEST } from './types';
+import {
+  CARS_REQUEST,
+  WINNERS_REQUEST,
+  CAR_CREATED,
+  CAR_DELETED,
+} from './types';
 
 const getCars = pageNumber => {
   return {
@@ -14,4 +19,14 @@ const getWinners = pageNumber => {
   };
 };
 
-export { getCars, getWinners };
+const addNewCar = car => ({
+  type: CAR_CREATED,
+  car,
+});
+
+const deleteCar = id => ({
+  type: CAR_DELETED,
+  id,
+});
+
+export { getCars, getWinners, addNewCar, deleteCar };

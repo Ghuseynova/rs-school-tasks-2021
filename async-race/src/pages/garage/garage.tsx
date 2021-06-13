@@ -20,8 +20,6 @@ const Garage = (): JSX.Element => {
     (state: { garagePageNumber: number }) => state.garagePageNumber,
   );
 
-  console.log(cars, 'heloloooepoporeo');
-
   useEffect(() => {
     dispatch(getCars(pageNumber));
   }, [pageNumber, dispatch]);
@@ -45,6 +43,7 @@ const Garage = (): JSX.Element => {
             return (
               <GarageItem
                 key={car.id}
+                id={car.id}
                 className="garage__item"
                 name={car.name}
                 color={car.color}

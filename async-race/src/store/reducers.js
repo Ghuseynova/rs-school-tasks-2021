@@ -1,4 +1,10 @@
-import { CARS_SUCCESS, WINNERS_SUCCESS, PAGE_CHANGED } from './types';
+import {
+  CARS_SUCCESS,
+  WINNERS_SUCCESS,
+  PAGE_CHANGED,
+  NEW_CAR_COLOR_CHANGED,
+  NEW_CAR_NAME_CHANGED,
+} from './types';
 
 const initialState = {
   currentPage: 'garage',
@@ -8,6 +14,10 @@ const initialState = {
   winnersCount: 0,
   garagePageNumber: 1,
   winnersPageNumber: 1,
+  newCar: {
+    color: '',
+    name: '',
+  },
 };
 
 export default function appReducer(state = initialState, action) {
@@ -18,7 +28,6 @@ export default function appReducer(state = initialState, action) {
         currentPage: action.page,
       };
     case CARS_SUCCESS:
-      console.log(action.cars);
       return {
         ...state,
         cars: action.cars.data,
@@ -26,11 +35,26 @@ export default function appReducer(state = initialState, action) {
       };
 
     case WINNERS_SUCCESS:
-      console.log(action.winners);
       return {
         ...state,
         winners: action.winners.data,
         winnersCount: action.winners.count,
+      };
+    case NEW_CAR_COLOR_CHANGED:
+      return {
+        ...state,
+        newCar: {
+          ...state.newCar,
+          color: action.color,
+        },
+      };
+    case NEW_CAR_NAME_CHANGED:
+      return {
+        ...state,
+        newCar: {
+          ...state.newCar,
+          name: action.name,
+        },
       };
     default:
       return state;

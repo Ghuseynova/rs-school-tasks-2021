@@ -2,7 +2,7 @@ const url = 'http://127.0.0.1:3000';
 
 class Api {
   static async fetchCars(pageNumber) {
-    const response = await fetch(`${url}/garage?_page=${pageNumber}&_limit=7`);
+    const response = await fetch(`${url}/garage?_page=${pageNumber}`);
 
     if (response.ok) {
       const json = await response.json();
@@ -27,8 +27,6 @@ class Api {
       const total = response.headers.get('X-Total-Count');
       const cs = [];
 
-      console.log(json);
-
       json.forEach(jItem => {
         const cItem = (async () => {
           const re = await fetch(`${url}/garage/${jItem.id}`);
@@ -41,10 +39,10 @@ class Api {
       });
 
       const results = await Promise.all(cs);
-      console.log(results);
 
       json = json.map(jItem => {
         const winsCar = jItem;
+
         results.forEach(result => {
           if (jItem.id === result.id) {
             winsCar.name = result.name;
@@ -55,12 +53,58 @@ class Api {
         return winsCar;
       });
 
-      console.log(json);
+      return {
+        data: json,
+        count: total,
+      };
+    }
+
+    return null;
+  }
+
+  static async createCar(data) {
+    const config = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+
+    const response = await fetch(`${url}/garage`, config);
+
+    if (response.ok) {
+      const json = await response.json();
+      const total = response.headers.get('X-Total-Count');
 
       return {
         data: json,
         count: total,
       };
+    }
+
+    return null;
+  }
+
+  static async deleteCarFromGarage(id) {
+    const response = await fetch(`${url}/garage/${id}`, { method: 'DELETE' });
+
+    if (response.ok) {
+      const json = await response.json();
+
+      return json;
+    }
+
+    return null;
+  }
+
+  static async deleteCarFromWinners(id) {
+    const response = await fetch(`${url}/winners/${id}`, { method: 'DELETE' });
+
+    if (response.ok) {
+      const json = await response.json();
+
+      return json;
     }
 
     return null;

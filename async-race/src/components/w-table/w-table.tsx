@@ -15,52 +15,12 @@ const selectWinners = (state: {
   }[];
 }) => state.winners;
 
-// const winners = [
-//   {
-//     id: 1,
-//     name: 'tesla',
-//     color: '#fff',
-//     wins: 2,
-//     time: 2.09,
-//   },
-//   {
-//     id: 2,
-//     name: 'bmw',
-//     color: '#fafafa',
-//     wins: 1,
-//     time: 0.09,
-//   },
-//   {
-//     id: 3,
-//     name: 'mercedes',
-//     color: '#ccc',
-//     wins: 3,
-//     time: 2,
-//   },
-//   {
-//     id: 4,
-//     name: 'jaguar',
-//     color: '#cacaca',
-//     wins: 1,
-//     time: 1.09,
-//   },
-//   {
-//     id: 5,
-//     name: 'toyoto',
-//     color: '#0c0c0c',
-//     wins: 4,
-//     time: 3,
-//   },
-// ];
-
 const WinnersTable = (): JSX.Element => {
   const dispatch = useDispatch();
   const winners = useSelector(selectWinners);
   const pageNumber = useSelector(
     (state: { winnersPageNumber: number }) => state.winnersPageNumber,
   );
-
-  console.log(winners);
 
   useEffect(() => {
     dispatch(getWinners(pageNumber));

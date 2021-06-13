@@ -7,16 +7,15 @@ import {
   WINNERS_REQUEST,
   WINNERS_SUCCESS,
   WINNERS_ERROR,
+  CAR_CREATED,
+  CAR_DELETED,
 } from './types';
 
 function* fetchCars(action) {
   try {
     const cars = yield call(Api.fetchCars, action.pageNumber);
-    console.log(cars);
     yield put({ type: CARS_SUCCESS, cars });
-    console.log(cars);
   } catch (e) {
-    // console.log(e);
     yield put({ type: CARS_ERROR, message: e.message });
   }
 }
@@ -24,12 +23,41 @@ function* fetchCars(action) {
 function* fetchWinners(action) {
   try {
     const winners = yield call(Api.fetchWinners, action.pageNumber);
-    console.log(winners);
     yield put({ type: WINNERS_SUCCESS, winners });
-    console.log(winners);
   } catch (e) {
-    console.log(e);
     yield put({ type: WINNERS_ERROR, message: e.message });
+  }
+}
+
+function* createCar(action) {
+  try {
+    yield call(Api.createCar, action.car);
+    const cars = yield call(Api.fetchCars, action.pageNumber);
+    yield put({ type: CARS_SUCCESS, cars });
+  } catch (e) {
+    yield put({ type: CARS_ERROR, message: e.message });
+  }
+}
+
+function* deleteCarFromGarage(action) {
+  console.log(action.id);
+  try {
+    yield call(Api.deleteCarFromGarage, action.id);
+    const cars = yield call(Api.fetchCars, action.pageNumber);
+    yield put({ type: CARS_SUCCESS, cars });
+  } catch (e) {
+    // yield put({ type: CARS_ERROR, message: e.message });
+  }
+}
+
+function* deleteCarFromWinners(action) {
+  console.log(action.id);
+  try {
+    yield call(Api.deleteCarFromWinners, action.id);
+    const winners = yield call(Api.fetchWinners, action.pageNumber);
+    yield put({ type: WINNERS_SUCCESS, winners });
+  } catch (e) {
+    // yield put({ type: CARS_ERROR, message: e.message });
   }
 }
 
@@ -41,8 +69,26 @@ function* watchFetchWinners() {
   yield takeEvery(WINNERS_REQUEST, fetchWinners);
 }
 
+function* watchCreateCar() {
+  yield takeEvery(CAR_CREATED, createCar);
+}
+
+function* watchDeleteCarFromGarage() {
+  yield takeEvery(CAR_DELETED, deleteCarFromGarage);
+}
+
+function* watchDeleteCarFromWinners() {
+  yield takeEvery(CAR_DELETED, deleteCarFromWinners);
+}
+
 function* rootSaga() {
-  yield all([watchFetchCars(), watchFetchWinners()]);
+  yield all([
+    watchFetchCars(),
+    watchFetchWinners(),
+    watchCreateCar(),
+    watchDeleteCarFromGarage(),
+    watchDeleteCarFromWinners(),
+  ]);
 }
 
 export default rootSaga;

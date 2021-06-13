@@ -1,6 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import Button from '../button';
 import CarIcon from '../car';
+import { deleteCar } from '../../store/actions';
 
 import './garage-item.scss';
 
@@ -8,13 +10,17 @@ type GarageItemTypes = {
   className: string;
   name: string;
   color: string;
+  id: number;
 };
 
 const GarageItem = ({
   className,
   name,
   color,
+  id,
 }: GarageItemTypes): JSX.Element => {
+  const dispatch = useDispatch();
+
   return (
     <div className={`garage-item ${className}`}>
       <div className="garage-item__top">
@@ -26,7 +32,10 @@ const GarageItem = ({
         <Button
           className=" button button--sm button--lightblue garage-item__btn"
           text="Remove"
-          callback={() => {}}
+          callback={() => {
+            console.log(id);
+            dispatch(deleteCar(id));
+          }}
         />
         <span className="garage-item__name">{name}</span>
       </div>
