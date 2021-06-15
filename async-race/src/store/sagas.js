@@ -46,7 +46,7 @@ function* updateCar(action) {
     const cars = yield call(Api.fetchCars, action.pageNumber);
     yield put({ type: CARS_SUCCESS, cars });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 

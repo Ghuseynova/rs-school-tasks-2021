@@ -28,7 +28,6 @@ const GarageItem = ({
           className=" button button--sm button--lightblue garage-item__btn"
           text="Select"
           callback={() => {
-            console.log('i clicked');
             dispatch(selectCar({ id, name, color }));
           }}
         />
@@ -36,7 +35,6 @@ const GarageItem = ({
           className=" button button--sm button--lightblue garage-item__btn"
           text="Remove"
           callback={() => {
-            console.log(id);
             dispatch(deleteCar(id));
           }}
         />

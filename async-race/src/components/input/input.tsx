@@ -21,7 +21,6 @@ const Input = ({
       value={value}
       className={`form-control ${className}`}
       onChange={e => {
-        console.log(e.target.value);
         callback(e.target.value);
       }}
     />

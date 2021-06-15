@@ -37,7 +37,6 @@ const selectCar = selectedCar => ({
 });
 
 const updateCar = car => {
-  console.log('between');
   return {
     type: CAR_UPTADED,
     car,

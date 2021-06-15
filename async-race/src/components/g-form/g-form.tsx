@@ -35,8 +35,6 @@ const GForm = (): JSX.Element => {
       state.selectedCar,
   );
 
-  console.log(selectedCarColor, selectedCarName);
-
   function handleNewCarColor(color: string) {
     dispatch({ type: NEW_CAR_COLOR_CHANGED, color });
   }
@@ -61,11 +59,6 @@ const GForm = (): JSX.Element => {
     dispatch({ type: CAR_CREATED, car });
   }
 
-  // function handleUpdatedCar() {
-  //   console.log('updated 2');
-
-  // }
-
   return (
     <form action="#" className="g-form">
       <div className="g-form__group">
@@ -89,7 +82,6 @@ const GForm = (): JSX.Element => {
           className="button--md button--lightblue g-form__btn"
           text="Create"
           callback={() => {
-            console.log('i clicked');
             handleCreateCar();
           }}
         />
@@ -115,9 +107,7 @@ const GForm = (): JSX.Element => {
           className="button--md button--lightblue g-form__btn"
           text="Update"
           callback={() => {
-            console.log('i updated');
             dispatch(updateCar(selectedCar));
-            console.log('i updated 2');
           }}
         />
       </div>
