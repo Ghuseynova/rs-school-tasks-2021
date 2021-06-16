@@ -2,14 +2,14 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Button from '../button';
 import Input from '../input';
-import { updateCar } from '../../store/actions';
+import { updateCar, addNewCar } from '../../store/actions';
 import {
   NEW_CAR_COLOR_CHANGED,
   NEW_CAR_NAME_CHANGED,
-  CAR_CREATED,
   SELECTED_CAR_COLOR_CHANGED,
   SELECTED_CAR_NAME_CHANGED,
 } from '../../store/types';
+import getRandomCar from '../../utils';
 
 import './g-form.scss';
 
@@ -56,7 +56,13 @@ const GForm = (): JSX.Element => {
       name: newCarName,
       color: newCarColor,
     };
-    dispatch({ type: CAR_CREATED, car });
+    dispatch(addNewCar(car));
+  }
+
+  function handleGeneratorCar() {
+    for (let i = 0; i < 100; i += 1) {
+      dispatch(addNewCar(getRandomCar()));
+    }
   }
 
   return (
@@ -125,7 +131,9 @@ const GForm = (): JSX.Element => {
         <Button
           className="button--md button--lightblue g-form__btn"
           text="Generate Cars"
-          callback={() => {}}
+          callback={() => {
+            handleGeneratorCar();
+          }}
         />
       </div>
     </form>
