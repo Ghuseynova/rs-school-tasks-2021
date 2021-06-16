@@ -5,6 +5,7 @@ import {
   CAR_DELETED,
   CAR_SELECTED,
   CAR_UPTADED,
+  PAGE_NUMBER_CHANGED,
 } from './types';
 
 const getCars = pageNumber => {
@@ -43,4 +44,19 @@ const updateCar = car => {
   };
 };
 
-export { getCars, getWinners, addNewCar, deleteCar, selectCar, updateCar };
+const setPageNumber = num => {
+  return {
+    type: PAGE_NUMBER_CHANGED,
+    num,
+  };
+};
+
+export {
+  getCars,
+  getWinners,
+  addNewCar,
+  deleteCar,
+  selectCar,
+  updateCar,
+  setPageNumber,
+};

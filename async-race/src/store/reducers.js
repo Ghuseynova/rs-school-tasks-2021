@@ -7,6 +7,7 @@ import {
   CAR_SELECTED,
   SELECTED_CAR_COLOR_CHANGED,
   SELECTED_CAR_NAME_CHANGED,
+  PAGE_NUMBER_CHANGED,
 } from './types';
 
 const initialState = {
@@ -83,6 +84,11 @@ export default function appReducer(state = initialState, action) {
           ...state.selectedCar,
           color: action.color,
         },
+      };
+    case PAGE_NUMBER_CHANGED:
+      return {
+        ...state,
+        garagePageNumber: action.num,
       };
     default:
       return state;
