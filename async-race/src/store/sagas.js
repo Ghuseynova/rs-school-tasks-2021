@@ -10,6 +10,12 @@ import {
   CAR_CREATED,
   CAR_DELETED,
   CAR_UPTADED,
+  CAR_ENGINE_STARTED_REQUEST,
+  CAR_ENGINE_STARTED_SUCCESS,
+  CAR_ENGINE_STARTED_ERROR,
+  CAR_ENGINE_STOPPED_REQUEST,
+  CAR_ENGINE_STOPPED_SUCCESS,
+  CAR_ENGINE_STOPPED_ERROR,
 } from './types';
 
 function* fetchCars(action) {
@@ -70,6 +76,34 @@ function* deleteCarFromWinners(action) {
   }
 }
 
+function* startCar(action) {
+  const { id } = action.payload;
+  try {
+    const { success, data } = yield call(Api.startCar, action.payload);
+    yield put({
+      type: CAR_ENGINE_STARTED_SUCCESS,
+      data: { ...data, isStarted: true, id },
+    });
+
+    if (success) {
+      const status = yield call(Api.switchModeToDrive, { id, status: 'drive' });
+      yield put({ type: 'SWITCHED_TO_DRIVE', status });
+    }
+  } catch (e) {
+    yield put({ type: CAR_ENGINE_STARTED_ERROR, message: e.message });
+  }
+}
+
+function* stopCar(action) {
+  try {
+    const data = yield call(Api.stopCar, action.payload);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+// watchers
+
 function* watchFetchCars() {
   yield takeEvery(CARS_REQUEST, fetchCars);
 }
@@ -94,6 +128,14 @@ function* watchDeleteCarFromWinners() {
   yield takeEvery(CAR_DELETED, deleteCarFromWinners);
 }
 
+function* watchStartCar() {
+  yield takeEvery(CAR_ENGINE_STARTED_REQUEST, startCar);
+}
+
+function* watchStopCar() {
+  yield takeEvery(CAR_ENGINE_STARTED_REQUEST, stopCar);
+}
+
 function* rootSaga() {
   yield all([
     watchFetchCars(),
@@ -102,6 +144,8 @@ function* rootSaga() {
     watchUpdateCar(),
     watchDeleteCarFromGarage(),
     watchDeleteCarFromWinners(),
+    watchStartCar(),
+    watchStopCar(),
   ]);
 }
 

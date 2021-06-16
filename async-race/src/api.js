@@ -140,6 +140,33 @@ class Api {
 
     return null;
   }
+
+  static async startCar({ id, status }) {
+    const response = await fetch(`${url}/engine?id=${id}&status=${status}`);
+
+    if (response.ok) {
+      const json = await response.json();
+
+      console.log(json, 'ok');
+
+      return {
+        success: response.ok,
+        data: json,
+      };
+    }
+
+    return null;
+  }
+
+  static async stopCar({ id, status }) {
+    const response = await fetch(`${url}/engine?id=${id}&status=${status}`);
+  }
+
+  static async switchModeToDrive({ id, status }) {
+    const response = await fetch(`${url}/engine?id=${id}&status=${status}`);
+
+    return response.status;
+  }
 }
 
 export default Api;

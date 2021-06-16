@@ -1,8 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '../button';
 import CarIcon from '../car';
-import { deleteCar, selectCar } from '../../store/actions';
+import { deleteCar, selectCar, startCar, stopCar } from '../../store/actions';
 
 import './garage-item.scss';
 
@@ -20,6 +20,26 @@ const GarageItem = ({
   id,
 }: GarageItemTypes): JSX.Element => {
   const dispatch = useDispatch();
+
+  const status = useSelector((state: { status: number }) => state.status);
+  const startedCars = useSelector(
+    (state: {
+      startedCars: {
+        velocity: number;
+        distance: number;
+        id: number;
+        isStarted: boolean;
+      }[];
+    }) => state.startedCars,
+  );
+
+  console.log(startedCars);
+
+  const isStarted = startedCars.find(
+    startedCar => startedCar.id === id,
+  )?.isStarted;
+
+  console.log(status, isStarted);
 
   return (
     <div className={`garage-item ${className}`}>
@@ -42,15 +62,23 @@ const GarageItem = ({
       </div>
       <div className="garage-item__bottom">
         <Button
-          className=" button button--engine garage-item__engine garage-item__engine--start"
+          className={`button button--engine ${
+            isStarted ? 'button--disable' : ''
+          } garage-item__engine garage-item__engine--start`}
           text="A"
-          callback={() => {}}
+          callback={() => {
+            dispatch(startCar(id, 'started'));
+          }}
         />
 
         <Button
-          className=" button button--engine button--disable garage-item__engine garage-item__engine--stop"
+          className={`button button--engine ${
+            isStarted ? '' : 'button--disable'
+          } garage-item__engine garage-item__engine--stop`}
           text="B"
-          callback={() => {}}
+          callback={() => {
+            dispatch(stopCar(id, 'stoped'));
+          }}
         />
 
         <CarIcon color={color} className="garage-item__car" />

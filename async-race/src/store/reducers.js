@@ -8,6 +8,7 @@ import {
   SELECTED_CAR_COLOR_CHANGED,
   SELECTED_CAR_NAME_CHANGED,
   PAGE_NUMBER_CHANGED,
+  CAR_ENGINE_STARTED_SUCCESS,
 } from './types';
 
 const initialState = {
@@ -16,6 +17,7 @@ const initialState = {
   winners: [],
   carsCount: 0,
   winnersCount: 0,
+  status: 200,
   garagePageNumber: 1,
   winnersPageNumber: 1,
   newCar: {
@@ -26,6 +28,8 @@ const initialState = {
     name: '',
     color: '',
   },
+
+  startedCars: [],
 };
 
 export default function appReducer(state = initialState, action) {
@@ -89,6 +93,17 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         garagePageNumber: action.num,
+      };
+    case CAR_ENGINE_STARTED_SUCCESS:
+      return {
+        ...state,
+        startedCars: [...state.startedCars, action.data],
+        carStatus: 'stop',
+      };
+    case 'SWITCHED_TO_DRIVE':
+      return {
+        ...state,
+        status: action.status,
       };
     default:
       return state;

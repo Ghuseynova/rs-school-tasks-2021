@@ -6,6 +6,8 @@ import {
   CAR_SELECTED,
   CAR_UPTADED,
   PAGE_NUMBER_CHANGED,
+  CAR_ENGINE_STARTED_REQUEST,
+  CAR_ENGINE_STOPPED_REQUEST,
 } from './types';
 
 const getCars = pageNumber => {
@@ -51,6 +53,26 @@ const setPageNumber = num => {
   };
 };
 
+const startCar = (id, status) => {
+  return {
+    type: CAR_ENGINE_STARTED_REQUEST,
+    payload: {
+      id,
+      status,
+    },
+  };
+};
+
+const stopCar = (id, status) => {
+  return {
+    type: CAR_ENGINE_STOPPED_REQUEST,
+    payload: {
+      id,
+      status,
+    },
+  };
+};
+
 export {
   getCars,
   getWinners,
@@ -59,4 +81,6 @@ export {
   selectCar,
   updateCar,
   setPageNumber,
+  startCar,
+  stopCar,
 };
