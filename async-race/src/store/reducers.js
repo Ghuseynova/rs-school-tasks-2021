@@ -7,7 +7,8 @@ import {
   CAR_SELECTED,
   SELECTED_CAR_COLOR_CHANGED,
   SELECTED_CAR_NAME_CHANGED,
-  PAGE_NUMBER_CHANGED,
+  GARAGE_PAGE_NUMBER_CHANGED,
+  WINNER_PAGE_NUMBER_CHANGED,
   CAR_ENGINE_STARTED_SUCCESS,
 } from './types';
 
@@ -89,10 +90,15 @@ export default function appReducer(state = initialState, action) {
           color: action.color,
         },
       };
-    case PAGE_NUMBER_CHANGED:
+    case GARAGE_PAGE_NUMBER_CHANGED:
       return {
         ...state,
         garagePageNumber: action.num,
+      };
+    case WINNER_PAGE_NUMBER_CHANGED:
+      return {
+        ...state,
+        winnersPageNumber: action.num,
       };
     case CAR_ENGINE_STARTED_SUCCESS:
       return {

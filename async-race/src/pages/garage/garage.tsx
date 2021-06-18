@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import GForm from '../../components/g-form';
 import GarageItem from '../../components/garage-item';
 import Pagination from '../../components/pagination';
-import { getCars } from '../../store/actions';
+import { getCars, setGaragePageNumber } from '../../store/actions';
 
 import './garage.scss';
 
@@ -14,11 +14,37 @@ const selectCars = (state: {
 const Garage = (): JSX.Element => {
   const dispatch = useDispatch();
 
+  const carsPerPage = 7;
   const cars = useSelector(selectCars);
   const count = useSelector((state: { carsCount: number }) => state.carsCount);
-  const pageNumber = useSelector(
+  let pageNumber = useSelector(
     (state: { garagePageNumber: number }) => state.garagePageNumber,
   );
+
+  const carsCount = useSelector(
+    (state: { carsCount: number }) => state.carsCount,
+  );
+  const numGaragePages = Math.ceil(carsCount / carsPerPage);
+
+  function handlePrevBtn() {
+    pageNumber -= 1;
+    if (pageNumber < 1) {
+      pageNumber = 1;
+    }
+
+    dispatch(setGaragePageNumber(pageNumber));
+    dispatch(getCars(pageNumber));
+  }
+
+  function handleNextBtn() {
+    pageNumber += 1;
+    if (pageNumber > numGaragePages) {
+      pageNumber = numGaragePages;
+    }
+
+    dispatch(setGaragePageNumber(pageNumber));
+    dispatch(getCars(pageNumber));
+  }
 
   useEffect(() => {
     dispatch(getCars(pageNumber));
@@ -52,7 +78,13 @@ const Garage = (): JSX.Element => {
           })}
         </div>
 
-        <Pagination className="garage__pagination" />
+        <Pagination
+          className="garage__pagination"
+          pageNumber={pageNumber}
+          handleNextBtn={handleNextBtn}
+          handlePrevBtn={handlePrevBtn}
+          numPages={numGaragePages}
+        />
       </div>
     </div>
   );

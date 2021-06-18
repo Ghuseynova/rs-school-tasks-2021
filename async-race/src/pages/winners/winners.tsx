@@ -1,17 +1,44 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Pagination from '../../components/pagination';
 import WinnersTable from '../../components/w-table';
+
+import { setWinnerPageNumber, getWinners } from '../../store/actions';
 
 import './winners.scss';
 
 const Winners = (): JSX.Element => {
+  const dispatch = useDispatch();
+
+  const winnersPerPage = 10;
   const count = useSelector(
     (state: { winnersCount: number }) => state.winnersCount,
   );
-  const pageNumber = useSelector(
+  let pageNumber = useSelector(
     (state: { winnersPageNumber: number }) => state.winnersPageNumber,
   );
+
+  const numWinnerPages = Math.ceil(count / winnersPerPage);
+
+  function handlePrevBtn() {
+    pageNumber -= 1;
+    if (pageNumber < 1) {
+      pageNumber = 1;
+    }
+
+    dispatch(setWinnerPageNumber(pageNumber));
+    dispatch(getWinners(pageNumber));
+  }
+
+  function handleNextBtn() {
+    pageNumber += 1;
+    if (pageNumber > numWinnerPages) {
+      pageNumber = numWinnerPages;
+    }
+
+    dispatch(setWinnerPageNumber(pageNumber));
+    dispatch(getWinners(pageNumber));
+  }
 
   return (
     <div className="winners">
@@ -26,7 +53,13 @@ const Winners = (): JSX.Element => {
       <div className="winners__table">
         <WinnersTable />
       </div>
-      <Pagination className="winners__pagination" />
+      <Pagination
+        className="winners__pagination"
+        pageNumber={pageNumber}
+        handleNextBtn={handleNextBtn}
+        handlePrevBtn={handlePrevBtn}
+        numPages={numWinnerPages}
+      />
     </div>
   );
 };

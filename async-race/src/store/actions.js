@@ -5,7 +5,8 @@ import {
   CAR_DELETED,
   CAR_SELECTED,
   CAR_UPTADED,
-  PAGE_NUMBER_CHANGED,
+  GARAGE_PAGE_NUMBER_CHANGED,
+  WINNER_PAGE_NUMBER_CHANGED,
   CAR_ENGINE_STARTED_REQUEST,
   CAR_ENGINE_STOPPED_REQUEST,
   CAR_WON,
@@ -51,9 +52,16 @@ const updateCar = car => {
   };
 };
 
-const setPageNumber = num => {
+const setGaragePageNumber = num => {
   return {
-    type: PAGE_NUMBER_CHANGED,
+    type: GARAGE_PAGE_NUMBER_CHANGED,
+    num,
+  };
+};
+
+const setWinnerPageNumber = num => {
+  return {
+    type: WINNER_PAGE_NUMBER_CHANGED,
     num,
   };
 };
@@ -90,8 +98,9 @@ export {
   deleteCar,
   selectCar,
   updateCar,
-  setPageNumber,
+  setGaragePageNumber,
   startCar,
   stopCar,
   addNewWinner,
+  setWinnerPageNumber,
 };
