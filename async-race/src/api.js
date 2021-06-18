@@ -17,9 +17,10 @@ class Api {
     return null;
   }
 
-  static async fetchWinners(pageNumber) {
+  static async fetchWinners(data) {
+    const { pageNumber, sort, order } = data;
     const response = await fetch(
-      `${url}/winners?_page=${pageNumber}&_limit=10`,
+      `${url}/winners?_page=${pageNumber}&_limit=10&_sort=${sort}_order${order}`,
     );
 
     if (response.ok) {
@@ -147,8 +148,6 @@ class Api {
     if (response.ok) {
       const json = await response.json();
 
-      console.log(json, 'ok');
-
       return {
         success: response.ok,
         data: json,
@@ -160,12 +159,76 @@ class Api {
 
   static async stopCar({ id, status }) {
     const response = await fetch(`${url}/engine?id=${id}&status=${status}`);
+
+    return response;
   }
 
   static async switchModeToDrive({ id, status }) {
     const response = await fetch(`${url}/engine?id=${id}&status=${status}`);
 
     return response.status;
+  }
+
+  static async getWinner(id) {
+    const response = await fetch(`${url}/winners/${id}`);
+
+    if (response.ok) {
+      const json = await response.json();
+
+      return {
+        winner: json,
+        status: response.status,
+      };
+    }
+
+    return {
+      status: response.status,
+    };
+  }
+
+  static async createWinner(data) {
+    const config = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+
+    const response = await fetch(`${url}/winners`, config);
+
+    if (response.ok) {
+      const json = await response.json();
+      const total = response.headers.get('X-Total-Count');
+
+      return {
+        data: json,
+        count: total,
+      };
+    }
+
+    return null;
+  }
+
+  static async updateWinner(winner) {
+    const { id, wins, time } = winner;
+    const config = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ wins, time }),
+    };
+
+    const response = await fetch(`${url}/winners/${id}`, config);
+
+    if (response.ok) {
+      const json = await response.json();
+
+      return json;
+    }
+
+    return null;
   }
 }
 

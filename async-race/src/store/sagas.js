@@ -13,10 +13,13 @@ import {
   CAR_ENGINE_STARTED_REQUEST,
   CAR_ENGINE_STARTED_SUCCESS,
   CAR_ENGINE_STARTED_ERROR,
-  CAR_ENGINE_STOPPED_REQUEST,
-  CAR_ENGINE_STOPPED_SUCCESS,
-  CAR_ENGINE_STOPPED_ERROR,
+  CAR_WON,
+  // CAR_ENGINE_STOPPED_REQUEST,
+  // CAR_ENGINE_STOPPED_SUCCESS,
+  // CAR_ENGINE_STOPPED_ERROR,
 } from './types';
+
+import { getCars, getWinners } from './actions';
 
 function* fetchCars(action) {
   try {
@@ -29,7 +32,7 @@ function* fetchCars(action) {
 
 function* fetchWinners(action) {
   try {
-    const winners = yield call(Api.fetchWinners, action.pageNumber);
+    const winners = yield call(Api.fetchWinners, action.payload);
     yield put({ type: WINNERS_SUCCESS, winners });
   } catch (e) {
     yield put({ type: WINNERS_ERROR, message: e.message });
@@ -39,8 +42,7 @@ function* fetchWinners(action) {
 function* createCar(action) {
   try {
     yield call(Api.createCar, action.car);
-    const cars = yield call(Api.fetchCars, action.pageNumber);
-    yield put({ type: CARS_SUCCESS, cars });
+    yield put(getCars());
   } catch (e) {
     yield put({ type: CARS_ERROR, message: e.message });
   }
@@ -49,8 +51,7 @@ function* createCar(action) {
 function* updateCar(action) {
   try {
     yield call(Api.updateCar, action.car);
-    const cars = yield call(Api.fetchCars, action.pageNumber);
-    yield put({ type: CARS_SUCCESS, cars });
+    yield put(getCars());
   } catch (e) {
     // console.log(e);
   }
@@ -59,8 +60,7 @@ function* updateCar(action) {
 function* deleteCarFromGarage(action) {
   try {
     yield call(Api.deleteCarFromGarage, action.id);
-    const cars = yield call(Api.fetchCars, action.pageNumber);
-    yield put({ type: CARS_SUCCESS, cars });
+    yield put(getCars());
   } catch (e) {
     // yield put({ type: CARS_ERROR, message: e.message });
   }
@@ -69,8 +69,7 @@ function* deleteCarFromGarage(action) {
 function* deleteCarFromWinners(action) {
   try {
     yield call(Api.deleteCarFromWinners, action.id);
-    const winners = yield call(Api.fetchWinners, action.pageNumber);
-    yield put({ type: WINNERS_SUCCESS, winners });
+    yield put(getWinners());
   } catch (e) {
     // yield put({ type: CARS_ERROR, message: e.message });
   }
@@ -94,11 +93,36 @@ function* startCar(action) {
   }
 }
 
-function* stopCar(action) {
+// function* stopCar(action) {
+//   try {
+//     // const data = yield call(Api.stopCar, action.payload);
+//   } catch (e) {
+//     // console.log(e);
+//   }
+// }
+
+function* addWinner(action) {
+  const newTime = action.winner.time;
   try {
-    const data = yield call(Api.stopCar, action.payload);
+    const data = yield call(Api.getWinner, action.winner.id);
+
+    if (data.status === 200) {
+      const { id, wins, time } = data.winner;
+
+      const winner = {
+        id,
+        wins: wins + 1,
+        time: newTime < time ? newTime : time,
+      };
+
+      yield call(Api.updateWinner, winner);
+      yield put(getWinners());
+    } else {
+      yield call(Api.createWinner, action.winner);
+      yield put(getWinners());
+    }
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 
@@ -132,8 +156,12 @@ function* watchStartCar() {
   yield takeEvery(CAR_ENGINE_STARTED_REQUEST, startCar);
 }
 
-function* watchStopCar() {
-  yield takeEvery(CAR_ENGINE_STARTED_REQUEST, stopCar);
+// function* watchStopCar() {
+//   yield takeEvery(CAR_ENGINE_STARTED_REQUEST, stopCar);
+// }
+
+function* watchAddWinner() {
+  yield takeEvery(CAR_WON, addWinner);
 }
 
 function* rootSaga() {
@@ -145,7 +173,8 @@ function* rootSaga() {
     watchDeleteCarFromGarage(),
     watchDeleteCarFromWinners(),
     watchStartCar(),
-    watchStopCar(),
+    watchAddWinner(),
+    // watchStopCar(),
   ]);
 }
 

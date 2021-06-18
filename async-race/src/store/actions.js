@@ -8,19 +8,24 @@ import {
   PAGE_NUMBER_CHANGED,
   CAR_ENGINE_STARTED_REQUEST,
   CAR_ENGINE_STOPPED_REQUEST,
+  CAR_WON,
 } from './types';
 
-const getCars = pageNumber => {
+const getCars = (pageNumber = 1) => {
   return {
     type: CARS_REQUEST,
     pageNumber,
   };
 };
 
-const getWinners = pageNumber => {
+const getWinners = (pageNumber = 1, sort = 'id', order = 'ASC') => {
   return {
     type: WINNERS_REQUEST,
-    pageNumber,
+    payload: {
+      pageNumber,
+      sort,
+      order,
+    },
   };
 };
 
@@ -73,6 +78,11 @@ const stopCar = (id, status) => {
   };
 };
 
+const addNewWinner = winner => ({
+  type: CAR_WON,
+  winner,
+});
+
 export {
   getCars,
   getWinners,
@@ -83,4 +93,5 @@ export {
   setPageNumber,
   startCar,
   stopCar,
+  addNewWinner,
 };

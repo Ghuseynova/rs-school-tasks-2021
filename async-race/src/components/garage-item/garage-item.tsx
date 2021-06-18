@@ -21,7 +21,6 @@ const GarageItem = ({
 }: GarageItemTypes): JSX.Element => {
   const dispatch = useDispatch();
 
-  const status = useSelector((state: { status: number }) => state.status);
   const startedCars = useSelector(
     (state: {
       startedCars: {
@@ -33,13 +32,9 @@ const GarageItem = ({
     }) => state.startedCars,
   );
 
-  console.log(startedCars);
-
   const isStarted = startedCars.find(
     startedCar => startedCar.id === id,
   )?.isStarted;
-
-  console.log(status, isStarted);
 
   return (
     <div className={`garage-item ${className}`}>
