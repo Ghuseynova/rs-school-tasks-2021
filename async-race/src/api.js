@@ -19,8 +19,9 @@ class Api {
 
   static async fetchWinners(data) {
     const { pageNumber, sort, order } = data;
+
     const response = await fetch(
-      `${url}/winners?_page=${pageNumber}&_limit=10&_sort=${sort}_order${order}`,
+      `${url}/winners?_page=${pageNumber}&_limit=10&_sort=${sort}&_order=${order}`,
     );
 
     if (response.ok) {

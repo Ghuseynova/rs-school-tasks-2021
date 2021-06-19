@@ -10,6 +10,7 @@ import {
   GARAGE_PAGE_NUMBER_CHANGED,
   WINNER_PAGE_NUMBER_CHANGED,
   CAR_ENGINE_STARTED_SUCCESS,
+  SORT_DIRECTION_CHANGED,
 } from './types';
 
 const initialState = {
@@ -31,6 +32,10 @@ const initialState = {
   },
 
   startedCars: [],
+  sortConfig: {
+    order: 'ASC',
+    sort: '',
+  },
 };
 
 export default function appReducer(state = initialState, action) {
@@ -110,6 +115,15 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         status: action.status,
+      };
+    case SORT_DIRECTION_CHANGED:
+      return {
+        ...state,
+        sortConfig: {
+          ...state.sortConfig,
+          order: action.payload.order,
+          sort: action.payload.sort,
+        },
       };
     default:
       return state;

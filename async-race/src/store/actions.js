@@ -10,6 +10,7 @@ import {
   CAR_ENGINE_STARTED_REQUEST,
   CAR_ENGINE_STOPPED_REQUEST,
   CAR_WON,
+  SORT_DIRECTION_CHANGED,
 } from './types';
 
 const getCars = (pageNumber = 1) => {
@@ -91,6 +92,14 @@ const addNewWinner = winner => ({
   winner,
 });
 
+const setSortConfig = ({ order, sort }) => ({
+  type: SORT_DIRECTION_CHANGED,
+  payload: {
+    order,
+    sort,
+  },
+});
+
 export {
   getCars,
   getWinners,
@@ -103,4 +112,5 @@ export {
   stopCar,
   addNewWinner,
   setWinnerPageNumber,
+  setSortConfig,
 };
