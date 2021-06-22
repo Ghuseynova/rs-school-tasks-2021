@@ -17,53 +17,6 @@ class Api {
     return null;
   }
 
-  static async fetchWinners(data) {
-    const { pageNumber, sort, order } = data;
-
-    const response = await fetch(
-      `${url}/winners?_page=${pageNumber}&_limit=10&_sort=${sort}&_order=${order}`,
-    );
-
-    if (response.ok) {
-      let json = await response.json();
-      const total = response.headers.get('X-Total-Count');
-      const cs = [];
-
-      json.forEach(jItem => {
-        const cItem = (async () => {
-          const re = await fetch(`${url}/garage/${jItem.id}`);
-          if (re.status !== 200) return null;
-          const d = await re.json();
-          return d;
-        })();
-
-        cs.push(cItem);
-      });
-
-      const results = await Promise.all(cs);
-
-      json = json.map(jItem => {
-        const winsCar = jItem;
-
-        results.forEach(result => {
-          if (jItem.id === result.id) {
-            winsCar.name = result.name;
-            winsCar.color = result.color;
-          }
-        });
-
-        return winsCar;
-      });
-
-      return {
-        data: json,
-        count: total,
-      };
-    }
-
-    return null;
-  }
-
   static async createCar(data) {
     const config = {
       method: 'POST',
@@ -152,6 +105,55 @@ class Api {
       return {
         success: response.ok,
         data: json,
+      };
+    }
+
+    return null;
+  }
+
+  static async fetchWinners(data) {
+    const { pageNumber, sort, order } = data;
+
+    const response = await fetch(
+      `${url}/winners?_page=${pageNumber}&_limit=10&_sort=${sort}&_order=${order}`,
+    );
+
+    if (response.ok) {
+      let json = await response.json();
+      const total = response.headers.get('X-Total-Count');
+      const cs = [];
+
+      json.forEach(jItem => {
+        const cItem = (async () => {
+          const re = await fetch(`${url}/garage/${jItem.id}`);
+          console.log(re.status);
+          if (re.status !== 200) return null;
+
+          const d = await re.json();
+          return d;
+        })();
+
+        cs.push(cItem);
+      });
+
+      const results = await Promise.all(cs);
+
+      json = json.map(jItem => {
+        const winsCar = jItem;
+
+        results.forEach(result => {
+          if (jItem.id === result.id) {
+            winsCar.name = result.name;
+            winsCar.color = result.color;
+          }
+        });
+
+        return winsCar;
+      });
+
+      return {
+        data: json,
+        count: total,
       };
     }
 

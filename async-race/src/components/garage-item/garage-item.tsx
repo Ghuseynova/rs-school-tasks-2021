@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../button';
 import CarIcon from '../car';
@@ -19,6 +19,8 @@ const GarageItem = ({
   color,
   id,
 }: GarageItemTypes): JSX.Element => {
+  // const [way, setWay] = useState(0);
+  // const increment = useRef<number | null>(null);
   const dispatch = useDispatch();
 
   const startedCars = useSelector(
@@ -35,6 +37,24 @@ const GarageItem = ({
   const isStarted = startedCars.find(
     startedCar => startedCar.id === id,
   )?.isStarted;
+
+  // const distance =
+  //   startedCars.find(startedCar => startedCar.id === id)?.distance || 0;
+
+  // const velocity =
+  //   startedCars.find(startedCar => startedCar.id === id)?.velocity || 1;
+
+  // const handleStart = () => {
+  //   const riceTime = distance / velocity;
+  //   increment.current = window.setInterval(() => {
+  //     console.log(way);
+  //     setWay((way: number) => way + 1);
+  //   }, riceTime / 100);
+
+  //   window.setTimeout(() => {
+  //     if (increment.current) clearInterval(increment.current);
+  //   }, riceTime);
+  // };
 
   return (
     <div className={`garage-item ${className}`}>

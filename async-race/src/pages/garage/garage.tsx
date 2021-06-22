@@ -21,10 +21,7 @@ const Garage = (): JSX.Element => {
     (state: { garagePageNumber: number }) => state.garagePageNumber,
   );
 
-  const carsCount = useSelector(
-    (state: { carsCount: number }) => state.carsCount,
-  );
-  const numGaragePages = Math.ceil(carsCount / carsPerPage);
+  const numGaragePages = Math.ceil(count / carsPerPage);
 
   function handlePrevBtn() {
     pageNumber -= 1;
