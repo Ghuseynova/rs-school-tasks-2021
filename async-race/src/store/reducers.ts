@@ -13,6 +13,11 @@ import {
   SORT_DIRECTION_CHANGED,
 } from './types';
 
+import * as actions from './actions';
+
+type InferValueTypes<T> = T extends { [key: string]: infer U } ? U : never;
+type ActionTypes = ReturnType<InferValueTypes<typeof actions>>;
+
 const initialState = {
   currentPage: 'garage',
   cars: [],
@@ -38,7 +43,10 @@ const initialState = {
   },
 };
 
-export default function appReducer(state = initialState, action) {
+export default function appReducer(
+  state: any = initialState,
+  action: ActionTypes | any,
+): unknown {
   switch (action.type) {
     case PAGE_CHANGED:
       return {
