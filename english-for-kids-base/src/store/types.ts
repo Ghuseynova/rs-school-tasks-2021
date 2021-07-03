@@ -1,1 +1,3 @@
-export {};
+const SWITCH_ITEM_CHANGED = 'SWITCH_ITEM_CHANGED';
+
+export { SWITCH_ITEM_CHANGED };
