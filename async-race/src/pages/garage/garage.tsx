@@ -4,22 +4,17 @@ import GForm from '../../components/g-form';
 import GarageItem from '../../components/garage-item';
 import Pagination from '../../components/pagination';
 import { getCars, setGaragePageNumber } from '../../store/actions';
+import { getGarageCount, getGaragePageNumber, selectCars } from '../../store/selectors';
 
 import './garage.scss';
-
-const selectCars = (state: {
-  cars: { name: string; color: string; id: number }[];
-}) => state.cars;
 
 const Garage = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const carsPerPage = 7;
   const cars = useSelector(selectCars);
-  const count = useSelector((state: { carsCount: number }) => state.carsCount);
-  let pageNumber = useSelector(
-    (state: { garagePageNumber: number }) => state.garagePageNumber,
-  );
+  const count = useSelector(getGarageCount);
+  let pageNumber = useSelector(getGaragePageNumber);
 
   const numGaragePages = Math.ceil(count / carsPerPage);
 
@@ -63,15 +58,7 @@ const Garage = (): JSX.Element => {
 
         <div className="garage__items">
           {cars.map(car => {
-            return (
-              <GarageItem
-                key={car.id}
-                id={car.id}
-                className="garage__item"
-                name={car.name}
-                color={car.color}
-              />
-            );
+            return <GarageItem key={car.id} id={car.id} className="garage__item" name={car.name} color={car.color} />;
           })}
         </div>
 

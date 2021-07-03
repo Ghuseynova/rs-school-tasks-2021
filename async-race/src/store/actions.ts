@@ -13,9 +13,7 @@ import {
   SORT_DIRECTION_CHANGED,
 } from './types';
 
-const getCars = (
-  pageNumber = 1,
-): { type: 'CARS_REQUEST'; pageNumber: number } => {
+const getCars = (pageNumber = 1): { type: 'CARS_REQUEST'; pageNumber: number } => {
   return {
     type: CARS_REQUEST,
     pageNumber,

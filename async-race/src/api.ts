@@ -1,11 +1,11 @@
-const url = 'http://127.0.0.1:3000';
+import { carsPerPage, winnersPerPage, URL } from './constants';
 
 class Api {
   static async fetchCars(pageNumber: number): Promise<{
     data: { name: string; color: string; id: number }[];
     count: unknown;
   } | null> {
-    const response = await fetch(`${url}/garage?_page=${pageNumber}&_limit=7`);
+    const response = await fetch(`${URL}/garage?_page=${pageNumber}&_limit=${carsPerPage}`);
 
     if (response.ok) {
       const json = await response.json();
@@ -32,7 +32,7 @@ class Api {
       body: JSON.stringify(data),
     };
 
-    const response = await fetch(`${url}/garage`, config);
+    const response = await fetch(`${URL}/garage`, config);
 
     if (response.ok) {
       const json = await response.json();
@@ -47,11 +47,7 @@ class Api {
     return null;
   }
 
-  static async updateCar(data: {
-    name: string;
-    color: string;
-    id: number;
-  }): Promise<{
+  static async updateCar(data: { name: string; color: string; id: number }): Promise<{
     data: { name: string; color: string; id: number };
     count: unknown;
   } | null> {
@@ -70,7 +66,7 @@ class Api {
       body: JSON.stringify(car),
     };
 
-    const response = await fetch(`${url}/garage/${id}`, config);
+    const response = await fetch(`${URL}/garage/${id}`, config);
 
     if (response.ok) {
       const json = await response.json();
@@ -85,10 +81,8 @@ class Api {
     return null;
   }
 
-  static async deleteCarFromGarage(
-    id: number,
-  ): Promise<Record<string, never> | null> {
-    const response = await fetch(`${url}/garage/${id}`, { method: 'DELETE' });
+  static async deleteCarFromGarage(id: number): Promise<Record<string, never> | null> {
+    const response = await fetch(`${URL}/garage/${id}`, { method: 'DELETE' });
 
     if (response.ok) {
       const json = await response.json();
@@ -99,10 +93,8 @@ class Api {
     return null;
   }
 
-  static async deleteCarFromWinners(
-    id: number,
-  ): Promise<Record<string, never> | null> {
-    const response = await fetch(`${url}/winners/${id}`, { method: 'DELETE' });
+  static async deleteCarFromWinners(id: number): Promise<Record<string, never> | null> {
+    const response = await fetch(`${URL}/winners/${id}`, { method: 'DELETE' });
 
     if (response.ok) {
       const json = await response.json();
@@ -113,20 +105,14 @@ class Api {
     return null;
   }
 
-  static async startCar({
-    id,
-    status,
-  }: {
-    id: number;
-    status: string;
-  }): Promise<{
+  static async startCar({ id, status }: { id: number; status: string }): Promise<{
     success: boolean;
     data: {
       velocity: number;
       distance: number;
     };
   } | null> {
-    const response = await fetch(`${url}/engine?id=${id}&status=${status}`);
+    const response = await fetch(`${URL}/engine?id=${id}&status=${status}`);
 
     if (response.ok) {
       const json = await response.json();
@@ -140,11 +126,7 @@ class Api {
     return null;
   }
 
-  static async fetchWinners(data: {
-    pageNumber: number;
-    sort: string;
-    order: string;
-  }): Promise<{
+  static async fetchWinners(data: { pageNumber: number; sort: string; order: string }): Promise<{
     data: {
       name: string;
       color: string;
@@ -157,7 +139,7 @@ class Api {
     const { pageNumber, sort, order } = data;
 
     const response = await fetch(
-      `${url}/winners?_page=${pageNumber}&_limit=10&_sort=${sort}&_order=${order}`,
+      `${URL}/winners?_page=${pageNumber}&_limit=${winnersPerPage}&_sort=${sort}&_order=${order}`,
     );
 
     if (response.ok) {
@@ -167,7 +149,7 @@ class Api {
 
       json.forEach((jItem: { id: number; wins: number; time: number }) => {
         const cItem: any = (async () => {
-          const re = await fetch(`${url}/garage/${jItem.id}`);
+          const re = await fetch(`${URL}/garage/${jItem.id}`);
 
           if (re.status !== 200) return null;
 
@@ -202,26 +184,14 @@ class Api {
     return null;
   }
 
-  static async stopCar({
-    id,
-    status,
-  }: {
-    id: number;
-    status: string;
-  }): Promise<unknown> {
-    const response = await fetch(`${url}/engine?id=${id}&status=${status}`);
+  static async stopCar({ id, status }: { id: number; status: string }): Promise<unknown> {
+    const response = await fetch(`${URL}/engine?id=${id}&status=${status}`);
 
     return response;
   }
 
-  static async switchModeToDrive({
-    id,
-    status,
-  }: {
-    id: number;
-    status: string;
-  }): Promise<number> {
-    const response = await fetch(`${url}/engine?id=${id}&status=${status}`);
+  static async switchModeToDrive({ id, status }: { id: number; status: string }): Promise<number> {
+    const response = await fetch(`${URL}/engine?id=${id}&status=${status}`);
 
     return response.status;
   }
@@ -233,7 +203,7 @@ class Api {
       }
     | { status: number }
   > {
-    const response = await fetch(`${url}/winners/${id}`);
+    const response = await fetch(`${URL}/winners/${id}`);
 
     if (response.ok) {
       const json = await response.json();
@@ -249,11 +219,7 @@ class Api {
     };
   }
 
-  static async createWinner(data: {
-    id: number;
-    wins: number;
-    time: number;
-  }): Promise<{
+  static async createWinner(data: { id: number; wins: number; time: number }): Promise<{
     data: { id: number; wins: number; time: number };
     count: unknown;
   } | null> {
@@ -265,7 +231,7 @@ class Api {
       body: JSON.stringify(data),
     };
 
-    const response = await fetch(`${url}/winners`, config);
+    const response = await fetch(`${URL}/winners`, config);
 
     if (response.ok) {
       const json = await response.json();
@@ -294,7 +260,7 @@ class Api {
       body: JSON.stringify({ wins, time }),
     };
 
-    const response = await fetch(`${url}/winners/${id}`, config);
+    const response = await fetch(`${URL}/winners/${id}`, config);
 
     if (response.ok) {
       const json = await response.json();

@@ -4,8 +4,9 @@ import Header from './components/header';
 
 import Garage from './pages/garage';
 import Winners from './pages/winners';
+import { getCurrentPage } from './store/selectors';
 
-const getCurrentPage = (state: { currentPage: string }) => state.currentPage;
+const defaultPageName = 'garage';
 
 function App(): JSX.Element {
   const currentPage: string = useSelector(getCurrentPage);
@@ -14,7 +15,7 @@ function App(): JSX.Element {
     <div className="App">
       <Header />
 
-      {currentPage === 'garage' ? <Garage /> : <Winners />}
+      {currentPage === defaultPageName ? <Garage /> : <Winners />}
     </div>
   );
 }

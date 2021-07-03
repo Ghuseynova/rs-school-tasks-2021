@@ -43,10 +43,7 @@ const initialState = {
   },
 };
 
-export default function appReducer(
-  state: any = initialState,
-  action: ActionTypes | any,
-): unknown {
+export default function appReducer(state: any = initialState, action: ActionTypes | any): unknown {
   switch (action.type) {
     case PAGE_CHANGED:
       return {

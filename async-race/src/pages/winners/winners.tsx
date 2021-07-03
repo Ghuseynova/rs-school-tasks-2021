@@ -4,6 +4,7 @@ import Pagination from '../../components/pagination';
 import WinnersTable from '../../components/w-table';
 
 import { setWinnerPageNumber, getWinners } from '../../store/actions';
+import { getWinnersCount, getWinnersPageNumber } from '../../store/selectors';
 
 import './winners.scss';
 
@@ -11,12 +12,8 @@ const Winners = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const winnersPerPage = 10;
-  const count = useSelector(
-    (state: { winnersCount: number }) => state.winnersCount,
-  );
-  let pageNumber = useSelector(
-    (state: { winnersPageNumber: number }) => state.winnersPageNumber,
-  );
+  const count = useSelector(getWinnersCount);
+  let pageNumber = useSelector(getWinnersPageNumber);
 
   const numWinnerPages = Math.ceil(count / winnersPerPage);
 

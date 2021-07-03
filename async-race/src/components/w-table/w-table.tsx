@@ -1,31 +1,17 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getWinners, setSortConfig } from '../../store/actions';
+import { getPageNumber, getSortConfig, selectWinners } from '../../store/selectors';
 import CarIcon from '../car';
 
 import './w-table.scss';
 
-const selectWinners = (state: {
-  winners: {
-    id: number;
-    wins: number;
-    time: number;
-    color: string;
-    name: string;
-  }[];
-}) => state.winners;
-
 const WinnersTable = (): JSX.Element => {
   const dispatch = useDispatch();
-  const winners = useSelector(selectWinners);
-  const pageNumber = useSelector(
-    (state: { winnersPageNumber: number }) => state.winnersPageNumber,
-  );
 
-  const sortConfig = useSelector(
-    (state: { sortConfig: { order: string; sort: string } }) =>
-      state.sortConfig,
-  );
+  const winners = useSelector(selectWinners);
+  const pageNumber = useSelector(getPageNumber);
+  const sortConfig = useSelector(getSortConfig);
 
   function handleSort(sort: string) {
     let { order } = sortConfig;
@@ -71,12 +57,7 @@ const WinnersTable = (): JSX.Element => {
               }}
             >
               Wins
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                version="1.1"
-                viewBox="0 0 16 28"
-                className="w-table__arrow"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 28" className="w-table__arrow">
                 <path d="M16 17c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1zM16 11c0 0.547-0.453 1-1 1h-14c-0.547 0-1-0.453-1-1 0-0.266 0.109-0.516 0.297-0.703l7-7c0.187-0.187 0.438-0.297 0.703-0.297s0.516 0.109 0.703 0.297l7 7c0.187 0.187 0.297 0.438 0.297 0.703z" />
               </svg>
             </button>
@@ -90,12 +71,7 @@ const WinnersTable = (): JSX.Element => {
               }}
             >
               Best time(seconds)
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                version="1.1"
-                viewBox="0 0 16 28"
-                className="w-table__arrow"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 28" className="w-table__arrow">
                 <path d="M16 17c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1zM16 11c0 0.547-0.453 1-1 1h-14c-0.547 0-1-0.453-1-1 0-0.266 0.109-0.516 0.297-0.703l7-7c0.187-0.187 0.438-0.297 0.703-0.297s0.516 0.109 0.703 0.297l7 7c0.187 0.187 0.297 0.438 0.297 0.703z" />
               </svg>
             </button>

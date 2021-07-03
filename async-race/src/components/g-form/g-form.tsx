@@ -10,30 +10,24 @@ import {
   SELECTED_CAR_NAME_CHANGED,
 } from '../../store/types';
 import getRandomCar from '../../utils';
+import {
+  getNewCarColor,
+  getNewCarName,
+  getSelectedCar,
+  getSelectedCarColor,
+  getSelectedCarName,
+} from '../../store/selectors';
 
 import './g-form.scss';
 
 const GForm = (): JSX.Element => {
   const dispatch = useDispatch();
-  const newCarName = useSelector(
-    (state: { newCar: { name: string } }) => state.newCar.name,
-  );
-  const newCarColor = useSelector(
-    (state: { newCar: { color: string } }) => state.newCar.color,
-  );
 
-  const selectedCarName = useSelector(
-    (state: { selectedCar: { name: string } }) => state.selectedCar.name,
-  );
-
-  const selectedCarColor = useSelector(
-    (state: { selectedCar: { color: string } }) => state.selectedCar.color,
-  );
-
-  const selectedCar = useSelector(
-    (state: { selectedCar: { id: number; name: string; color: string } }) =>
-      state.selectedCar,
-  );
+  const newCarName = useSelector(getNewCarName);
+  const newCarColor = useSelector(getNewCarColor);
+  const selectedCarName = useSelector(getSelectedCarName);
+  const selectedCarColor = useSelector(getSelectedCarColor);
+  const selectedCar = useSelector(getSelectedCar);
 
   function handleNewCarColor(color: string) {
     dispatch({ type: NEW_CAR_COLOR_CHANGED, color });
@@ -118,16 +112,8 @@ const GForm = (): JSX.Element => {
         />
       </div>
       <div className="g-form__group">
-        <Button
-          className="button--md button--lightgreen g-form__btn"
-          text="Race"
-          callback={() => {}}
-        />
-        <Button
-          className="button--md button--lightgreen g-form__btn"
-          text="Reset"
-          callback={() => {}}
-        />
+        <Button className="button--md button--lightgreen g-form__btn" text="Race" callback={() => {}} />
+        <Button className="button--md button--lightgreen g-form__btn" text="Reset" callback={() => {}} />
         <Button
           className="button--md button--lightblue g-form__btn"
           text="Generate Cars"

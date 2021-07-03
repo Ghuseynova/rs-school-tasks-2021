@@ -9,12 +9,7 @@ type InputProps = {
   value: string;
 };
 
-const Input = ({
-  type,
-  className,
-  callback,
-  value,
-}: InputProps): JSX.Element => {
+const Input = ({ type, className, callback, value }: InputProps): JSX.Element => {
   return (
     <input
       type={type}
