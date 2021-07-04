@@ -13,7 +13,7 @@ import {
   SORT_DIRECTION_CHANGED,
 } from './types';
 
-const getCars = (pageNumber = 1): { type: 'CARS_REQUEST'; pageNumber: number } => {
+const getCars = (pageNumber = 1): { type: string; pageNumber: number } => {
   return {
     type: CARS_REQUEST,
     pageNumber,
@@ -25,7 +25,7 @@ const getWinners = (
   sort = 'id',
   order = 'ASC',
 ): {
-  type: 'WINNERS_REQUEST';
+  type: string;
   payload: {
     pageNumber: number;
     sort: string;
@@ -42,15 +42,12 @@ const getWinners = (
   };
 };
 
-const addNewCar = (car: {
-  name: string;
-  color: string;
-}): { type: 'CAR_CREATED'; car: { name: string; color: string } } => ({
+const addNewCar = (car: { name: string; color: string }): { type: string; car: { name: string; color: string } } => ({
   type: CAR_CREATED,
   car,
 });
 
-const deleteCar = (id: number): { type: 'CAR_DELETED'; id: number } => ({
+const deleteCar = (id: number): { type: string; id: number } => ({
   type: CAR_DELETED,
   id,
 });
@@ -60,7 +57,7 @@ const selectCar = (selectedCar: {
   color: string;
   id: number;
 }): {
-  type: 'CAR_SELECTED';
+  type: string;
   selectedCar: { name: string; color: string; id: number };
 } => ({
   type: CAR_SELECTED,
@@ -72,7 +69,7 @@ const updateCar = (car: {
   color: string;
   id: number;
 }): {
-  type: 'CAR_UPTADED';
+  type: string;
   car: { name: string; color: string; id: number };
 } => {
   return {
@@ -84,7 +81,7 @@ const updateCar = (car: {
 const setGaragePageNumber = (
   num: number,
 ): {
-  type: 'GARAGE_PAGE_NUMBER_CHANGED';
+  type: string;
   num: number;
 } => {
   return {
@@ -96,7 +93,7 @@ const setGaragePageNumber = (
 const setWinnerPageNumber = (
   num: number,
 ): {
-  type: 'WINNER_PAGE_NUMBER_CHANGED';
+  type: string;
   num: number;
 } => {
   return {
@@ -109,7 +106,7 @@ const startCar = (
   id: number,
   status: string,
 ): {
-  type: 'CAR_ENGINE_STARTED_REQUEST';
+  type: string;
   payload: {
     id: number;
     status: string;
@@ -128,7 +125,7 @@ const stopCar = (
   id: number,
   status: string,
 ): {
-  type: 'CAR_ENGINE_STOPPED_REQUEST';
+  type: string;
   payload: {
     id: number;
     status: string;
@@ -148,7 +145,7 @@ const addNewWinner = (winner: {
   wins: number;
   time: number;
 }): {
-  type: 'CAR_WON';
+  type: string;
   winner: { id: number; wins: number; time: number };
 } => ({
   type: CAR_WON,
@@ -162,7 +159,7 @@ const setSortConfig = ({
   order: string;
   sort: string;
 }): {
-  type: 'SORT_DIRECTION_CHANGED';
+  type: string;
   payload: { order: string; sort: string };
 } => ({
   type: SORT_DIRECTION_CHANGED,

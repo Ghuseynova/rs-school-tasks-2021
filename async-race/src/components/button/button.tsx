@@ -10,13 +10,7 @@ type ButtonProps = {
 
 const Button = ({ className, text, callback }: ButtonProps): JSX.Element => {
   return (
-    <button
-      className={`button ${className}`}
-      type="button"
-      onClick={() => {
-        callback();
-      }}
-    >
+    <button className={`button ${className}`} type="button" onClick={callback}>
       <span className="button__text">{text}</span>
     </button>
   );

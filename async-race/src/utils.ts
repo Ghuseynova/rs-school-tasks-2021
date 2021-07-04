@@ -2,16 +2,18 @@ import { maxModelNumber, maxRGBNumber, minModelNumber, minRGBNumber } from './co
 import carModels from './data/car-models';
 import cardModelsEndings from './data/car-models-endings';
 
-const randomBetween = (min: number, max: number): number => min + Math.floor(Math.random() * (max - min + 1));
+const getRandomNumber = (min: number, max: number): number => min + Math.floor(Math.random() * (max - min + 1));
+
+const randomModel = `${carModels[getRandomNumber(0, carModels.length - 1)]} ${
+  cardModelsEndings[getRandomNumber(0, cardModelsEndings.length - 1)]
+} ${getRandomNumber(minModelNumber, maxModelNumber)}`;
+
+const randomColor = `rgb(${getRandomNumber(minRGBNumber, maxRGBNumber)},
+${getRandomNumber(minRGBNumber, maxRGBNumber)}, ${getRandomNumber(minRGBNumber, maxRGBNumber)})`;
 
 const getRandomCar = (): { name: string; color: string } => ({
-  name: `${carModels[randomBetween(0, carModels.length - 1)]} ${
-    cardModelsEndings[randomBetween(0, cardModelsEndings.length - 1)]
-  } ${randomBetween(minModelNumber, maxModelNumber)}`,
-  color: `rgb(${randomBetween(minRGBNumber, maxRGBNumber)},${randomBetween(minRGBNumber, maxRGBNumber)},${randomBetween(
-    minRGBNumber,
-    maxRGBNumber,
-  )})`,
+  name: randomModel,
+  color: randomColor,
 });
 
 export default getRandomCar;

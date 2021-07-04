@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import GForm from '../../components/g-form';
+import GarageForm from '../../components/garage-form';
 import GarageItem from '../../components/garage-item';
 import Pagination from '../../components/pagination';
+import { carsPerPage, defaultPageNumber } from '../../constants';
 import { getCars, setGaragePageNumber } from '../../store/actions';
 import { getGarageCount, getGaragePageNumber, selectCars } from '../../store/selectors';
 
@@ -11,7 +12,6 @@ import './garage.scss';
 const Garage = (): JSX.Element => {
   const dispatch = useDispatch();
 
-  const carsPerPage = 7;
   const cars = useSelector(selectCars);
   const count = useSelector(getGarageCount);
   let pageNumber = useSelector(getGaragePageNumber);
@@ -19,9 +19,9 @@ const Garage = (): JSX.Element => {
   const numGaragePages = Math.ceil(count / carsPerPage);
 
   function handlePrevBtn() {
-    pageNumber -= 1;
-    if (pageNumber < 1) {
-      pageNumber = 1;
+    pageNumber -= defaultPageNumber;
+    if (pageNumber < defaultPageNumber) {
+      pageNumber = defaultPageNumber;
     }
 
     dispatch(setGaragePageNumber(pageNumber));
@@ -45,7 +45,7 @@ const Garage = (): JSX.Element => {
   return (
     <div className="garage">
       <div className="garage__form">
-        <GForm />
+        <GarageForm />
       </div>
 
       <div className="garage__inner">

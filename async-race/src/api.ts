@@ -1,5 +1,13 @@
 import { carsPerPage, winnersPerPage, URL } from './constants';
 
+type Winners = {
+  name: string;
+  color: string;
+  id: number;
+  wins: number;
+  time: number;
+};
+
 class Api {
   static async fetchCars(pageNumber: number): Promise<{
     data: { name: string; color: string; id: number }[];
@@ -126,18 +134,20 @@ class Api {
     return null;
   }
 
+  static async getCar(id: number): Promise<{ name: string; color: string; id: number } | null> {
+    const response = await fetch(`${URL}/garage/${id}`);
+
+    if (response.status !== 200) return null;
+
+    const data = await response.json();
+    return data;
+  }
+
   static async fetchWinners(data: { pageNumber: number; sort: string; order: string }): Promise<{
-    data: {
-      name: string;
-      color: string;
-      id: number;
-      wins: number;
-      time: number;
-    }[];
+    data: Winners[];
     count: unknown;
   } | null> {
     const { pageNumber, sort, order } = data;
-
     const response = await fetch(
       `${URL}/winners?_page=${pageNumber}&_limit=${winnersPerPage}&_sort=${sort}&_order=${order}`,
     );
@@ -145,18 +155,10 @@ class Api {
     if (response.ok) {
       let json = await response.json();
       const total = response.headers.get('X-Total-Count');
-      const cs: { name: string; color: string; id: number }[] = [];
+      const cs: Promise<{ name: string; color: string; id: number } | null>[] = [];
 
       json.forEach((jItem: { id: number; wins: number; time: number }) => {
-        const cItem: any = (async () => {
-          const re = await fetch(`${URL}/garage/${jItem.id}`);
-
-          if (re.status !== 200) return null;
-
-          const d = await re.json();
-          return d;
-        })();
-
+        const cItem = Api.getCar(jItem.id);
         cs.push(cItem);
       });
 
@@ -164,9 +166,8 @@ class Api {
 
       json = json.map((jItem: { id: number; name: string; color: string }) => {
         const winsCar = jItem;
-
         results.forEach(result => {
-          if (jItem.id === result.id) {
+          if (result !== null && jItem.id === result.id) {
             winsCar.name = result.name;
             winsCar.color = result.color;
           }
@@ -180,7 +181,6 @@ class Api {
         count: total,
       };
     }
-
     return null;
   }
 

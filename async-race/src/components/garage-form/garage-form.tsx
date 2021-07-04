@@ -18,9 +18,10 @@ import {
   getSelectedCarName,
 } from '../../store/selectors';
 
-import './g-form.scss';
+import './garage-form.scss';
+import { maxGeneratedCarNumber } from '../../constants';
 
-const GForm = (): JSX.Element => {
+const GarageForm = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const newCarName = useSelector(getNewCarName);
@@ -54,7 +55,7 @@ const GForm = (): JSX.Element => {
   }
 
   function handleGeneratorCar() {
-    for (let i = 0; i < 100; i += 1) {
+    for (let i = 0; i < maxGeneratedCarNumber; i += 1) {
       dispatch(addNewCar(getRandomCar()));
     }
   }
@@ -66,49 +67,33 @@ const GForm = (): JSX.Element => {
           type="text"
           className="g-form__input"
           value={newCarName}
-          callback={(value: string) => {
-            handleNewCarName(value);
-          }}
+          callback={(value: string) => handleNewCarName(value)}
         />
         <Input
           type="color"
           className="form-control--color g-form__input"
           value={newCarColor}
-          callback={(value: string) => {
-            handleNewCarColor(value);
-          }}
+          callback={(value: string) => handleNewCarColor(value)}
         />
-        <Button
-          className="button--md button--lightblue g-form__btn"
-          text="Create"
-          callback={() => {
-            handleCreateCar();
-          }}
-        />
+        <Button className="button--md button--lightblue g-form__btn" text="Create" callback={() => handleCreateCar()} />
       </div>
       <div className="g-form__group">
         <Input
           type="text"
           className="g-form__input"
           value={selectedCarName}
-          callback={(value: string) => {
-            handleSelectedCarName(value);
-          }}
+          callback={(value: string) => handleSelectedCarName(value)}
         />
         <Input
           type="color"
           className="form-control--color g-form__input"
           value={selectedCarColor}
-          callback={(value: string) => {
-            handleSelectedCarColor(value);
-          }}
+          callback={(value: string) => handleSelectedCarColor(value)}
         />
         <Button
           className="button--md button--lightblue g-form__btn"
           text="Update"
-          callback={() => {
-            dispatch(updateCar(selectedCar));
-          }}
+          callback={() => dispatch(updateCar(selectedCar))}
         />
       </div>
       <div className="g-form__group">
@@ -117,13 +102,11 @@ const GForm = (): JSX.Element => {
         <Button
           className="button--md button--lightblue g-form__btn"
           text="Generate Cars"
-          callback={() => {
-            handleGeneratorCar();
-          }}
+          callback={() => handleGeneratorCar()}
         />
       </div>
     </form>
   );
 };
 
-export default GForm;
+export default GarageForm;

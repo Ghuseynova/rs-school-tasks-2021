@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { ascendingOrder, descendingOrder } from '../../constants';
 import { getWinners, setSortConfig } from '../../store/actions';
 import { getPageNumber, getSortConfig, selectWinners } from '../../store/selectors';
 import CarIcon from '../car';
 
-import './w-table.scss';
+import './winners-table.scss';
 
 const WinnersTable = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -15,8 +16,8 @@ const WinnersTable = (): JSX.Element => {
 
   function handleSort(sort: string) {
     let { order } = sortConfig;
-    if (order === 'ASC') {
-      order = 'DESC';
+    if (order === ascendingOrder) {
+      order = descendingOrder;
     } else {
       order = 'ASC';
     }

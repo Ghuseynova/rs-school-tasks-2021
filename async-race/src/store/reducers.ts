@@ -1,6 +1,6 @@
 import {
-  CARS_SUCCESS,
-  WINNERS_SUCCESS,
+  FETCH_CARS_SUCCESS,
+  FETCH_WINNERS_SUCCESS,
   PAGE_CHANGED,
   NEW_CAR_COLOR_CHANGED,
   NEW_CAR_NAME_CHANGED,
@@ -13,10 +13,37 @@ import {
   SORT_DIRECTION_CHANGED,
 } from './types';
 
-import * as actions from './actions';
+// type InferValueTypes<T> = T extends { [key: string]: infer U } ? U : never;
+// type ActionTypes = ReturnType<InferValueTypes<typeof actions>> | { type: string; page: string };
 
-type InferValueTypes<T> = T extends { [key: string]: infer U } ? U : never;
-type ActionTypes = ReturnType<InferValueTypes<typeof actions>>;
+type AppState = {
+  currentPage: string;
+  cars: { name: string; color: string; id: number }[];
+  winners: {
+    id: number;
+    wins: number;
+    time: number;
+  }[];
+  winnersCount: number;
+  carsCount: number;
+  status: number;
+  garagePageNumber: number;
+  winnersPageNumber: number;
+  newCar: {
+    color: string;
+    name: string;
+  };
+  selectedCar: {
+    name: string;
+    color: string;
+  };
+  startedCars: { name: string; color: string; id: number; isStarted: boolean }[];
+  sortConfig: {
+    order: string;
+    sort: string;
+  };
+  carStatus: string;
+};
 
 const initialState = {
   currentPage: 'garage',
@@ -41,23 +68,75 @@ const initialState = {
     order: 'ASC',
     sort: '',
   },
-};
+  carStatus: '',
+} as AppState;
 
-export default function appReducer(state: any = initialState, action: ActionTypes | any): unknown {
+interface I1 {
+  type: string;
+  page: string;
+}
+interface I2 {
+  type: string;
+  pageNumber: number;
+}
+interface I3 {
+  type: string;
+  payload: {
+    pageNumber: number;
+    sort: string;
+    order: string;
+  };
+}
+interface I4 {
+  type: string;
+  color: string;
+}
+interface I5 {
+  type: string;
+  name: string;
+}
+interface I6 {
+  type: string;
+  selectedCar: { name: string; color: string; id: number };
+}
+interface I7 {
+  type: string;
+  num: number;
+}
+interface I8 {
+  type: string;
+  velocity: number;
+  distance: number;
+}
+interface I9 {
+  type: string;
+  status: string;
+}
+interface I10 {
+  type: string;
+  payload: {
+    sort: string;
+    order: string;
+  };
+}
+
+type ActionType = I1 | I2 | I3 | I4 | I5 | I6 | I7 | I8 | I9 | I10;
+
+function appReducer(state = initialState, action: ActionType | any): AppState {
   switch (action.type) {
     case PAGE_CHANGED:
       return {
         ...state,
         currentPage: action.page,
       };
-    case CARS_SUCCESS:
+    case FETCH_CARS_SUCCESS:
       return {
         ...state,
         cars: action.cars.data,
         carsCount: action.cars.count,
       };
 
-    case WINNERS_SUCCESS:
+    case FETCH_WINNERS_SUCCESS:
       return {
         ...state,
         winners: action.winners.data,
@@ -134,3 +213,5 @@ export default function appReducer(state: any = initialState, action: ActionType
       return state;
   }
 }
+
+export default appReducer;

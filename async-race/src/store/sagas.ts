@@ -2,10 +2,10 @@ import { call, put, takeEvery, all } from 'redux-saga/effects';
 import Api from '../api';
 import {
   CARS_REQUEST,
-  CARS_SUCCESS,
+  FETCH_CARS_SUCCESS,
   CARS_ERROR,
   WINNERS_REQUEST,
-  WINNERS_SUCCESS,
+  FETCH_WINNERS_SUCCESS,
   WINNERS_ERROR,
   CAR_CREATED,
   CAR_DELETED,
@@ -15,21 +15,22 @@ import {
   CAR_ENGINE_STARTED_REQUEST,
   CAR_ENGINE_STARTED_SUCCESS,
   CAR_ENGINE_STARTED_ERROR,
+  CREATE_CAR_ERROR,
 } from './types';
 
 import { getCars, getWinners } from './actions';
 
-function* fetchCars(action: { type: 'CARS_REQUEST'; pageNumber: number }) {
+function* fetchCars(action: { type: string; pageNumber: number }) {
   try {
     const cars: ReturnType<typeof Api.fetchCars> = yield call(Api.fetchCars, action.pageNumber);
-    yield put({ type: CARS_SUCCESS, cars });
+    yield put({ type: FETCH_CARS_SUCCESS, cars });
   } catch (e) {
     yield put({ type: CARS_ERROR, message: e.message });
   }
 }
 
 function* fetchWinners(action: {
-  type: 'WINNERS_REQUEST';
+  type: string;
   payload: {
     pageNumber: number;
     sort: string;
@@ -38,22 +39,22 @@ function* fetchWinners(action: {
 }) {
   try {
     const winners: ReturnType<typeof Api.fetchWinners> = yield call(Api.fetchWinners, action.payload);
-    yield put({ type: WINNERS_SUCCESS, winners });
+    yield put({ type: FETCH_WINNERS_SUCCESS, winners });
   } catch (e) {
     yield put({ type: WINNERS_ERROR, message: e.message });
   }
 }
 
-function* createCar(action: { type: 'CAR_CREATED'; car: { name: string; color: string } }) {
+function* createCar(action: { type: string; car: { name: string; color: string } }) {
   try {
     yield call(Api.createCar, action.car);
     yield put(getCars());
   } catch (e) {
-    yield put({ type: CARS_ERROR, message: e.message });
+    yield put({ type: CREATE_CAR_ERROR, message: e.message });
   }
 }
 
-function* updateCar(action: { type: 'CAR_UPTADED'; car: { name: string; color: string; id: number } }) {
+function* updateCar(action: { type: string; car: { name: string; color: string; id: number } }) {
   try {
     yield call(Api.updateCar, action.car);
     yield put(getCars());
@@ -62,7 +63,7 @@ function* updateCar(action: { type: 'CAR_UPTADED'; car: { name: string; color: s
   }
 }
 
-function* deleteCarFromGarage(action: { type: 'CAR_DELETED'; id: number }) {
+function* deleteCarFromGarage(action: { type: string; id: number }) {
   try {
     yield call(Api.deleteCarFromGarage, action.id);
     yield put(getCars());
@@ -71,7 +72,7 @@ function* deleteCarFromGarage(action: { type: 'CAR_DELETED'; id: number }) {
   }
 }
 
-function* deleteCarFromWinners(action: { type: 'CAR_DELETED'; id: number }) {
+function* deleteCarFromWinners(action: { type: string; id: number }) {
   try {
     yield call(Api.deleteCarFromWinners, action.id);
     yield put(getWinners());
@@ -81,7 +82,7 @@ function* deleteCarFromWinners(action: { type: 'CAR_DELETED'; id: number }) {
 }
 
 function* startCar(action: {
-  type: 'CAR_ENGINE_STARTED_REQUEST';
+  type: string;
   payload: {
     id: number;
     status: string;

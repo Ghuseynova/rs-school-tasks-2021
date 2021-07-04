@@ -1,4 +1,5 @@
 import React from 'react';
+import { defaultPageNumber } from '../../constants';
 import Button from '../button';
 
 import './pagination.scss';
@@ -22,21 +23,17 @@ const Pagination = ({
     <div className={`pagination ${className}`}>
       <Button
         className={`button button--md ${
-          pageNumber === 1 ? 'button--disable' : ''
+          pageNumber === defaultPageNumber ? 'button--disable' : ''
         } button--lightviolet pagination__btn pagination__btn--prev`}
         text="prev"
-        callback={() => {
-          handlePrevBtn();
-        }}
+        callback={() => handlePrevBtn()}
       />
       <Button
         className={`button button--md ${
           pageNumber === numPages ? 'button--disable' : ''
         } button--lightviolet pagination__btn pagination__btn--next`}
         text="next"
-        callback={() => {
-          handleNextBtn();
-        }}
+        callback={() => handleNextBtn()}
       />
     </div>
   );

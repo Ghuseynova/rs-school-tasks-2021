@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import Button from '../button';
 import { PAGE_CHANGED } from '../../store/types';
+import { garagePageName, winnerPageName } from '../../constants';
 
 import './header.scss';
 
@@ -19,14 +20,14 @@ const Header = (): JSX.Element => {
           className="button--yellow header__button"
           text="TO GARAGE"
           callback={() => {
-            handleSwitchBtn('garage');
+            handleSwitchBtn(garagePageName);
           }}
         />
         <Button
           className="button--yellow header__button"
           text="TO WINNERS"
           callback={() => {
-            handleSwitchBtn('winners');
+            handleSwitchBtn(winnerPageName);
           }}
         />
       </div>

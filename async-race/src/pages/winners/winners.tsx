@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Pagination from '../../components/pagination';
-import WinnersTable from '../../components/w-table';
+import WinnersTable from '../../components/winners-table';
+import { defaultPageNumber, winnersPerPage } from '../../constants';
 
 import { setWinnerPageNumber, getWinners } from '../../store/actions';
 import { getWinnersCount, getWinnersPageNumber } from '../../store/selectors';
@@ -11,16 +12,15 @@ import './winners.scss';
 const Winners = (): JSX.Element => {
   const dispatch = useDispatch();
 
-  const winnersPerPage = 10;
   const count = useSelector(getWinnersCount);
   let pageNumber = useSelector(getWinnersPageNumber);
 
   const numWinnerPages = Math.ceil(count / winnersPerPage);
 
   function handlePrevBtn() {
-    pageNumber -= 1;
-    if (pageNumber < 1) {
-      pageNumber = 1;
+    pageNumber -= defaultPageNumber;
+    if (pageNumber < defaultPageNumber) {
+      pageNumber = defaultPageNumber;
     }
 
     dispatch(setWinnerPageNumber(pageNumber));
