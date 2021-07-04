@@ -1,3 +1,5 @@
+import { AnyAction } from 'redux';
+
 import {
   FETCH_CARS_SUCCESS,
   FETCH_WINNERS_SUCCESS,
@@ -12,9 +14,6 @@ import {
   CAR_ENGINE_STARTED_SUCCESS,
   SORT_DIRECTION_CHANGED,
 } from './types';
-
-// type InferValueTypes<T> = T extends { [key: string]: infer U } ? U : never;
-// type ActionTypes = ReturnType<InferValueTypes<typeof actions>> | { type: string; page: string };
 
 type AppState = {
   currentPage: string;
@@ -71,58 +70,7 @@ const initialState = {
   carStatus: '',
 } as AppState;
 
-interface I1 {
-  type: string;
-  page: string;
-}
-interface I2 {
-  type: string;
-  pageNumber: number;
-}
-interface I3 {
-  type: string;
-  payload: {
-    pageNumber: number;
-    sort: string;
-    order: string;
-  };
-}
-interface I4 {
-  type: string;
-  color: string;
-}
-interface I5 {
-  type: string;
-  name: string;
-}
-interface I6 {
-  type: string;
-  selectedCar: { name: string; color: string; id: number };
-}
-interface I7 {
-  type: string;
-  num: number;
-}
-interface I8 {
-  type: string;
-  velocity: number;
-  distance: number;
-}
-interface I9 {
-  type: string;
-  status: string;
-}
-interface I10 {
-  type: string;
-  payload: {
-    sort: string;
-    order: string;
-  };
-}
-
-type ActionType = I1 | I2 | I3 | I4 | I5 | I6 | I7 | I8 | I9 | I10;
-
-function appReducer(state = initialState, action: ActionType | any): AppState {
+function appReducer(state = initialState, action: AnyAction): AppState {
   switch (action.type) {
     case PAGE_CHANGED:
       return {

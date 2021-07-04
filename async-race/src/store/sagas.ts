@@ -1,4 +1,5 @@
-import { call, put, takeEvery, all } from 'redux-saga/effects';
+import { call, put, takeEvery, all, fork } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
 import Api from '../api';
 import {
   CARS_REQUEST,
@@ -108,44 +109,42 @@ function* startCar(action: {
   }
 }
 
-function* watchFetchCars() {
+function* watchFetchCars(): SagaIterator {
   yield takeEvery(CARS_REQUEST, fetchCars);
 }
 
-function* watchFetchWinners() {
+function* watchFetchWinners(): SagaIterator {
   yield takeEvery(WINNERS_REQUEST, fetchWinners);
 }
 
-function* watchCreateCar() {
+function* watchCreateCar(): SagaIterator {
   yield takeEvery(CAR_CREATED, createCar);
 }
 
-function* watchUpdateCar() {
+function* watchUpdateCar(): SagaIterator {
   yield takeEvery(CAR_UPTADED, updateCar);
 }
 
-function* watchDeleteCarFromGarage() {
+function* watchDeleteCarFromGarage(): SagaIterator {
   yield takeEvery(CAR_DELETED, deleteCarFromGarage);
 }
 
-function* watchDeleteCarFromWinners() {
+function* watchDeleteCarFromWinners(): SagaIterator {
   yield takeEvery(CAR_DELETED, deleteCarFromWinners);
 }
 
-function* watchStartCar() {
+function* watchStartCar(): SagaIterator {
   yield takeEvery(CAR_ENGINE_STARTED_REQUEST, startCar);
 }
 
-function* rootSaga(): any {
+export default function* rootSaga(): Generator {
   yield all([
-    watchFetchCars(),
-    watchFetchWinners(),
-    watchCreateCar(),
-    watchUpdateCar(),
-    watchDeleteCarFromGarage(),
-    watchDeleteCarFromWinners(),
-    watchStartCar(),
+    fork(watchFetchCars),
+    fork(watchFetchWinners),
+    fork(watchCreateCar),
+    fork(watchUpdateCar),
+    fork(watchDeleteCarFromGarage),
+    fork(watchDeleteCarFromWinners),
+    fork(watchStartCar),
   ]);
 }
-
-export default rootSaga;
