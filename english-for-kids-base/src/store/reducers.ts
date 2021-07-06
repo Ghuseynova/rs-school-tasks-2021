@@ -1,15 +1,23 @@
 import { combineReducers } from 'redux';
 import {
-  CategoriesInitialState,
+  CategoryInitialState,
   MainAction,
   MainInitialState,
   StatisticsInitialState,
 } from '../type';
 
-import { SWITCH_ITEM_CHANGED } from './types';
+import {
+  FETCH_CATEGORIES_FAIL,
+  FETCH_CATEGORIES_SUCCESS,
+  SWITCH_ITEM_CHANGED,
+} from './types';
 
-const mainInitialState: MainInitialState = { switchItem: 'train' };
-const categoriesInitialState: CategoriesInitialState = {
+const mainInitialState: MainInitialState = {
+  switchItem: 'train',
+  categories: [],
+  errorMessage: '',
+};
+const categoryInitialState: CategoryInitialState = {
   categories: 'CategoriesInitialState',
 };
 const statisticsInitialState: StatisticsInitialState = {
@@ -18,15 +26,22 @@ const statisticsInitialState: StatisticsInitialState = {
 
 const mainReducer = (state = mainInitialState, action: MainAction) => {
   switch (action.type) {
+    case FETCH_CATEGORIES_SUCCESS:
+      return {
+        ...state,
+        categories: action.payload,
+      };
+    case FETCH_CATEGORIES_FAIL:
+      return {
+        ...state,
+        errorMessage: action.payload,
+      };
     default:
       return state;
   }
 };
 
-const categoriesReducer = (
-  state = categoriesInitialState,
-  action: MainAction,
-) => {
+const categoryReducer = (state = categoryInitialState, action: MainAction) => {
   switch (action.type) {
     default:
       return state;
@@ -45,7 +60,7 @@ const statisticsReducer = (
 
 const rootReducer = combineReducers({
   main: mainReducer,
-  categories: categoriesReducer,
+  category: categoryReducer,
   statistics: statisticsReducer,
 });
 

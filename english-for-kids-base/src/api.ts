@@ -1,5 +1,16 @@
-//const URL = 'http://127.0.0.1:3000';
+const URL = 'http://localhost:3000';
 
-class Api {}
+class Api {
+  static async fetchCategories<T>(): Promise<T | null> {
+    const response = await fetch(`${URL}/categories`);
+
+    if (response.ok) {
+      const data = await response.json();
+
+      return data;
+    }
+    return null;
+  }
+}
 
 export default Api;

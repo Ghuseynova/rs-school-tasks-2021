@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducers';
 
-// import rootSaga from './sagas';
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -13,6 +13,6 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(sagaMiddleware, logger)),
 );
 
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
 export default store;
