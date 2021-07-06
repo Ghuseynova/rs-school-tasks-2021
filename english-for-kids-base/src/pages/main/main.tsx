@@ -7,9 +7,7 @@ const Main = (): JSX.Element => {
   return (
     <div className="main">
       <div className="main__container container">
-        <div className="main__top">
-          <CategoryCards className="main__cards" />
-        </div>
+        <CategoryCards className="main__cards" />
       </div>
     </div>
   );

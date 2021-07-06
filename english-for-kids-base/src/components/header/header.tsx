@@ -1,11 +1,12 @@
 import React from 'react';
+import Burger from '../burger';
 import './header.scss';
 
 const Header = (): JSX.Element => {
   return (
     <header className="header">
       <div className="header__inner">
-        <h1>Hello to learning English</h1>
+        <Burger className="header__burger" />
       </div>
     </header>
   );
