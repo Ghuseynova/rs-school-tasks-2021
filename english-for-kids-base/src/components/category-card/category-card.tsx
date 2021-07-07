@@ -4,18 +4,10 @@ import { Category } from '../../type';
 
 import './category-card.scss';
 
-const CategoryCard = (props: {
-  className: string;
-  category: Category;
-  isPlay: boolean;
-}): JSX.Element => {
+const CategoryCard = (props: { className: string; category: Category; isPlay: boolean }): JSX.Element => {
   const { className, category, isPlay } = props;
   return (
-    <div
-      className={`category-card ${className} ${
-        isPlay ? 'category-card--theme-play' : ''
-      }`}
-    >
+    <div className={`category-card ${className} ${isPlay ? 'category-card--theme-play' : ''}`}>
       <Link to={category.category} className="category-card__link" />
       <div className="category-card__img">
         <img

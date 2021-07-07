@@ -1,14 +1,11 @@
 import { combineReducers } from 'redux';
-import {
-  CategoryInitialState,
-  MainAction,
-  MainInitialState,
-  StatisticsInitialState,
-} from '../type';
+import { CategoryInitialState, MainAction, MainInitialState, StatisticsInitialState } from '../type';
 
 import {
   FETCH_CATEGORIES_FAIL,
   FETCH_CATEGORIES_SUCCESS,
+  MENU_OPEN,
+  SET_CATEGORY,
   SWITCH_VALUE_CHANGED,
 } from './types';
 
@@ -17,6 +14,8 @@ const mainInitialState: MainInitialState = {
   categories: [],
   errorMessage: '',
   isPlay: false,
+  isMenuOpen: false,
+  selectedCategory: 'Main page',
 };
 const categoryInitialState: CategoryInitialState = {
   categories: 'CategoriesInitialState',
@@ -42,6 +41,16 @@ const mainReducer = (state = mainInitialState, action: MainAction) => {
         ...state,
         isPlay: action.payload,
       };
+    case MENU_OPEN:
+      return {
+        ...state,
+        isMenuOpen: action.payload,
+      };
+    case SET_CATEGORY:
+      return {
+        ...state,
+        selectedCategory: action.payload,
+      };
     default:
       return state;
   }
@@ -54,10 +63,7 @@ const categoryReducer = (state = categoryInitialState, action: MainAction) => {
   }
 };
 
-const statisticsReducer = (
-  state = statisticsInitialState,
-  action: MainAction,
-) => {
+const statisticsReducer = (state = statisticsInitialState, action: MainAction) => {
   switch (action.type) {
     default:
       return state;

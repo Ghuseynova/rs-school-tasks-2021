@@ -8,4 +8,13 @@
   &__button {
     margin: 1rem;
   }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 24rem;
+    z-index: 9;
+  }
 }

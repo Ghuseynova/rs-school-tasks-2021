@@ -16,26 +16,10 @@ const Switch = ({ className }: { className: string }): JSX.Element => {
   return (
     <div className="switch">
       <label className="switch__label" htmlFor="switch">
-        <input
-          checked={isPlay}
-          onChange={handleChange}
-          className="switch__input"
-          type="checkbox"
-          id="switch"
-        />
+        <input checked={isPlay} onChange={handleChange} className="switch__input" type="checkbox" id="switch" />
         <div className="switch__circle" />
-        <div
-          className={`switch__play ${isPlay ? 'switch__play--is-active' : ''}`}
-        >
-          Play
-        </div>
-        <div
-          className={`switch__train ${
-            isPlay ? '' : 'switch__train--is-active'
-          }`}
-        >
-          Train
-        </div>
+        <div className={`switch__play ${isPlay ? 'switch__play--is-active' : ''}`}>Play</div>
+        <div className={`switch__train ${isPlay ? '' : 'switch__train--is-active'}`}>Train</div>
       </label>
     </div>
   );

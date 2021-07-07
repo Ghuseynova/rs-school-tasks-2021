@@ -21,14 +21,7 @@ const CategoryCards = ({ className }: { className: string }): JSX.Element => {
   return (
     <div className={`category-cards ${className}`}>
       {categories.map((category: Category) => {
-        return (
-          <CategoryCard
-            key={category.id}
-            category={category}
-            isPlay={isPlay}
-            className="category-cards__item"
-          />
-        );
+        return <CategoryCard key={category.id} category={category} isPlay={isPlay} className="category-cards__item" />;
       })}
     </div>
   );

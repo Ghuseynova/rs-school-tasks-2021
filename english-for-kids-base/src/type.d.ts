@@ -3,6 +3,8 @@ import {
   FETCH_CATEGORIES_REQUEST,
   FETCH_CATEGORIES_SUCCESS,
   FETCH_CATEGORIES_FAIL,
+  MENU_OPEN,
+  SET_CATEGORY,
 } from './store/types';
 
 interface MainInitialState {
@@ -10,6 +12,8 @@ interface MainInitialState {
   categories: Category[];
   errorMessage: string;
   isPlay: boolean;
+  isMenuOpen: boolean;
+  selectedCategory: string;
 }
 
 interface CategoryInitialState {
@@ -23,6 +27,16 @@ interface StatisticsInitialState {
 interface SwitchItemSet {
   type: typeof SWITCH_VALUE_CHANGED;
   payload: boolean;
+}
+
+interface SetIsMenuOpen {
+  type: typeof MENU_OPEN;
+  payload: boolean;
+}
+
+interface SetSelectedCategory {
+  type: typeof SET_CATEGORY;
+  payload: string;
 }
 
 interface Word {
@@ -55,4 +69,4 @@ interface FetchCategoriesFail {
   payload: string;
 }
 
-type MainAction = SwitchItemSet | FetchCategoriesSuccess | FetchCategoriesFail;
+type MainAction = SwitchItemSet | FetchCategoriesSuccess | FetchCategoriesFail | SetIsMenuOpen | SetSelectedCategory;

@@ -7,6 +7,8 @@
   cursor: pointer;
 
   &--is-open {
+    position: relative;
+    z-index: 19;
     #{$self}__icon {
       path {
         &:nth-child(1) {
