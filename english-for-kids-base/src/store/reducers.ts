@@ -9,13 +9,14 @@ import {
 import {
   FETCH_CATEGORIES_FAIL,
   FETCH_CATEGORIES_SUCCESS,
-  SWITCH_ITEM_CHANGED,
+  SWITCH_VALUE_CHANGED,
 } from './types';
 
 const mainInitialState: MainInitialState = {
   switchItem: 'train',
   categories: [],
   errorMessage: '',
+  isPlay: false,
 };
 const categoryInitialState: CategoryInitialState = {
   categories: 'CategoriesInitialState',
@@ -35,6 +36,11 @@ const mainReducer = (state = mainInitialState, action: MainAction) => {
       return {
         ...state,
         errorMessage: action.payload,
+      };
+    case SWITCH_VALUE_CHANGED:
+      return {
+        ...state,
+        isPlay: action.payload,
       };
     default:
       return state;

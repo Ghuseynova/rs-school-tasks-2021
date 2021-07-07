@@ -5,4 +5,7 @@ const getCategories = (state: {
 }): Category[] => state.main.categories;
 const getWords = (): void => {};
 
-export { getCategories, getWords };
+const getIsPlay = (state: { main: { isPlay: boolean } }): boolean =>
+  state.main.isPlay;
+
+export { getCategories, getWords, getIsPlay };

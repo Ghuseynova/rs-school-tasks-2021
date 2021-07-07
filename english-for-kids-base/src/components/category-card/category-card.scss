@@ -3,6 +3,10 @@
   border-radius: 3rem;
   background-color: rgb(144, 245, 226);
 
+  &--theme-play {
+    background-color: rgb(228, 67, 193);
+  }
+
   &__link {
     position: absolute;
     top: 0;

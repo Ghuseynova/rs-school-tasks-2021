@@ -1,5 +1,5 @@
 import {
-  SWITCH_ITEM_CHANGED,
+  SWITCH_VALUE_CHANGED,
   FETCH_CATEGORIES_REQUEST,
   FETCH_CATEGORIES_SUCCESS,
   FETCH_CATEGORIES_FAIL,
@@ -9,6 +9,7 @@ interface MainInitialState {
   switchItem: string;
   categories: Category[];
   errorMessage: string;
+  isPlay: boolean;
 }
 
 interface CategoryInitialState {
@@ -20,8 +21,8 @@ interface StatisticsInitialState {
 }
 
 interface SwitchItemSet {
-  type: typeof SWITCH_ITEM_CHANGED;
-  payload: string;
+  type: typeof SWITCH_VALUE_CHANGED;
+  payload: boolean;
 }
 
 interface Word {
