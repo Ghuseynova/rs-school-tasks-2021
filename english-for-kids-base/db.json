@@ -4,7 +4,7 @@
       "id": 1,
       "category": "Action (set A)",
       "wordsCount": 7,
-      "image": "images/cry.jpg",
+      "image": "images/activities.png",
       "words": [
         {
           "word": "cry",
@@ -60,7 +60,7 @@
       "id": 2,
       "category": "Action (set B)",
       "wordsCount": 8,
-      "image": "images/open.jpg",
+      "image": "images/activities.jpg",
       "words": [
         {
           "word": "open",
@@ -116,7 +116,7 @@
       "id": 3,
       "category": "Animal (set A)",
       "wordsCount": 8,
-      "image": "images/cat.jpg",
+      "image": "images/animals.jpg",
       "words": [
         {
           "word": "cat",
@@ -396,7 +396,7 @@
       "id": 8,
       "category": "Backyard",
       "wordsCount": 8,
-      "image": "images/bike.jpg",
+      "image": "images/backyard.jpg",
       "words": [
         {
           "word": "bike",

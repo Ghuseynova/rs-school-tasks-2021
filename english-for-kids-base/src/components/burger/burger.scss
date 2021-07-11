@@ -5,6 +5,11 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: opacity 0.4s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   &--is-open {
     position: relative;
