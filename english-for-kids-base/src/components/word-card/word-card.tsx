@@ -11,8 +11,13 @@ interface WordCardType {
 }
 
 const WordCard = ({ word, audioSrc, translation, image, className }: WordCardType): JSX.Element => {
+  function handleClick() {
+    const audio = new Audio(`${process.env.PUBLIC_URL}/static/${audioSrc}`);
+    audio.play();
+  }
+
   return (
-    <div className={`word ${className}`}>
+    <div className={`word ${className}`} onClick={handleClick} onKeyDown={handleClick} role="button" tabIndex={0}>
       <div className="word__front">
         <div className="word__img">
           <img src={`${process.env.PUBLIC_URL}/static/${image}`} alt="word" className="word__img-file" />

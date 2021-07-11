@@ -1,6 +1,5 @@
 .word {
   position: relative;
-  // padding-bottom: 20%;
   transform-style: preserve-3d;
   transition: transform 0.4s;
   cursor: pointer;
@@ -8,10 +7,6 @@
   &--is-flip {
     transform: rotateY(180deg);
   }
-
-  // &:hover {
-  //   transform: rotateY(180deg);
-  // }
 
   &__back,
   &__front {
