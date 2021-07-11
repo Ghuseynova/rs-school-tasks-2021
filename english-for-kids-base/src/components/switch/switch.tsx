@@ -14,7 +14,7 @@ const Switch = ({ className }: { className: string }): JSX.Element => {
   }
 
   return (
-    <div className="switch">
+    <div className={`switch ${className}`}>
       <label className="switch__label" htmlFor="switch">
         <input checked={isPlay} onChange={handleChange} className="switch__input" type="checkbox" id="switch" />
         <div className="switch__circle" />

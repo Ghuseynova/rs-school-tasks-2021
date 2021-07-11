@@ -8,7 +8,7 @@ import './category.scss';
 const Category = ({ match }: { match: { params: { category: string } } }): JSX.Element => {
   const categories = useSelector(getCategories);
   const category = categories.find(item => item.category === match.params.category) || { words: [], category: '' };
-  console.log(match, category);
+  // console.log(match, category);
   return (
     <div className="category">
       <div className="category__container container">

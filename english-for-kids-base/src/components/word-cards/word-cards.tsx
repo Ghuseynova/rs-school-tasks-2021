@@ -10,7 +10,7 @@ interface WordCardsType {
 }
 
 const WordCards = ({ className, words }: WordCardsType): JSX.Element => {
-  console.log(words);
+  // console.log(words);
   return (
     <div className={`words ${className}`}>
       {words.map(word => {
