@@ -12,8 +12,6 @@ const CategoryCards = ({ className }: { className: string }): JSX.Element => {
   const categories = useSelector(getCategories);
   const isPlay = useSelector(getIsPlay);
 
-  console.log(categories);
-
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);

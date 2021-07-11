@@ -7,7 +7,7 @@ import './header.scss';
 const Header = (): JSX.Element => {
   return (
     <header className="header">
-      <div className="header__inner">
+      <div className="header__inner container">
         <Burger className="header__burger" />
         <Switch className="header__switch" />
         <Menu className="header__nav" />

@@ -1,0 +1,77 @@
+.word {
+  position: relative;
+  // padding-bottom: 20%;
+  transform-style: preserve-3d;
+  transition: transform 0.4s;
+  cursor: pointer;
+
+  &--is-flip {
+    transform: rotateY(180deg);
+  }
+
+  // &:hover {
+  //   transform: rotateY(180deg);
+  // }
+
+  &__back,
+  &__front {
+    border-radius: 3rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem rgba($color: #000000, $alpha: 0.3);
+    backface-visibility: hidden;
+    transition: box-shadow 0.4s;
+
+    &:hover {
+      box-shadow: 0.3rem 0.3rem 1rem rgba($color: #000000, $alpha: 0.3);
+    }
+  }
+
+  &__img {
+    position: relative;
+    padding-bottom: 60%;
+
+    &-file {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 3rem 3rem 0 0;
+      object-fit: cover;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    padding: 1.6rem 2rem;
+    background-color: #fff;
+    border-radius: 0 0 3rem 3rem;
+  }
+
+  &__text {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  &__turn {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.6rem;
+    z-index: 1;
+
+    &-icon {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+
+  &__back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: rotateY(180deg);
+  }
+}
