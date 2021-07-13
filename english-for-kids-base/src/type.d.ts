@@ -17,7 +17,9 @@ interface MainInitialState {
 }
 
 interface CategoryInitialState {
-  categories: string;
+  isGameStarted: boolean;
+  playedAudio: string;
+  audios: string[];
 }
 
 interface StatisticsInitialState {
@@ -36,6 +38,21 @@ interface SetIsMenuOpen {
 
 interface SetSelectedCategory {
   type: typeof SET_CATEGORY;
+  payload: string;
+}
+
+interface SetGameStart {
+  type: typeof SET_GAME_START;
+  payload: boolean;
+}
+
+interface SetAudios {
+  type: typeof SET_AUDIOS;
+  payload: string[];
+}
+
+interface SetPlayedAudio {
+  type: typeof SET_PLAYED_AUDIO;
   payload: string;
 }
 
@@ -70,3 +87,4 @@ interface FetchCategoriesFail {
 }
 
 type MainAction = SwitchItemSet | FetchCategoriesSuccess | FetchCategoriesFail | SetIsMenuOpen | SetSelectedCategory;
+type CategoryAction = SetGameStart | SetAudios | SetPlayedAudio;

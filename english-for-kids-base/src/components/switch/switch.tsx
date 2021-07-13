@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSwitchValue } from '../../store/actions';
+import { setGameStart, setSwitchValue } from '../../store/actions';
 import { getIsPlay } from '../../store/selectors';
 
 import './switch.scss';
@@ -11,6 +11,7 @@ const Switch = ({ className }: { className: string }): JSX.Element => {
 
   function handleChange() {
     dispatch(setSwitchValue(!isPlay));
+    dispatch(setGameStart(false));
   }
 
   return (

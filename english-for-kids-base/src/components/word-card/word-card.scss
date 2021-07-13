@@ -17,6 +17,11 @@
     }
   }
 
+  &--is-correct {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   &__back,
   &__front {
     border-radius: 3rem;

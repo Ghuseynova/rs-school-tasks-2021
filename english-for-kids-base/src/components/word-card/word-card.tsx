@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { getIsPlay } from '../../store/selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import { setAudios, setPlayedAudio } from '../../store/actions';
+import { getAudios, getIsPlay, getPlayedAudio } from '../../store/selectors';
+import { getRandomAudio, playAudio } from '../../utils';
 import FlipElement from '../flip-element';
 
 import './word-card.scss';
@@ -15,12 +17,28 @@ interface WordCardType {
 
 const WordCard = ({ word, audioSrc, translation, image, className }: WordCardType): JSX.Element => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const [isCorrect, setIsCorrect] = useState<boolean>(false);
+  const dispatch = useDispatch();
   const isPlay = useSelector(getIsPlay);
+  const audios = useSelector(getAudios);
+  const playedAudio = useSelector(getPlayedAudio);
 
   function handleClick() {
     if (!isPlay) {
-      const audio = new Audio(`${process.env.PUBLIC_URL}/static/${audioSrc}`);
-      audio.play();
+      playAudio(audioSrc);
+    } else if (audioSrc === playedAudio) {
+      const filteredAudios = audios.filter(audio => audio !== playedAudio);
+      setIsCorrect(!isCorrect);
+      playAudio('audio/right.mp3');
+
+      window.setTimeout(() => {
+        const randomAudio = getRandomAudio(filteredAudios);
+        playAudio(randomAudio);
+        dispatch(setPlayedAudio(randomAudio));
+        dispatch(setAudios(filteredAudios));
+      }, 500);
+    } else {
+      playAudio('audio/wrong.mp3');
     }
   }
 
@@ -40,7 +58,9 @@ const WordCard = ({ word, audioSrc, translation, image, className }: WordCardTyp
 
   return (
     <div
-      className={`word ${className} ${isFlipped ? 'word--is-flip' : ''} ${isPlay ? 'word--is-play' : ''}`}
+      className={`word ${className} ${isFlipped ? 'word--is-flip' : ''} ${isPlay ? 'word--is-play' : ''} ${
+        isCorrect ? 'word--is-correct' : ''
+      }`}
       onMouseLeave={handleMouseLive}
     >
       <div

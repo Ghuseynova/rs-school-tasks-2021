@@ -10,4 +10,19 @@ const getIsMenuOpen = (state: { main: { isMenuOpen: boolean } }): boolean => sta
 
 const getSelectedCategory = (state: { main: { selectedCategory: string } }): string => state.main.selectedCategory;
 
-export { getCategories, getWords, getIsPlay, getIsMenuOpen, getSelectedCategory };
+const getIsGameStarted = (state: { category: { isGameStarted: boolean } }): boolean => state.category.isGameStarted;
+
+const getPlayedAudio = (state: { category: { playedAudio: string } }): string => state.category.playedAudio;
+
+const getAudios = (state: { category: { audios: string[] } }): string[] => state.category.audios;
+
+export {
+  getCategories,
+  getWords,
+  getIsPlay,
+  getIsMenuOpen,
+  getSelectedCategory,
+  getIsGameStarted,
+  getPlayedAudio,
+  getAudios,
+};

@@ -1,5 +1,21 @@
-import { FetchCategoriesRequest, SetIsMenuOpen, SetSelectedCategory, SwitchItemSet } from '../type';
-import { FETCH_CATEGORIES_REQUEST, MENU_OPEN, SET_CATEGORY, SWITCH_VALUE_CHANGED } from './types';
+import {
+  FetchCategoriesRequest,
+  SetAudios,
+  SetGameStart,
+  SetIsMenuOpen,
+  SetPlayedAudio,
+  SetSelectedCategory,
+  SwitchItemSet,
+} from '../type';
+import {
+  FETCH_CATEGORIES_REQUEST,
+  MENU_OPEN,
+  SET_AUDIOS,
+  SET_CATEGORY,
+  SET_GAME_START,
+  SET_PLAYED_AUDIO,
+  SWITCH_VALUE_CHANGED,
+} from './types';
 
 const fetchCategories = (): FetchCategoriesRequest => ({
   type: FETCH_CATEGORIES_REQUEST,
@@ -21,6 +37,30 @@ const setSelectedCategory = (category: string): SetSelectedCategory => ({
   payload: category,
 });
 
+const setGameStart = (value: boolean): SetGameStart => ({
+  type: SET_GAME_START,
+  payload: value,
+});
+
+const setPlayedAudio = (audio: string): SetPlayedAudio => ({
+  type: SET_PLAYED_AUDIO,
+  payload: audio,
+});
+
+const setAudios = (audios: string[]): SetAudios => ({
+  type: SET_AUDIOS,
+  payload: audios,
+});
+
 const fetchWords = (): void => {};
 
-export { fetchCategories, fetchWords, setSwitchValue, setIsMenuOpen, setSelectedCategory };
+export {
+  fetchCategories,
+  fetchWords,
+  setSwitchValue,
+  setIsMenuOpen,
+  setSelectedCategory,
+  setGameStart,
+  setAudios,
+  setPlayedAudio,
+};

@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
-import { CategoryInitialState, MainAction, MainInitialState, StatisticsInitialState } from '../type';
+import { CategoryAction, CategoryInitialState, MainAction, MainInitialState, StatisticsInitialState } from '../type';
 
 import {
   FETCH_CATEGORIES_FAIL,
   FETCH_CATEGORIES_SUCCESS,
   MENU_OPEN,
+  SET_AUDIOS,
   SET_CATEGORY,
+  SET_GAME_START,
+  SET_PLAYED_AUDIO,
   SWITCH_VALUE_CHANGED,
 } from './types';
 
@@ -17,9 +20,13 @@ const mainInitialState: MainInitialState = {
   isMenuOpen: false,
   selectedCategory: 'Main page',
 };
+
 const categoryInitialState: CategoryInitialState = {
-  categories: 'CategoriesInitialState',
+  isGameStarted: false,
+  playedAudio: '',
+  audios: [],
 };
+
 const statisticsInitialState: StatisticsInitialState = {
   statistics: 'StatisticsInitialState',
 };
@@ -56,8 +63,25 @@ const mainReducer = (state = mainInitialState, action: MainAction) => {
   }
 };
 
-const categoryReducer = (state = categoryInitialState, action: MainAction) => {
+const categoryReducer = (state = categoryInitialState, action: CategoryAction) => {
   switch (action.type) {
+    case SET_GAME_START:
+      return {
+        ...state,
+        isGameStarted: action.payload,
+      };
+
+    case SET_AUDIOS:
+      return {
+        ...state,
+        audios: action.payload,
+      };
+    case SET_PLAYED_AUDIO:
+      return {
+        ...state,
+        playedAudio: action.payload,
+      };
+
     default:
       return state;
   }
