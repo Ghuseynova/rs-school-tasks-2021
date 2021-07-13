@@ -1,4 +1,5 @@
 .word {
+  $self: &;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.4s;
@@ -6,6 +7,14 @@
 
   &--is-flip {
     transform: rotateY(180deg);
+  }
+
+  &--is-play {
+    #{$self}__bottom,
+    #{$self}__turn {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 
   &__back,
@@ -22,7 +31,7 @@
 
   &__img {
     position: relative;
-    padding-bottom: 60%;
+    padding-bottom: 70%;
 
     &-file {
       position: absolute;
@@ -32,16 +41,22 @@
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 3rem 3rem 0 0;
+      border-radius: 3rem;
       object-fit: cover;
     }
   }
 
   &__bottom {
-    position: relative;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
     padding: 1.6rem 2rem;
     background-color: #fff;
     border-radius: 0 0 3rem 3rem;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s, visibility 0.4s;
   }
 
   &__text {
@@ -54,6 +69,9 @@
     bottom: 1.2rem;
     right: 1.6rem;
     z-index: 1;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s, visibility 0.4s;
 
     &::after {
       content: '';

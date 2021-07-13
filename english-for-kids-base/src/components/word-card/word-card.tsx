@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { getIsPlay } from '../../store/selectors';
 import FlipElement from '../flip-element';
 
 import './word-card.scss';
@@ -13,23 +15,34 @@ interface WordCardType {
 
 const WordCard = ({ word, audioSrc, translation, image, className }: WordCardType): JSX.Element => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const isPlay = useSelector(getIsPlay);
 
   function handleClick() {
-    const audio = new Audio(`${process.env.PUBLIC_URL}/static/${audioSrc}`);
-    audio.play();
+    if (!isPlay) {
+      const audio = new Audio(`${process.env.PUBLIC_URL}/static/${audioSrc}`);
+      audio.play();
+    }
   }
 
   function handleFlipping(event: React.MouseEvent<HTMLDivElement, MouseEvent>): void {
     event.stopPropagation();
-    setIsFlipped(true);
+
+    if (!isPlay) {
+      setIsFlipped(true);
+    }
   }
 
   function handleMouseLive() {
-    setIsFlipped(false);
+    if (!isPlay) {
+      setIsFlipped(false);
+    }
   }
 
   return (
-    <div className={`word ${className} ${isFlipped ? 'word--is-flip' : ''}`} onMouseLeave={handleMouseLive}>
+    <div
+      className={`word ${className} ${isFlipped ? 'word--is-flip' : ''} ${isPlay ? 'word--is-play' : ''}`}
+      onMouseLeave={handleMouseLive}
+    >
       <div
         className="word__front"
         onClick={handleClick}

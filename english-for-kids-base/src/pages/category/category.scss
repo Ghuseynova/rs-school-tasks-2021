@@ -5,9 +5,29 @@
     font-size: 3.6rem;
   }
 
-  &__container {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  &__words {
+  &__circle {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 0.2rem;
+    border: 2px solid rgb(106, 100, 64);
+    border-radius: 50%;
+
+    &--is {
+      &-fill {
+        background-color: rgb(223, 245, 29);
+      }
+    }
+  }
+
+  &__btn {
+    margin: 3.6rem 0 3rem;
+    text-align: center;
   }
 }
