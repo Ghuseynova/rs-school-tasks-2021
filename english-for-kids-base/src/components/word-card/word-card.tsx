@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setAudios, setPlayedAudio } from '../../store/actions';
+import { useHistory } from 'react-router-dom';
+import { finishGame, setAudios, setCircle, setPlayedAudio } from '../../store/actions';
 import { getAudios, getIsPlay, getPlayedAudio } from '../../store/selectors';
+import { GAME_FINISHED } from '../../store/types';
 import { getRandomAudio, playAudio } from '../../utils';
 import FlipElement from '../flip-element';
 
@@ -19,6 +21,7 @@ const WordCard = ({ word, audioSrc, translation, image, className }: WordCardTyp
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const dispatch = useDispatch();
+  const history = useHistory();
   const isPlay = useSelector(getIsPlay);
   const audios = useSelector(getAudios);
   const playedAudio = useSelector(getPlayedAudio);
@@ -30,15 +33,28 @@ const WordCard = ({ word, audioSrc, translation, image, className }: WordCardTyp
       const filteredAudios = audios.filter(audio => audio !== playedAudio);
       setIsCorrect(!isCorrect);
       playAudio('audio/right.mp3');
+      dispatch(setCircle('fill'));
 
       window.setTimeout(() => {
         const randomAudio = getRandomAudio(filteredAudios);
         playAudio(randomAudio);
         dispatch(setPlayedAudio(randomAudio));
         dispatch(setAudios(filteredAudios));
+
+        if (audios.length === 1) {
+          console.log('empty');
+
+          history.push('/win');
+
+          window.setTimeout(() => {
+            history.push('/');
+            dispatch(finishGame());
+          }, 1500);
+        }
       }, 500);
     } else {
       playAudio('audio/wrong.mp3');
+      dispatch(setCircle('empty'));
     }
   }
 

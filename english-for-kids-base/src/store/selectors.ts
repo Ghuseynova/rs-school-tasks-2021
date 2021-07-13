@@ -16,6 +16,8 @@ const getPlayedAudio = (state: { category: { playedAudio: string } }): string =>
 
 const getAudios = (state: { category: { audios: string[] } }): string[] => state.category.audios;
 
+const getCircles = (state: { category: { circles: string[] } }): string[] => state.category.circles;
+
 export {
   getCategories,
   getWords,
@@ -25,4 +27,5 @@ export {
   getIsGameStarted,
   getPlayedAudio,
   getAudios,
+  getCircles,
 };

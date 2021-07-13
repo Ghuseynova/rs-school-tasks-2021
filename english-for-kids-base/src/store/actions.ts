@@ -1,17 +1,22 @@
 import {
   FetchCategoriesRequest,
+  FinishGame,
   SetAudios,
+  SetCircle,
   SetGameStart,
   SetIsMenuOpen,
   SetPlayedAudio,
   SetSelectedCategory,
   SwitchItemSet,
 } from '../type';
+
 import {
   FETCH_CATEGORIES_REQUEST,
+  GAME_FINISHED,
   MENU_OPEN,
   SET_AUDIOS,
   SET_CATEGORY,
+  SET_CIRCLE,
   SET_GAME_START,
   SET_PLAYED_AUDIO,
   SWITCH_VALUE_CHANGED,
@@ -52,6 +57,16 @@ const setAudios = (audios: string[]): SetAudios => ({
   payload: audios,
 });
 
+const setCircle = (circle: string): SetCircle => ({
+  type: SET_CIRCLE,
+  payload: circle,
+});
+
+const finishGame = (): FinishGame => ({
+  type: GAME_FINISHED,
+  payload: '',
+});
+
 const fetchWords = (): void => {};
 
 export {
@@ -63,4 +78,6 @@ export {
   setGameStart,
   setAudios,
   setPlayedAudio,
+  setCircle,
+  finishGame,
 };

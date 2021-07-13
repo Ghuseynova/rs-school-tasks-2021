@@ -16,6 +16,7 @@ const Category = ({ match }: { match: { params: { category: string } } }): JSX.E
   const playedAudio = useSelector(getPlayedAudio);
   const audios = useSelector(getAudios);
   const category = categories.find(item => item.category === match.params.category) || { words: [], category: '' };
+  const audioArr = JSON.stringify(category.words.map(word => word.audioSrc));
 
   function handleStartBtn() {
     const randomAudio = getRandomAudio(audios);
@@ -29,9 +30,8 @@ const Category = ({ match }: { match: { params: { category: string } } }): JSX.E
   }
 
   useEffect(() => {
-    const audios = category.words.map(word => word.audioSrc);
-    dispatch(setAudios(audios));
-  }, [dispatch, category.words]);
+    dispatch(setAudios(JSON.parse(audioArr)));
+  }, [dispatch, audioArr]);
 
   return (
     <div className="category">

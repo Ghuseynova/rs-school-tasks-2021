@@ -20,6 +20,7 @@ interface CategoryInitialState {
   isGameStarted: boolean;
   playedAudio: string;
   audios: string[];
+  circles: string[];
 }
 
 interface StatisticsInitialState {
@@ -56,6 +57,16 @@ interface SetPlayedAudio {
   payload: string;
 }
 
+interface SetCircle {
+  type: typeof SET_CIRCLE;
+  payload: string;
+}
+
+interface FinishGame {
+  type: typeof GAME_FINISHED;
+  payload: string;
+}
+
 interface Word {
   word: string;
   translation: stirng;
@@ -86,5 +97,11 @@ interface FetchCategoriesFail {
   payload: string;
 }
 
-type MainAction = SwitchItemSet | FetchCategoriesSuccess | FetchCategoriesFail | SetIsMenuOpen | SetSelectedCategory;
-type CategoryAction = SetGameStart | SetAudios | SetPlayedAudio;
+type MainAction =
+  | SwitchItemSet
+  | FetchCategoriesSuccess
+  | FetchCategoriesFail
+  | SetIsMenuOpen
+  | SetSelectedCategory
+  | FinishGame;
+type CategoryAction = SetGameStart | SetAudios | SetPlayedAudio | SetCircle | FinishGame;

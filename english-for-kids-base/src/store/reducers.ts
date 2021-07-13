@@ -4,9 +4,11 @@ import { CategoryAction, CategoryInitialState, MainAction, MainInitialState, Sta
 import {
   FETCH_CATEGORIES_FAIL,
   FETCH_CATEGORIES_SUCCESS,
+  GAME_FINISHED,
   MENU_OPEN,
   SET_AUDIOS,
   SET_CATEGORY,
+  SET_CIRCLE,
   SET_GAME_START,
   SET_PLAYED_AUDIO,
   SWITCH_VALUE_CHANGED,
@@ -25,6 +27,7 @@ const categoryInitialState: CategoryInitialState = {
   isGameStarted: false,
   playedAudio: '',
   audios: [],
+  circles: [],
 };
 
 const statisticsInitialState: StatisticsInitialState = {
@@ -58,6 +61,8 @@ const mainReducer = (state = mainInitialState, action: MainAction) => {
         ...state,
         selectedCategory: action.payload,
       };
+    case GAME_FINISHED:
+      return mainInitialState;
     default:
       return state;
   }
@@ -82,6 +87,13 @@ const categoryReducer = (state = categoryInitialState, action: CategoryAction) =
         playedAudio: action.payload,
       };
 
+    case SET_CIRCLE:
+      return {
+        ...state,
+        circles: [...state.circles, action.payload],
+      };
+    case GAME_FINISHED:
+      return categoryInitialState;
     default:
       return state;
   }
