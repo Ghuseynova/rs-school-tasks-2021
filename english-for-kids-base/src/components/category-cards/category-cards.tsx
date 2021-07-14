@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories } from '../../store/actions';
 import { getCategories, getIsPlay } from '../../store/selectors';
 import { Category } from '../../type';

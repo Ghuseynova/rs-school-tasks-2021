@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { finishGame, setAudios, setCircle, setPlayedAudio } from '../../store/actions';
-import { getAudios, getCircles, getIsPlay, getPlayedAudio } from '../../store/selectors';
-import { GAME_FINISHED } from '../../store/types';
+import { getAudios, getCircles, getIsGameStarted, getIsPlay, getPlayedAudio } from '../../store/selectors';
 import { getRandomAudio, playAudio } from '../../utils';
 import FlipElement from '../flip-element';
 
@@ -23,6 +22,7 @@ const WordCard = ({ word, audioSrc, translation, image, className }: WordCardTyp
   const dispatch = useDispatch();
   const history = useHistory();
   const isPlay = useSelector(getIsPlay);
+  const isGameStarted = useSelector(getIsGameStarted);
   const audios = useSelector(getAudios);
   const circles = useSelector(getCircles);
   const playedAudio = useSelector(getPlayedAudio);
@@ -31,37 +31,38 @@ const WordCard = ({ word, audioSrc, translation, image, className }: WordCardTyp
   function handleClick() {
     if (!isPlay) {
       playAudio(audioSrc);
-    } else if (audioSrc === playedAudio) {
-      const filteredAudios = audios.filter(audio => audio !== playedAudio);
-      setIsCorrect(!isCorrect);
-      playAudio('audio/right.mp3');
-      dispatch(setCircle('fill'));
+    }
 
-      console.log(filteredAudios);
-      window.setTimeout(() => {
-        const randomAudio = getRandomAudio(filteredAudios);
-        playAudio(randomAudio);
-        dispatch(setPlayedAudio(randomAudio));
-        dispatch(setAudios(filteredAudios));
+    if (isGameStarted) {
+      if (audioSrc === playedAudio) {
+        const filteredAudios = audios.filter(audio => audio !== playedAudio);
+        setIsCorrect(!isCorrect);
+        playAudio('audio/right.mp3');
+        dispatch(setCircle('fill'));
 
-        if (audios.length === minAudioLength) {
-          console.log('empty');
+        window.setTimeout(() => {
+          const randomAudio = getRandomAudio(filteredAudios);
+          playAudio(randomAudio);
+          dispatch(setPlayedAudio(randomAudio));
+          dispatch(setAudios(filteredAudios));
 
-          if (circles.indexOf('empty') === -1) {
-            history.push('/win');
-          } else {
-            history.push('/lost');
+          if (audios.length === minAudioLength) {
+            if (circles.indexOf('empty') === -1) {
+              history.push('/win');
+            } else {
+              history.push('/lost');
+            }
+
+            window.setTimeout(() => {
+              history.push('/');
+              dispatch(finishGame());
+            }, 1000);
           }
-
-          window.setTimeout(() => {
-            history.push('/');
-            dispatch(finishGame());
-          }, 1000);
-        }
-      }, 500);
-    } else {
-      playAudio('audio/wrong.mp3');
-      dispatch(setCircle('empty'));
+        }, 500);
+      } else {
+        playAudio('audio/wrong.mp3');
+        dispatch(setCircle('empty'));
+      }
     }
   }
 
@@ -82,7 +83,7 @@ const WordCard = ({ word, audioSrc, translation, image, className }: WordCardTyp
   return (
     <div
       className={`word ${className} ${isFlipped ? 'word--is-flip' : ''} ${isPlay ? 'word--is-play' : ''} ${
-        isCorrect ? 'word--is-correct' : ''
+        isCorrect && isPlay ? 'word--is-correct' : ''
       }`}
       onMouseLeave={handleMouseLive}
     >

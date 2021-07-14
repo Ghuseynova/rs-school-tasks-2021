@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../components/button';
 import WordCards from '../../components/word-cards';
-import { setAudios, setGameStart, setPlayedAudio } from '../../store/actions';
+import { fetchCategories, setAudios, setGameStart, setPlayedAudio } from '../../store/actions';
 import {
   getAudios,
   getCategories,
@@ -26,8 +26,6 @@ const Category = ({ match }: { match: { params: { category: string } } }): JSX.E
   const category = categories.find(item => item.category === match.params.category) || { words: [], category: '' };
   const audioArr = JSON.stringify(category.words.map(word => word.audioSrc));
 
-  console.log(circles);
-
   function handleStartBtn() {
     const randomAudio = getRandomAudio(audios);
     playAudio(randomAudio);
@@ -41,6 +39,7 @@ const Category = ({ match }: { match: { params: { category: string } } }): JSX.E
 
   useEffect(() => {
     dispatch(setAudios(JSON.parse(audioArr)));
+    dispatch(fetchCategories());
   }, [dispatch, audioArr]);
 
   return (
@@ -52,7 +51,7 @@ const Category = ({ match }: { match: { params: { category: string } } }): JSX.E
           {isPlay && (
             <div className="category__circles">
               {circles.length && circles
-                ? circles.map((circle, i) => {
+                ? circles.map(circle => {
                     if (circle === 'empty') {
                       return <span className="category__circle" key={Math.random() * 100} />;
                     }

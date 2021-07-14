@@ -1,15 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Footer from './components/footer';
 import Header from './components/header';
 import Message from './components/message';
 import Category from './pages/category';
 import Main from './pages/main';
-import { getAudios } from './store/selectors';
 
 function App(): JSX.Element {
-  const audios = useSelector(getAudios);
   return (
     <Router>
       <div className="App">

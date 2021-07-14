@@ -1,5 +1,3 @@
-import { Word } from './type';
-
 function getRandomAudio(audios: string[]): string {
   const randomAudio = audios[Math.floor(Math.random() * audios.length)];
   return randomAudio;
@@ -8,9 +6,7 @@ function getRandomAudio(audios: string[]): string {
 function playAudio(audioSrc: string): void {
   const audio = new Audio(`${process.env.PUBLIC_URL}/static/${audioSrc}`);
 
-  audio.play().catch(error => {
-    console.log(error);
-  });
+  audio.play();
 }
 
 export { getRandomAudio, playAudio };
