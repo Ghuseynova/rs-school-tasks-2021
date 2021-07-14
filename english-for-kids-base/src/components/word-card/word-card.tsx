@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { finishGame, setAudios, setCircle, setPlayedAudio } from '../../store/actions';
-import { getAudios, getIsPlay, getPlayedAudio } from '../../store/selectors';
+import { getAudios, getCircles, getIsPlay, getPlayedAudio } from '../../store/selectors';
 import { GAME_FINISHED } from '../../store/types';
 import { getRandomAudio, playAudio } from '../../utils';
 import FlipElement from '../flip-element';
@@ -24,7 +24,9 @@ const WordCard = ({ word, audioSrc, translation, image, className }: WordCardTyp
   const history = useHistory();
   const isPlay = useSelector(getIsPlay);
   const audios = useSelector(getAudios);
+  const circles = useSelector(getCircles);
   const playedAudio = useSelector(getPlayedAudio);
+  const minAudioLength = 1;
 
   function handleClick() {
     if (!isPlay) {
@@ -42,15 +44,19 @@ const WordCard = ({ word, audioSrc, translation, image, className }: WordCardTyp
         dispatch(setPlayedAudio(randomAudio));
         dispatch(setAudios(filteredAudios));
 
-        if (audios.length === 1) {
+        if (audios.length === minAudioLength) {
           console.log('empty');
 
-          history.push('/win');
+          if (circles.indexOf('empty') === -1) {
+            history.push('/win');
+          } else {
+            history.push('/lost');
+          }
 
           window.setTimeout(() => {
             history.push('/');
             dispatch(finishGame());
-          }, 1500);
+          }, 1000);
         }
       }, 500);
     } else {

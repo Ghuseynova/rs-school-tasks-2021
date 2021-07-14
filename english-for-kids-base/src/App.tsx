@@ -18,8 +18,8 @@ function App(): JSX.Element {
         <Route exact path="/" component={Main} />
         <Route path="/:category" component={Category} />
 
-        <Route path="/win" component={() => <Message text="You Win" />} />
-        <Route path="/lost" component={() => <Message text="You Lost" />} />
+        <Route path="/win" component={() => <Message text="You Win" className="message--is-win" />} />
+        <Route path="/lost" component={() => <Message text="You Lost" className="message--is-lost" />} />
 
         <Footer />
       </div>

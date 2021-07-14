@@ -1,11 +1,14 @@
 import React from 'react';
 
+import './message.scss';
+
 interface MessageType {
   text: string;
+  className: string;
 }
 
-const Message = ({ text }: MessageType): JSX.Element => {
-  return <div className="message">{text}</div>;
+const Message = ({ text, className }: MessageType): JSX.Element => {
+  return <div className={`message ${className}`}>{text}</div>;
 };
 
 export default Message;
