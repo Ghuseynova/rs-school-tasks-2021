@@ -3,7 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../components/button';
 import WordCards from '../../components/word-cards';
 import { setAudios, setGameStart, setPlayedAudio } from '../../store/actions';
-import { getAudios, getCategories, getIsGameStarted, getIsPlay, getPlayedAudio } from '../../store/selectors';
+import {
+  getAudios,
+  getCategories,
+  getCircles,
+  getIsGameStarted,
+  getIsPlay,
+  getPlayedAudio,
+} from '../../store/selectors';
 import { getRandomAudio, playAudio } from '../../utils';
 
 import './category.scss';
@@ -15,8 +22,11 @@ const Category = ({ match }: { match: { params: { category: string } } }): JSX.E
   const isGameStarted = useSelector(getIsGameStarted);
   const playedAudio = useSelector(getPlayedAudio);
   const audios = useSelector(getAudios);
+  const circles = useSelector(getCircles);
   const category = categories.find(item => item.category === match.params.category) || { words: [], category: '' };
   const audioArr = JSON.stringify(category.words.map(word => word.audioSrc));
+
+  console.log(circles);
 
   function handleStartBtn() {
     const randomAudio = getRandomAudio(audios);
@@ -41,8 +51,15 @@ const Category = ({ match }: { match: { params: { category: string } } }): JSX.E
 
           {isPlay && (
             <div className="category__circles">
-              <span className="category__circle category__circle--is-fill" />
-              <span className="category__circle" />
+              {circles.length && circles
+                ? circles.map((circle, i) => {
+                    if (circle === 'empty') {
+                      return <span className="category__circle" key={Math.random() * 100} />;
+                    }
+
+                    return <span className="category__circle category__circle--is-fill" key={Math.random() * 100} />;
+                  })
+                : ''}
             </div>
           )}
         </div>

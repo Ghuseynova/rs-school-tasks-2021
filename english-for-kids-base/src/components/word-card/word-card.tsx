@@ -35,6 +35,7 @@ const WordCard = ({ word, audioSrc, translation, image, className }: WordCardTyp
       playAudio('audio/right.mp3');
       dispatch(setCircle('fill'));
 
+      console.log(filteredAudios);
       window.setTimeout(() => {
         const randomAudio = getRandomAudio(filteredAudios);
         playAudio(randomAudio);
