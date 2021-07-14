@@ -35,7 +35,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/{**/*,*}.{js,ts,jsx,tsx,css,scss,sass}",
-    "lint": "tsc --noEmit && eslint src/**/{**/*,*}.{ts,tsx}"
+    "lint": "tsc --noEmit && eslint src/**/{**/*,*}.{ts,tsx}",
+    "serve": "json-server db.json"
   },
   "eslintConfig": {
     "extends": [
