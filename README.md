@@ -3,5 +3,7 @@ Private repository for @ghuseynova
 
 # Run 
 for development --- npm start
+
 for running db --- npm run serve
+
 for build --- npm run build
