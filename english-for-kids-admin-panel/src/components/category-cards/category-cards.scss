@@ -1,0 +1,29 @@
+.category-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1200px) {
+    justify-content: center;
+  }
+
+  &__item {
+    flex: 0 0 calc(94% / 4);
+    margin-bottom: 2.5%;
+
+    @media screen and (max-width: 1200px) {
+      flex: 0 0 calc(90% / 3 - 4rem);
+      margin: 2rem;
+    }
+
+    @media screen and (max-width: 1200px) {
+      flex: 0 0 calc(90% / 2 - 4rem);
+      margin: 2rem;
+    }
+
+    @media screen and (max-width: 767px) {
+      flex: 0 0 100%;
+      margin: 2rem;
+    }
+  }
+}

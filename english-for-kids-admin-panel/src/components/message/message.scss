@@ -1,0 +1,23 @@
+.message {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 6rem;
+  background-color: #fff;
+
+  font-size: 3.6rem;
+  font-weight: 500;
+  text-align: center;
+
+  &--is {
+    &-win {
+      color: rgb(230, 255, 8);
+    }
+
+    &-lost {
+      color: rgb(121, 38, 66);
+    }
+  }
+}
