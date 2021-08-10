@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Online Zoo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="./zoo.css">
+</head>
+
+<body class="page">
+  <div class="page__header">
+    <header class="header ">
+      <div class="header__inner container"><a class="logo header__logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo.svg" alt="logo"></a>
+        <h1 class="h1 h1--hidden">Online Zoo</h1>
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link " href="../landing/index.html">About</a></li>
+            <li class="nav__item"><a class="nav__link " href="../zoo-map/zoo-map.html">Map</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--is-active" href="../zoo/panda.html">Zoos</a></li>
+            <li class="nav__item"><a class="nav__link " href="../404/404.html">Contact us</a></li>
+            <li class="nav__item nav__item--design"><a class="nav__link" href="https://www.figma.com">Design</a></li>
+            <li class="nav__item nav__item--profile"><a class="nav__link" href="#">Profile</a></li>
+          </ul>
+        </nav>
+        <div class="user header__user"><svg class="user__icon">
+            <use href="../../assets/icons/sprite.svg#profile_icon"></use>
+          </svg></div>
+        <div class="burger header__burger"><span class="burger__item"></span><span class="burger__item"></span><span class="burger__item"></span></div>
+      </div>
+    </header>
+  </div>
+  <div class="page__row">
+    <div class="page__col page__col--left page__col--left--zoo container">
+      <aside class="sidebar page__aside">
+        <div class="sidebar__logo"><a class="logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo.svg" alt="logo"></a></div>
+        <div class="s-slider sidebar__slider">
+          <div class="s-slider__controls"><button class="s-slider__arrow s-slider__arrow--prev"><svg class="s-slider__icon">
+                <use href="../../assets/icons/sprite.svg#slider-arrow-up"></use>
+              </svg></button><button class="s-slider__arrow s-slider__arrow--next"><svg class="s-slider__icon">
+                <use href="../../assets/icons/sprite.svg#slider-arrow-down"></use>
+              </svg></button></div>
+          <div class="s-slider__list">
+            <div class="s-slider__item"><a class="s-slider__link" href="../zoo/panda.html"><svg class="s-slider__panda">
+                  <use href="../../assets/icons/sprite.svg#panda"></use>
+                </svg></a></div>
+            <div class="s-slider__item"><a class="s-slider__link" href="../zoo/alligator.html"><svg class="s-slider__alligator">
+                  <use href="../../assets/icons/sprite.svg#alligator"></use>
+                </svg></a></div>
+            <div class="s-slider__item"><a class="s-slider__link" href="../zoo/eagle.html"><svg class="s-slider__eagle">
+                  <use href="../../assets/icons/sprite.svg#eagle"></use>
+                </svg></a></div>
+            <div class="s-slider__item"><a class="s-slider__link s-slider__link--is-active" href="../zoo/gorilla.html"><svg class="s-slider__gorilla">
+                  <use href="../../assets/icons/sprite.svg#gorilla"></use>
+                </svg></a></div>
+            <div class="s-slider__item"><a class="s-slider__link s-slider__link--question" href="#">?</a></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="page__col page__col--right">
+      <main class="content content--zoo page__content">
+        <section class="main-cam">
+          <div class="container container--small">
+            <div class="main-cam__row">
+              <div class="main-cam__col main-cam__col--left"><iframe class="main-cam__iframe" src="https://www.youtube.com/embed/rgXWDk7rh4w"></iframe></div>
+              <div class="main-cam__col main-cam__col--right">
+                <div class="zoo main-cam__zoo"><img class="zoo__avatar" src="../../assets/images/gorilla-avatar.png" alt="gorilla avatar">
+                  <div class="zoo__info">
+                    <h4 class="zoo__title">Grace gorillas</h4>
+                    <div class="zoo__watching"><svg class="zoo__icon">
+                        <use href="../../assets/icons/sprite.svg#eye"></use>
+                      </svg><span class="text text--theme-dark zoo__text">235 watching now</span></div>
+                  </div>
+                </div>
+                <div class="main-cam-info main-cam__info">
+                  <h3 class="h3 h3--theme-dark main-cam-info__title">You can donate to this animals <br>for a wonderful lunch.</h3>
+                  <p class="text text--theme-dark main-cam-info__desc">Alligators will receive a piece of meator fresh fish. Animals will receive your gift in about 5-15 minutes</p><button class="button button--primary main-cam-info__btn"><span class="button__text">Feed the gorilla</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="other-cams">
+          <div class="container container--small">
+            <div class="other-cams__inner">
+              <h3 class="h3 h3--theme-dark other-cams__title">Other cams<svg class="other-cams__icon">
+                  <use href="../../assets/icons/sprite.svg#caret"></use>
+                </svg></h3>
+              <div class="cams other-cams__list">
+                <div class="cams__item"><iframe class="cams__iframe" src="https://www.youtube.com/embed/NdE7bANJIz0"></iframe>
+                  <div class="cams__info">
+                    <h4 class="cams__title">10 viewers</h4><a class="link link--theme-light link--with-arrow cams__link" href="#">Watch<svg class="link__icon">
+                        <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                      </svg></a>
+                  </div>
+                </div>
+                <div class="cams__item"><iframe class="cams__iframe" src="https://www.youtube.com/embed/672cUSe69J0"></iframe>
+                  <div class="cams__info">
+                    <h4 class="cams__title">10 viewers</h4><a class="link link--theme-light link--with-arrow cams__link" href="#">Watch<svg class="link__icon">
+                        <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                      </svg></a>
+                  </div>
+                </div>
+                <div class="cams__item"><iframe class="cams__iframe" src="https://www.youtube.com/embed/ARpl5ffDhiI"></iframe>
+                  <div class="cams__info">
+                    <h4 class="cams__title">10 viewers</h4><a class="link link--theme-light link--with-arrow cams__link" href="#">Watch<svg class="link__icon">
+                        <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                      </svg></a>
+                  </div>
+                </div>
+              </div>
+              <div class="controls other-cams__controls"><button class="controls__arrow controls__arrow--prev controls__arrow--theme-dark"><svg class="controls__icon">
+                    <use href="../../assets/icons/sprite.svg#arrow-left"></use>
+                  </svg></button><button class="controls__arrow controls__arrow--next controls__arrow--theme-dark"><svg class="controls__icon">
+                    <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                  </svg></button></div>
+            </div>
+          </div>
+        </section>
+        <section class="i-facts">
+          <div class="container container--small">
+            <div class="i-facts__inner">
+              <div class="i-facts-info i-facts__info">
+                <h3 class="h3 h3--theme-dark i-facts-info__title">Interesting facts</h3>
+                <p class="text text--theme-dark i-facts-info__desc">The Gorilla Rehabilitation and Conservation Education Center is located near the Tayna Nature Reserve in the Republic of Congo. Watch live and learn more about the gorillas.</p>
+              </div>
+              <div class="i-accerdion i-facts__accerdion">
+                <div class="i-accerdion-item i-accerdion-item--is-open i-accerdion__item">
+                  <div class="i-accerdion-item__head">
+                    <h4 class="i-accerdion-item__title">Species population</h4>
+                    <div class="i-accerdion-item__icon"></div>
+                  </div>
+                  <div class="i-accerdion-item__body">
+                    <p class="text text--theme-dark i-accerdion-item__desc">All species (and subspecies) of gorilla are listed as endangered or critically endangered on the IUCN Red List. <br/> Now, over 100,000 western lowland gorillas are thought to exist in the wild, with 4,000 in zoos, thanks to conservation; eastern lowland gorillas have a population of under 5,000 in the wild and 24 in zoos.</p>
+                  </div>
+                </div>
+                <div class="i-accerdion-item i-accerdion-item--is-open i-accerdion__item">
+                  <div class="i-accerdion-item__head">
+                    <h4 class="i-accerdion-item__title">Region of habitat</h4>
+                    <div class="i-accerdion-item__icon"></div>
+                  </div>
+                  <div class="i-accerdion-item__body">
+                    <p class="text text--theme-dark i-accerdion-item__desc">In nature, gorillas live in the equatorial forests of western and central Africa, mountain gorillas - on the slopes of the volcanic mountains of Virunga, covered with forest. They keep in small groups, consisting of a male leader, several females and their cubs (from 5 to 30 individuals in total).</p>
+                  </div>
+                </div>
+                <div class="i-accerdion-item i-accerdion-item--is-open i-accerdion__item">
+                  <div class="i-accerdion-item__head">
+                    <h4 class="i-accerdion-item__title">Nutrition</h4>
+                    <div class="i-accerdion-item__icon"></div>
+                  </div>
+                  <div class="i-accerdion-item__body">
+                    <p class="text text--theme-dark i-accerdion-item__desc">The gorilla's diet is based on plant foods. Among the plants used, one can distinguish wild celery, bedstraw, nettles, bamboo shoots, blue pygeum fruits. Fruits and nuts are an addition to the main diet, while animal foods.</p>
+                    <p class="text text--theme-dark i-accerdion-item__desc">Gorillas also use various mineral supplements in their diet: they eat, for example, some types of clay, thus compensating for the lack of salt in food. Gorillas hardly have to drink: juicy greens already have enough moisture. Reservoirs and water in general are avoided whenever possible, and rain is disliked.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pay-feed" id="pay-feed">
+          <div class="container container--large">
+            <div class="pay-feed__inner">
+              <h4 class="h4 h4--theme-dark h4--size-sm pay-feed__title">Pay & feed</h4>
+              <div class="pay-feed__items">
+                <div class="pay-feed__item pay-feed__item--1">
+                  <div class="pay-feed-item">
+                    <div class="pay-feed-item__illustration"><img class="pay-feed-item__illustration-file" src="../../assets/images/illus-1.svg" alt="" /></div>
+                    <div class="pay-feed-item__info">
+                      <h3 class="h3 h3--theme-dark pay-feed-item__title">Pay with VISA card</h3>
+                      <p class="text text--theme-dark pay-feed-item__desc">On the payment page, you need to enter the details of your &quot;Visa&quot; card and make a transfer. The operation will not take more than ~2 minutes.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pay-feed__item pay-feed__item--2">
+                  <div class="pay-feed-item">
+                    <div class="pay-feed-item__illustration"><img class="pay-feed-item__illustration-file" src="../../assets/images/illus-2.svg" alt="" /></div>
+                    <div class="pay-feed-item__info">
+                      <h3 class="h3 h3--theme-dark pay-feed-item__title">Payment goes to the zoo</h3>
+                      <p class="text text--theme-dark pay-feed-item__desc">Payment goes to the account of the zoo and volunteers with employees receive a notification about the donation.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pay-feed__item pay-feed__item--3">
+                  <div class="pay-feed-item">
+                    <div class="pay-feed-item__illustration"><img class="pay-feed-item__illustration-file" src="../../assets/images/illus-3.svg" alt="" /></div>
+                    <div class="pay-feed-item__info">
+                      <h3 class="h3 h3--theme-dark pay-feed-item__title">The selected animal receives a treat</h3>
+                      <p class="text text--theme-dark pay-feed-item__desc">The staff takes the food you need for your chosen animal and delivers it to the animal. With your help, the animal is happy!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pay-feed__arrows">
+                <div class="pay-feed__arrow pay-feed__arrow--1"></div>
+                <div class="pay-feed__arrow pay-feed__arrow--2"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="page__footer">
+    <footer class="footer">
+      <div class="footer__row footer__row--top container container--medium">
+        <div class="footer__col footer__col--left"><a class="logo logo--large footer__logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo-footer.svg" alt="logo"></a>
+          <div class="courses footer__courses">
+            <div class="courses__link courses__link--yem" title="Yem Digital"><img class="courses__icon" src="../../assets/images/yem_digital.svg" alt="logo"></div>
+            <div class="courses__link courses__link--rs" title="Rolling Scopes School"><img class="courses__icon" src="../../assets/images/rs_school_js.svg" alt="logo"></div>
+          </div>
+        </div>
+        <div class="footer__col footer__col--center">
+          <h4 class="h4 h4--theme-light footer__title">Navigation</h4>
+          <nav class="nav nav--footer footer__nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#watch-online">Watch online</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#how-it-works">How it works</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#famous-pets">Famous pets</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#pay-feed">Pay & feed</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#testimonials">Testimonials</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#zoogeography">Zoogeography</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__col footer__col--right">
+          <div class="donation footer__donation">
+            <h4 class="h4 h4--theme-light donation__title">Support of volunteers</h4>
+            <p class="text text--theme-light donation__desc">You can thank the volunteers for their work. For example, caring for animals and sincere love for them.</p><button class="button button--theme-light button--size-lg donation__btn"><span class="button__text">Donate for volunteers</span></button>
+          </div>
+          <div class="socials socials--footer footer__socials"><a class="socials__link socials__link--text" href="https://www.instagram.com/">Instagram</a><a class="socials__link socials__link--text" href="https://www.facebook.com/">Facebook</a><a class="socials__link socials__link--text" href="https://twitter.com/">Twitter</a></div>
+        </div>
+      </div>
+      <div class="footer__row footer__row--bottom container container--medium">
+        <div class="footer__wrap">
+          <div class="footer__copyright">Copyright ©RSSchool and ©Yem Digital 2020 - 2021</div>
+          <div class="footer__designed">Designed by Vladislav Chernov</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

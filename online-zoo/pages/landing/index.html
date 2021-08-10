@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Online Zoo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="./landing.css">
+</head>
+
+<body class="page">
+  <div class="page__header">
+    <header class="header ">
+      <div class="header__inner container"><a class="logo header__logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo.svg" alt="logo"></a>
+        <h1 class="h1 h1--hidden">Online Zoo</h1>
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link nav__link--is-active" href="../landing/index.html">About</a></li>
+            <li class="nav__item"><a class="nav__link " href="../zoo-map/zoo-map.html">Map</a></li>
+            <li class="nav__item"><a class="nav__link " href="../zoo/panda.html">Zoos</a></li>
+            <li class="nav__item"><a class="nav__link " href="../404/404.html">Contact us</a></li>
+            <li class="nav__item nav__item--design"><a class="nav__link" href="https://www.figma.com">Design</a></li>
+            <li class="nav__item nav__item--profile"><a class="nav__link" href="#">Profile</a></li>
+          </ul>
+        </nav>
+        <div class="user header__user"><svg class="user__icon">
+            <use href="../../assets/icons/sprite.svg#profile_icon"></use>
+          </svg></div>
+        <div class="burger header__burger"><span class="burger__item"></span><span class="burger__item"></span><span class="burger__item"></span></div>
+      </div>
+    </header>
+  </div>
+  <div class="page__row">
+    <div class="page__col page__col--left container">
+      <aside class="sidebar page__aside">
+        <div class="sidebar__logo"><a class="logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo.svg" alt="logo"></a></div>
+        <div class="sidebar__socials">
+          <div class="socials"><a class="socials__link socials__link--instagram" href="https://www.instagram.com/"><svg class="socials__icon">
+                <use href="../../assets/icons/sprite.svg#social-instagram"></use>
+              </svg></a><a class="socials__link socials__link--facebook" href="https://www.facebook.com/"><svg class="socials__icon">
+                <use href="../../assets/icons/sprite.svg#social-facebook"></use>
+              </svg></a><a class="socials__link socials__link--twitter" href="https://twitter.com/"><svg class="socials__icon">
+                <use href="../../assets/icons/sprite.svg#social-twitter"></use>
+              </svg></a></div>
+        </div>
+        <div class="sidebar__up"><button class="back-to-up"><svg class="back-to-up__icon">
+              <use href="../../assets/icons/sprite.svg#arrow-up"></use>
+            </svg></button></div>
+      </aside>
+    </div>
+    <div class="page__col page__col--right">
+      <main class="content page__content">
+        <section class="fav-animal" id="watch-online">
+          <div class="container container--small">
+            <div class="fav-animal__row">
+              <div class="fav-animal__col fav-animal__col--left">
+                <div class="fav-animal-info fav-animal__info">
+                  <h4 class="h4 h4--theme-dark fav-animal-info__subtitle">Wild park</h4>
+                  <h2 class="h2 h2--theme-dark fav-animal-info__title">Watch your favorite
+                    animal
+                    onl<span class="h2--red">i</span>ne</h2>
+                  <div class="fav-animal-info__btns"><a class="button button--primary fav-animal-info__btn" href="../zoo-map/zoo-map.html"><span class="button__text">Choose zoo</span></a><a class="button button--secondary fav-animal-info__btn" href="../zoo/panda.html"><span class="button__text">Watch online</span></a></div>
+                </div>
+              </div>
+              <div class="fav-animal__col fav-animal__col--right">
+                <div class="fav-animal__img"><img class="fav-animal__img-file" src="../../assets/images/panda-1.png" alt="favourite animal"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="zoo-online" id="how-it-works">
+          <div class="container container--small">
+            <div class="zoo-online__row">
+              <div class="zoo-online__col zoo-online__col--left">
+                <div class="zoo-online__img"><img class="zoo-online__img-file" src="../../assets/images/l-second-img.png" alt="animal for online watch"></div>
+              </div>
+              <div class="zoo-online__col zoo-online__col--right">
+                <div class="zoo-online-info zoo-online__info">
+                  <h4 class="h4 h4--theme-dark zoo-online-info__subtitle">How Zoo online works</h4>
+                  <h3 class="h3 h3--theme-dark zoo-online-info__title">Our service will give you an unforgettable experience of observing and interacting with animals remotely</h3>
+                  <p class="text text--theme-dark zoo-online-info__desc">Zoo Online is a web application with which you can watch live cages of different animals in nature reserves and zoos online and, if you wish, donate to the needs of the animal you like</p><a class="button button--primary zoo-online-info__btn" href="../zoo/panda.html"><span class="button__text">Try now</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="famous-pets" id="famous-pets">
+          <div class="container container--small">
+            <div class="famous-pets__row">
+              <div class="famous-pets__col famous-pets__col--left">
+                <div class="famous-pets-info famous-pets__info">
+                  <h4 class="h4 h4--theme-dark h4--size-sm famous-pets-info__subtitle">Famous pets</h4>
+                  <h3 class="h3 h3--theme-dark famous-pets-info__title">You can choose <br>any animal <br>you like</h3>
+                </div>
+                <div class="controls controls--dark famous-pets__controls"><button class="controls__arrow controls__arrow--prev controls__arrow--theme-dark js-fslider-prev"><svg class="controls__icon">
+                      <use href="../../assets/icons/sprite.svg#arrow-left"></use>
+                    </svg></button><button class="controls__arrow controls__arrow--next controls__arrow--theme-dark js-fslider-next"><svg class="controls__icon">
+                      <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                    </svg></button></div>
+              </div>
+              <div class="famous-pets__col famous-pets__col--right">
+                <div class="f-slider famous-pets__slider">
+                  <div class="f-slider__row">
+                    <div class="f-slider__col">
+                      <div class="pet-card f-slider__pet-card">
+                        <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/little-panda.png" alt="little panda" /></div>
+                        <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                        <h5 class="h5 h5--theme-light pet-card__title">Little panda</h5>
+                        <div class="pet-card__detail">
+                          <p class="text text--theme-light pet-card__desc">North America, islands near Los Angeles</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                              <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                      <div class="pet-card f-slider__pet-card">
+                        <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/panda.png" alt="panda" /></div>
+                        <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                        <h5 class="h5 h5--theme-light pet-card__title">panda</h5>
+                        <div class="pet-card__detail">
+                          <p class="text text--theme-light pet-card__desc">Western central China</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                              <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="f-slider__col">
+                      <div class="pet-card f-slider__pet-card">
+                        <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/penguin.png" alt="penguin" /></div>
+                        <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                        <h5 class="h5 h5--theme-light pet-card__title">penguin</h5>
+                        <div class="pet-card__detail">
+                          <p class="text text--theme-light pet-card__desc">In the sea of the Southern Hemisphere, Antarctic waters</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                              <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                      <div class="pet-card f-slider__pet-card">
+                        <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/eagle.png" alt="eagle" /></div>
+                        <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                        <h5 class="h5 h5--theme-light pet-card__title">eagle</h5>
+                        <div class="pet-card__detail">
+                          <p class="text text--theme-light pet-card__desc">North America, islands near Los Angeles</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                              <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="f-slider__col">
+                      <div class="pet-card f-slider__pet-card">
+                        <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/squirrel.png" alt="squirrel" /></div>
+                        <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                        <h5 class="h5 h5--theme-light pet-card__title">squirrel</h5>
+                        <div class="pet-card__detail">
+                          <p class="text text--theme-light pet-card__desc">Russia, forests in the Orenburg region,</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                              <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                      <div class="pet-card f-slider__pet-card">
+                        <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/gorilla.png" alt="gorilla" /></div>
+                        <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                        <h5 class="h5 h5--theme-light pet-card__title">gorilla</h5>
+                        <div class="pet-card__detail">
+                          <p class="text text--theme-light pet-card__desc">Equatorial forests of western and central Africa</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                              <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="f-slider__col">
+                      <div class="pet-card f-slider__pet-card">
+                        <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/tiger.png" alt="tiger" /></div>
+                        <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                        <h5 class="h5 h5--theme-light pet-card__title">tiger</h5>
+                        <div class="pet-card__detail">
+                          <p class="text text--theme-light pet-card__desc">Russia, Amur region</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                              <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                      <div class="pet-card f-slider__pet-card">
+                        <div class="pet-card__img"><img class="pet-card__img-file" src="../../assets/images/crocodile.png" alt="crocodile" /></div>
+                        <div class="pet-card__more"><span class="pet-card__plus">+</span></div>
+                        <h5 class="h5 h5--theme-light pet-card__title">crocodile</h5>
+                        <div class="pet-card__detail">
+                          <p class="text text--theme-light pet-card__desc">American state of Florida</p><a class="link link--theme-light link--with-arrow pet-card__link" href="#">Follow<svg class="link__icon">
+                              <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                            </svg></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pay-feed" id="pay-feed">
+          <div class="container container--large">
+            <div class="pay-feed__inner">
+              <h4 class="h4 h4--theme-dark h4--size-sm pay-feed__title">Pay & feed</h4>
+              <div class="pay-feed__items">
+                <div class="pay-feed__item pay-feed__item--1">
+                  <div class="pay-feed-item">
+                    <div class="pay-feed-item__illustration"><img class="pay-feed-item__illustration-file" src="../../assets/images/illus-1.svg" alt="" /></div>
+                    <div class="pay-feed-item__info">
+                      <h3 class="h3 h3--theme-dark pay-feed-item__title">Pay with VISA card</h3>
+                      <p class="text text--theme-dark pay-feed-item__desc">On the payment page, you need to enter the details of your &quot;Visa&quot; card and make a transfer. The operation will not take more than ~2 minutes.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pay-feed__item pay-feed__item--2">
+                  <div class="pay-feed-item">
+                    <div class="pay-feed-item__illustration"><img class="pay-feed-item__illustration-file" src="../../assets/images/illus-2.svg" alt="" /></div>
+                    <div class="pay-feed-item__info">
+                      <h3 class="h3 h3--theme-dark pay-feed-item__title">Payment goes to the zoo</h3>
+                      <p class="text text--theme-dark pay-feed-item__desc">Payment goes to the account of the zoo and volunteers with employees receive a notification about the donation.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pay-feed__item pay-feed__item--3">
+                  <div class="pay-feed-item">
+                    <div class="pay-feed-item__illustration"><img class="pay-feed-item__illustration-file" src="../../assets/images/illus-3.svg" alt="" /></div>
+                    <div class="pay-feed-item__info">
+                      <h3 class="h3 h3--theme-dark pay-feed-item__title">The selected animal receives a treat</h3>
+                      <p class="text text--theme-dark pay-feed-item__desc">The staff takes the food you need for your chosen animal and delivers it to the animal. With your help, the animal is happy!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pay-feed__arrows">
+                <div class="pay-feed__arrow pay-feed__arrow--1"></div>
+                <div class="pay-feed__arrow pay-feed__arrow--2"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="testimonials" id="testimonials">
+          <div class="container container--large">
+            <div class="testimonials__row">
+              <div class="testimonials__col testimonials__col--left">
+                <div class="testimonials-info testimonials__info">
+                  <h4 class="h4 h4--theme-light h4--size-sm testimonials-info__subtitle">Testimonials</h4>
+                  <h3 class="h3 h3--theme-light testimonials-info__title">You can make us smile</h3>
+                  <p class="text text--theme-light testimonials-info__desc">We want to make animal observation and interaction accessible. You can leave your wishes on how to make the service more convenient, and most importantly, more interesting for you.</p><button class="button button--theme-light testimonials-info__btn js-popup"><span class="button__text">Leave feedback</span></button>
+                </div>
+              </div>
+              <div class="testimonials__col testimonials__col--right">
+                <div class="t-slider testimonials__slider"><a class="link link--theme-light link--with-arrow t-slider__link" href="#">See more reviews<svg class="link__icon">
+                      <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                    </svg></a>
+                  <div class="t-slider__row">
+                    <div class="t-slider__col">
+                      <div class="testimonial">
+                        <div class="testimonial__top">
+                          <div class="testimonial__avatar"><img class="testimonial__avatar-file" src="../../assets/images/avatar-1.png" alt="avatar"></div>
+                          <h4 class="h4 h4--theme-light h4--small testimonial__title">Alena Andreeva</h4>
+                        </div>
+                        <p class="text text--theme-dark testimonial__desc">“Had a great time with my kids and made the cute pandas happy with delicious treats. I think I will use your service more than once, thanks!”</p>
+                      </div>
+                    </div>
+                    <div class="t-slider__col">
+                      <div class="testimonial">
+                        <div class="testimonial__top">
+                          <div class="testimonial__avatar"><img class="testimonial__avatar-file" src="../../assets/images/avatar-2.png" alt="avatar"></div>
+                          <h4 class="h4 h4--theme-light h4--small testimonial__title">Joe Brown</h4>
+                        </div>
+                        <p class="text text--theme-dark testimonial__desc">“Thank you for the cool service, I turn on broadcasts with animals while working in the background, it relaxes and cheers up”</p>
+                      </div>
+                    </div>
+                    <div class="t-slider__col">
+                      <div class="testimonial">
+                        <div class="testimonial__top">
+                          <div class="testimonial__avatar"><img class="testimonial__avatar-file" src="../../assets/images/avatar-2.png" alt="avatar"></div>
+                          <h4 class="h4 h4--theme-light h4--small testimonial__title">Joe Brown</h4>
+                        </div>
+                        <p class="text text--theme-dark testimonial__desc">“Thank you for the cool service, I turn on broadcasts with animals while working in the background, it relaxes and cheers up”</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="controls t-slider__controls"><button class="controls__arrow controls__arrow--prev controls__arrow--simple js-tslider-prev"><svg class="controls__icon">
+                        <use href="../../assets/icons/sprite.svg#arrow-left"></use>
+                      </svg></button><button class="controls__arrow controls__arrow--next controls__arrow--simple js-tslider-next"><svg class="controls__icon">
+                        <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                      </svg></button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="zoogeography" id="zoogeography">
+          <div class="container container--large">
+            <div class="zoogeography__row">
+              <div class="zoogeography__col zoogeography__col--left">
+                <h4 class="h4 h4--theme-dark h4--size-sm zoogeography__subtitle">Testimonials</h4>
+                <div class="pet zoogeography__pet">
+                  <div class="pet__img"><img class="pet__img-file" src="../../assets/images/m-eagle.png" alt="eagle"></div>
+                  <div class="pet__content">
+                    <h3 class="h3 h3--theme-dark pet__title">Eagle</h3>
+                    <p class="text text--theme-dark pet__desc">The broadcast is from an island near Los Angeles. Watch their real life.</p><a class="link link--theme-dark link--with-arrow pet__link">Watch now<svg class="link__icon">
+                        <use href="../../assets/icons/sprite.svg#arrow-right"></use>
+                      </svg></a>
+                  </div>
+                </div>
+              </div>
+              <div class="zoogeography__col zoogeography__col--right">
+                <div class="map map--small zoogeography__map">
+                  <div class="markers map__markers">
+                    <div class="markers__item markers__item--active markers__item--small-eagle js-zoo-marker" data-animal="eagle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 89" fill="none">
+                        <path class="markers__icon-path" d="M69 34.6111C69 53.7263 34.5 89 34.5 89C34.5 89 0 53.7263 0 34.6111C0 15.4959 15.4462 0 34.5 0C53.5538 0 69 15.4959 69 34.6111Z" fill="#FCFCFC" />
+                        <g clip-path="url(#clip0)">
+                          <path d="M53.7021 52.5642L50.9304 27.2029C50.8868 18.1535 43.766 10.8057 35.0195 10.8057C26.273 10.8057 19.1522 18.154 19.1091 27.2029L16.337 52.5642C16.2906 52.9885 16.4282 53.4124 16.7132 53.721C16.9982 54.0301 17.4019 54.1948 17.8115 54.1631C17.8403 54.1612 20.675 53.9663 23.2279 53.9663C25.0274 53.9663 25.9218 54.0623 26.3555 54.1434C28.5271 54.5476 32.7659 57.3969 34.216 58.461C34.4569 58.6372 34.7382 58.726 35.0195 58.726C35.3013 58.726 35.584 58.6367 35.8249 58.4591C37.2295 57.4247 41.3414 54.646 43.4699 54.2197C43.9597 54.1218 44.9959 54.0052 47.1531 54.0052C49.6347 54.0052 52.2122 54.1621 52.2377 54.1641C52.645 54.1837 53.0463 54.0253 53.329 53.7172C53.6117 53.409 53.7484 52.9866 53.7021 52.5642ZM47.1531 51.1252C45.2174 51.1252 43.8406 51.2125 42.9421 51.3925C40.4489 51.8917 36.6915 54.3676 35.0177 55.5373C33.304 54.3441 29.4066 51.7857 26.8467 51.3085C26.0427 51.1588 24.8587 51.0863 23.227 51.0863C21.8201 51.0863 20.3608 51.141 19.2838 51.1943L21.8799 27.4482C21.8859 27.3945 21.8887 27.3402 21.8887 27.2865C21.8887 19.7869 27.7787 13.6861 35.0191 13.6861C42.259 13.6861 48.1494 19.7869 48.1494 27.2865C48.1494 27.3407 48.1527 27.3949 48.1582 27.4482L50.7552 51.2073C49.7709 51.166 48.4609 51.1252 47.1531 51.1252Z" fill="#0F0049" />
+                          <path d="M26.678 29.0648C28.0536 29.0648 29.1688 27.9097 29.1688 26.4848C29.1688 25.0599 28.0536 23.9048 26.678 23.9048C25.3023 23.9048 24.1871 25.0599 24.1871 26.4848C24.1871 27.9097 25.3023 29.0648 26.678 29.0648Z" fill="#0F0049" />
+                          <path d="M43.361 29.0648C44.7366 29.0648 45.8518 27.9097 45.8518 26.4848C45.8518 25.0599 44.7366 23.9048 43.361 23.9048C41.9853 23.9048 40.8701 25.0599 40.8701 26.4848C40.8701 27.9097 41.9853 29.0648 43.361 29.0648Z" fill="#0F0049" />
+                          <path d="M35.0195 46.8442L41.2236 30.2031H28.8143L35.0195 46.8442ZM35.0195 38.8503L32.8692 33.0831H37.1697L35.0195 38.8503Z" fill="#0F0049" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0">
+                            <rect width="38" height="48" fill="white" transform="translate(16 10.7661)" />
+                          </clipPath>
+                        </defs>
+                      </svg></div>
+                    <div class="markers__item markers__item--small-gorilla js-zoo-marker" data-animal="gorilla"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 89" fill="none">
+                        <path class="markers__icon-path" d="M69 34.6111C69 53.7263 34.5 89 34.5 89C34.5 89 0 53.7263 0 34.6111C0 15.4959 15.4462 0 34.5 0C53.5538 0 69 15.4959 69 34.6111Z" fill="#FCFCFC" />
+                        <path d="M54.8514 39.843C54.6874 36.9424 53.9274 31.1901 52.9826 28.3782C50.9451 22.3099 44.8685 12.04 35.0151 12.04C25.1633 12.04 19.0855 22.3099 17.0477 28.3782C16.1022 31.1927 15.3425 36.9438 15.1792 39.8433C14.9311 44.2493 16.5614 48.5485 19.7703 51.9491C23.3751 55.7693 28.4363 57.9603 33.6563 57.9603H36.3748C41.594 57.9603 46.6551 55.7693 50.26 51.9491C53.4688 48.5481 55.0996 44.2493 54.8514 39.843ZM48.6448 50.42C45.5044 53.7476 40.9177 55.7341 36.3744 55.7341H33.6559C29.1125 55.7341 24.5251 53.7476 21.3851 50.4196C18.6003 47.4686 17.1844 43.757 17.3977 39.9683C17.5581 37.1316 18.3037 31.6193 19.154 29.0871C20.8759 23.9607 26.4066 14.2655 35.0155 14.2655C43.6259 14.2655 49.1555 23.9607 50.8766 29.0875C51.7266 31.6171 52.4729 37.1301 52.6333 39.9683C52.8463 43.757 51.43 47.4689 48.6448 50.42Z" fill="#080029" />
+                        <path d="M40.9614 25.6831C38.7714 25.6831 36.6958 26.421 35.0151 27.7802C33.3343 26.421 31.2588 25.6831 29.0684 25.6831C23.834 25.6831 19.5754 29.9485 19.5754 35.1914C19.5754 38.677 21.4388 41.8076 24.4143 43.4751C24.1062 44.1744 23.9469 44.907 23.9469 45.6415C23.9469 49.8223 28.8084 53.0969 35.0151 53.0969C41.2217 53.0969 46.0829 49.8223 46.0829 45.6415C46.0829 44.907 45.9232 44.174 45.6154 43.4751C48.591 41.8076 50.454 38.6766 50.454 35.1914C50.4543 29.9485 46.1958 25.6831 40.9614 25.6831ZM43.6473 41.9538L42.3195 42.4831L43.1591 43.6417C43.6247 44.2838 43.861 44.9567 43.861 45.6415C43.861 48.4765 39.8099 50.8711 35.0154 50.8711C30.2206 50.8711 26.1695 48.4765 26.1695 45.6415C26.1695 44.9571 26.4058 44.2845 26.8717 43.6417L27.7114 42.4831L26.384 41.9538C23.5984 40.8431 21.7988 38.1884 21.7988 35.1914C21.7988 31.176 25.0603 27.9089 29.0695 27.9089C31.0199 27.9089 32.8517 28.6735 34.2277 30.0613L35.0162 30.857L35.8047 30.0613C37.1806 28.6735 39.0121 27.9089 40.9625 27.9089C44.9714 27.9089 48.2332 31.176 48.2332 35.1914C48.2321 38.1884 46.4325 40.8431 43.6473 41.9538Z" fill="#080029" />
+                        <path d="M28.3482 36.2892C29.4476 36.2892 30.3389 35.3965 30.3389 34.2952C30.3389 33.194 29.4476 32.3013 28.3482 32.3013C27.2487 32.3013 26.3574 33.194 26.3574 34.2952C26.3574 35.3965 27.2487 36.2892 28.3482 36.2892Z" fill="#080029" />
+                        <path d="M41.6821 36.2892C42.7816 36.2892 43.6729 35.3965 43.6729 34.2952C43.6729 33.194 42.7816 32.3013 41.6821 32.3013C40.5827 32.3013 39.6914 33.194 39.6914 34.2952C39.6914 35.3965 40.5827 36.2892 41.6821 36.2892Z" fill="#080029" />
+                        <path d="M34.1858 40.2876H31.9636V43.2884H34.1858V40.2876Z" fill="#080029" />
+                        <path d="M38.0667 40.2876H35.8445V43.2884H38.0667V40.2876Z" fill="#080029" />
+                      </svg></div>
+                    <div class="markers__item markers__item--small-panda js-zoo-marker" data-animal="panda"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 89" fill="none">
+                        <path class="markers__icon-path" d="M69 34.6111C69 53.7263 34.5 89 34.5 89C34.5 89 0 53.7263 0 34.6111C0 15.4959 15.4462 0 34.5 0C53.5538 0 69 15.4959 69 34.6111Z" fill="#FCFCFC" />
+                        <path d="M55.0253 19.3761C53.9181 18.239 52.4518 17.6128 50.8963 17.6128C49.311 17.6128 47.8251 18.2598 46.7117 19.4345L45.4533 20.7623C42.2273 18.5543 38.6325 17.3926 35.0002 17.3926C31.3675 17.3926 27.7727 18.5543 24.547 20.7623L23.2883 19.4345C22.1749 18.2598 20.6886 17.6132 19.1037 17.6132C17.5486 17.6132 16.0823 18.2394 14.9751 19.3769C12.6684 21.7467 12.6437 25.6288 14.9197 28.0308L16.7767 29.9901C15.6159 32.5122 15.0056 35.1197 15.0056 37.5774C15.0056 46.2863 22.6672 51.6964 35.0005 51.6964C47.3336 51.6964 54.9951 46.2863 54.9951 37.5774C54.9951 35.1201 54.3845 32.513 53.2233 29.9901L55.081 28.0308C57.3567 25.6288 57.3319 21.7467 55.0253 19.3761ZM53.5248 26.4331L51.117 28.9735C50.7824 29.3268 50.7063 29.8646 50.9287 30.3032C52.1594 32.7291 52.8097 35.2444 52.8097 37.577C52.8097 46.3102 43.6095 49.4218 34.9998 49.4218C26.3898 49.4218 17.1895 46.3102 17.1895 37.577C17.1895 35.244 17.8398 32.7283 19.0702 30.3032C19.2926 29.8646 19.2162 29.3264 18.8819 28.9735L16.4744 26.4331C15.0442 24.9238 15.0599 22.4843 16.509 20.9954C17.2048 20.2809 18.126 19.8871 19.1033 19.8871C20.0995 19.8871 21.0334 20.2938 21.7332 21.0318L23.635 23.0381C24.0133 23.4372 24.6144 23.4891 25.0513 23.1616C28.096 20.8752 31.5361 19.6668 35.0002 19.6668C38.4636 19.6668 41.9036 20.8752 44.9487 23.1616C45.3852 23.4895 45.9871 23.4372 46.3654 23.0381L48.2671 21.0318C48.9666 20.2938 49.9005 19.8871 50.8967 19.8871C51.8743 19.8871 52.7955 20.2809 53.491 20.995C54.9401 22.4847 54.9554 24.9238 53.5248 26.4331Z" fill="#080029" />
+                        <path d="M21.1347 32.287C19.0371 34.4707 18.6337 37.5906 20.2336 39.2557C21.8331 40.9216 24.83 40.5013 26.9277 38.3176C29.0249 36.1343 29.4283 33.0144 27.8288 31.3489C26.2289 29.6837 23.232 30.1037 21.1347 32.287ZM23.7126 37.4344C22.6316 37.4344 21.7555 36.5224 21.7555 35.3971C21.7555 34.2717 22.6316 33.3597 23.7126 33.3597C24.7936 33.3597 25.6697 34.2717 25.6697 35.3971C25.6697 36.5224 24.7936 37.4344 23.7126 37.4344Z" fill="#080029" />
+                        <path d="M42.1711 31.3489C40.5709 33.0144 40.975 36.1343 43.0723 38.3176C45.1695 40.5013 48.1668 40.9213 49.7664 39.2557C51.3666 37.5906 50.9625 34.4707 48.8652 32.287C46.768 30.1037 43.7703 29.6837 42.1711 31.3489ZM46.2873 37.4344C45.2063 37.4344 44.3303 36.5225 44.3303 35.3971C44.3303 34.2717 45.2063 33.3597 46.2873 33.3597C47.3684 33.3597 48.2444 34.2717 48.2444 35.3971C48.2444 36.5225 47.368 37.4344 46.2873 37.4344Z" fill="#080029" />
+                        <path d="M37.0469 39.9568C37.5417 39.8484 37.9131 39.3924 37.9131 38.8447C37.9131 38.2166 37.4241 37.7075 36.8208 37.7075H33.1797C32.5764 37.7075 32.0874 38.2166 32.0874 38.8447C32.0874 39.392 32.4588 39.848 32.9532 39.9568L31.1811 41.8016C30.7544 42.2454 30.7544 42.9656 31.1811 43.4095C31.3945 43.6316 31.6741 43.7427 31.9534 43.7427C32.2327 43.7427 32.5123 43.6316 32.7257 43.4095L34.9999 41.042L37.2741 43.4095C37.4875 43.6316 37.7671 43.7427 38.0464 43.7427C38.3256 43.7427 38.6053 43.6316 38.8186 43.4095C39.2454 42.9656 39.2454 42.2454 38.8186 41.8016L37.0469 39.9568Z" fill="#080029" />
+                      </svg></div>
+                    <div class="markers__item markers__item--small-alligator js-zoo-marker" data-animal="alligator"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 89" fill="none">
+                        <path class="markers__icon-path" d="M69 34.6111C69 53.7263 34.5 89 34.5 89C34.5 89 0 53.7263 0 34.6111C0 15.4959 15.4462 0 34.5 0C53.5538 0 69 15.4959 69 34.6111Z" fill="#FCFCFC" />
+                        <path d="M54.9228 27.3106C54.9228 23.5174 52.4879 19.4251 48.2418 16.0827C44.2111 12.9098 39.2609 11.0156 34.9997 11.0156C26.4847 11.0156 15.0767 19.0721 15.0767 27.311C15.0767 29.9086 18.76 34.8997 19.5427 35.9303C21.3418 38.5138 23.7633 43.0545 23.2752 44.6446C21.8977 49.1275 21.8936 52.5491 23.2626 54.8136C24.3805 56.6632 25.9933 57.019 26.1735 57.0534C26.2494 57.0679 26.3256 57.0752 26.4027 57.0752H43.5964C43.667 57.0752 43.7376 57.0692 43.8069 57.057C43.9875 57.0255 45.6044 56.6952 46.7308 54.8649C48.1168 52.6133 48.1144 49.1748 46.7243 44.645C46.2317 43.0399 48.6061 38.5906 50.4568 35.9295C51.2403 34.8977 54.9228 29.9078 54.9228 27.3106ZM48.4722 34.5253C47.6141 35.7548 43.385 42.0571 44.3965 45.3537C45.8389 50.0533 45.3573 52.3906 44.6992 53.5238C44.2403 54.3138 43.6507 54.5766 43.4381 54.649H26.565C26.3727 54.5787 25.8043 54.3167 25.3478 53.5622C24.6625 52.4278 24.15 50.0832 25.6026 45.3541C26.6154 42.0575 22.3854 35.7548 21.5273 34.5253C21.5179 34.5116 21.5078 34.4982 21.498 34.4849C19.8422 32.3081 17.5107 28.6432 17.5107 27.3106C17.5107 20.6141 27.775 13.441 34.9993 13.441C43.0084 13.441 52.4879 20.959 52.4879 27.3106C52.4879 28.6411 50.1565 32.3065 48.5006 34.4849C48.4913 34.4978 48.4812 34.5116 48.4722 34.5253Z" fill="#080029" />
+                        <path d="M33.3946 48.8101H30.9601V52.091H33.3946V48.8101Z" fill="#080029" />
+                        <path d="M39.0395 48.8101H36.605V52.091H39.0395V48.8101Z" fill="#080029" />
+                        <path d="M37.8221 36.4653H32.1774V38.8911H37.8221V36.4653Z" fill="#080029" />
+                        <path d="M37.8221 41.3867H32.1774V43.8125H37.8221V41.3867Z" fill="#080029" />
+                        <path d="M22.5059 28.108L27.3247 32.9097L29.0461 31.1944L24.2273 26.3927L22.5059 28.108Z" fill="#080029" />
+                        <path d="M40.9556 31.1936L42.6768 32.9092L47.4963 28.1082L45.7751 26.3927L40.9556 31.1936Z" fill="#080029" />
+                        <path d="M40.5281 22.9272H29.4714V25.3531H40.5281V22.9272Z" fill="#080029" />
+                        <path d="M40.5281 18.0757H29.4714V20.5015H40.5281V18.0757Z" fill="#080029" />
+                      </svg></div>
+                  </div>
+                </div>
+                <div class="s-slider s-slider--zoogeography zoogeography__slider">
+                  <div class="s-slider__controls"><button class="s-slider__arrow s-slider__arrow--prev"><svg class="s-slider__icon">
+                        <use href="../../assets/icons/sprite.svg#slider-arrow-up"></use>
+                      </svg></button><button class="s-slider__arrow s-slider__arrow--next"><svg class="s-slider__icon">
+                        <use href="../../assets/icons/sprite.svg#slider-arrow-down"></use>
+                      </svg></button></div>
+                  <div class="s-slider__list">
+                    <div class="s-slider__item"><a class="s-slider__link" href="#"><svg class="s-slider__panda">
+                          <use href="../../assets/icons/sprite.svg#panda"></use>
+                        </svg></a></div>
+                    <div class="s-slider__item"><a class="s-slider__link" href="#"><svg class="s-slider__alligator">
+                          <use href="../../assets/icons/sprite.svg#alligator"></use>
+                        </svg></a></div>
+                    <div class="s-slider__item"><a class="s-slider__link s-slider__link--is-active" href="#l"><svg class="s-slider__eagle">
+                          <use href="../../assets/icons/sprite.svg#eagle"></use>
+                        </svg></a></div>
+                    <div class="s-slider__item"><a class="s-slider__link" href="#"><svg class="s-slider__gorilla">
+                          <use href="../../assets/icons/sprite.svg#gorilla"></use>
+                        </svg></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="page__footer">
+    <footer class="footer">
+      <div class="footer__row footer__row--top container container--medium">
+        <div class="footer__col footer__col--left"><a class="logo logo--large footer__logo" href="../landing/index.html"><img class="logo__icon" src="../../assets/images/logo-footer.svg" alt="logo"></a>
+          <div class="courses footer__courses">
+            <div class="courses__link courses__link--yem" title="Yem Digital"><img class="courses__icon" src="../../assets/images/yem_digital.svg" alt="logo"></div>
+            <div class="courses__link courses__link--rs" title="Rolling Scopes School"><img class="courses__icon" src="../../assets/images/rs_school_js.svg" alt="logo"></div>
+          </div>
+        </div>
+        <div class="footer__col footer__col--center">
+          <h4 class="h4 h4--theme-light footer__title">Navigation</h4>
+          <nav class="nav nav--footer footer__nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#watch-online">Watch online</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#how-it-works">How it works</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#famous-pets">Famous pets</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#pay-feed">Pay & feed</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#testimonials">Testimonials</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--light" href="../landing/index.html#zoogeography">Zoogeography</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__col footer__col--right">
+          <div class="donation footer__donation">
+            <h4 class="h4 h4--theme-light donation__title">Support of volunteers</h4>
+            <p class="text text--theme-light donation__desc">You can thank the volunteers for their work. For example, caring for animals and sincere love for them.</p><button class="button button--theme-light button--size-lg donation__btn"><span class="button__text">Donate for volunteers</span></button>
+          </div>
+          <div class="socials socials--footer footer__socials"><a class="socials__link socials__link--text" href="https://www.instagram.com/">Instagram</a><a class="socials__link socials__link--text" href="https://www.facebook.com/">Facebook</a><a class="socials__link socials__link--text" href="https://twitter.com/">Twitter</a></div>
+        </div>
+      </div>
+      <div class="footer__row footer__row--bottom container container--medium">
+        <div class="footer__wrap">
+          <div class="footer__copyright">Copyright ©RSSchool and ©Yem Digital 2020 - 2021</div>
+          <div class="footer__designed">Designed by Vladislav Chernov</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="popups">
+    <div class="popup popup--feedback">
+      <div class="popup__overlay"></div>
+      <div class="popup__container"><button class="popup__close"></button>
+        <form class="f-form popup__form">
+          <h2 class="f-form__title">Your feedback</h2>
+          <div class="f-form__group"><label class="f-form__label" for="name">Your name:</label><input class="f-form__input" type="text" name="name" id="name" placeholder="Ellie Coward"></div>
+          <div class="f-form__group"><label class="f-form__label" for="email">Your e-mail:</label><input class="f-form__input" type="email" name="email" id="email" placeholder="example@gmail.com"></div>
+          <div class="f-form__group"><label class="f-form__label" for="message">Your review:</label><textarea class="f-form__textarea" id="message"></textarea></div><button class="button button--theme-dark button--size-lg button--is-disable f-form__btn"><span class="button__text">Send for moderation</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="landing.js"></script>
+</body>
+
+</html>
