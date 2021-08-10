@@ -1,0 +1,50 @@
+.garage-item {
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    margin-right: 0.6rem;
+  }
+
+  &__name {
+    margin-left: 1.2rem;
+    color: rgb(240, 17, 117);
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  &__bottom {
+    position: relative;
+    margin-top: 2rem;
+    padding: 5rem 0 0;
+    border-bottom: 2px dashed rgb(119, 198, 186);
+  }
+
+  &__engine {
+    position: absolute;
+    top: 0;
+
+    &--stop {
+      left: 4rem;
+    }
+  }
+
+  &__car {
+    position: absolute;
+    bottom: -2rem;
+    left: 8.4rem;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  &__flag {
+    position: absolute;
+    right: 6rem;
+    bottom: 0;
+    width: 3rem;
+    height: 3rem;
+    fill: rgb(125, 37, 2);
+  }
+}

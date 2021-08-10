@@ -1,0 +1,53 @@
+.w-table {
+  $self: &;
+  border-collapse: collapse;
+  color: rgb(141, 155, 11);
+
+  &__head {
+    #{$self}__col {
+      padding: 0;
+    }
+  }
+
+  &__row {
+    // display: flex;
+  }
+
+  &__col {
+    padding: 0.8rem 1.4rem;
+
+    &--number {
+    }
+
+    &--car {
+      width: 6rem;
+    }
+
+    &--name {
+    }
+
+    &--wins {
+    }
+
+    &--time {
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    background-color: rgb(224, 82, 194);
+    color: rgb(46, 7, 64);
+    cursor: pointer;
+  }
+
+  &__arrow {
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.2rem;
+    fill: currentColor;
+  }
+}
