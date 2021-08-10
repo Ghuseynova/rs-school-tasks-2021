@@ -1,0 +1,10 @@
+.form-control {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: rgb(178, 186, 175);
+
+  &--color {
+    padding: 0;
+  }
+}

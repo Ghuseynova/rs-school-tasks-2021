@@ -1,0 +1,60 @@
+.switch {
+  $self: &;
+  position: relative;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: -30rem;
+    height: 0;
+
+    &:checked {
+      & ~ #{$self}__circle {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: rgb(243, 186, 148);
+    transform: translate3d(240%, 0, 0);
+    transition: transform 0.3s ease-out;
+  }
+
+  &__play {
+    display: none;
+    padding: 0.5rem 1rem 0.5rem 3.5rem;
+    border-radius: 3rem;
+    background-color: rgb(228, 67, 193);
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+
+    &--is-active {
+      display: block;
+    }
+  }
+
+  &__train {
+    display: none;
+    padding: 0.5rem 3.5rem 0.5rem 0.5rem;
+    border-radius: 3rem;
+    background-color: rgb(144, 245, 226);
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+
+    &--is-active {
+      display: block;
+    }
+  }
+}

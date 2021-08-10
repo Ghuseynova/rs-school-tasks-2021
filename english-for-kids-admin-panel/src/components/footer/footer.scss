@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.4rem 0;
+
+  &__link {
+    transition: opacity 0.4s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &--github {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &--rs-school {
+      width: 6rem;
+      height: 3.2rem;
+    }
+  }
+
+  &__copyright {
+    font-weight: 500;
+  }
+}
