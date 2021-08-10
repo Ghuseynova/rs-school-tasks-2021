@@ -1,0 +1,118 @@
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { finishGame, setAudios, setCircle, setPlayedAudio } from '../../store/actions';
+import { getAudios, getCircles, getIsGameStarted, getIsPlay, getPlayedAudio } from '../../store/selectors';
+import { getRandomAudio, playAudio } from '../../utils';
+import FlipElement from '../flip-element';
+
+import './word-card.scss';
+
+interface WordCardType {
+  className: string;
+  word: string;
+  audioSrc: string;
+  translation: string;
+  image: string;
+}
+
+const WordCard = ({ word, audioSrc, translation, image, className }: WordCardType): JSX.Element => {
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const [isCorrect, setIsCorrect] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const isPlay = useSelector(getIsPlay);
+  const isGameStarted = useSelector(getIsGameStarted);
+  const audios = useSelector(getAudios);
+  const circles = useSelector(getCircles);
+  const playedAudio = useSelector(getPlayedAudio);
+  const minAudioLength = 1;
+
+  function handleClick() {
+    if (!isPlay) {
+      playAudio(audioSrc);
+    }
+
+    if (isGameStarted) {
+      if (audioSrc === playedAudio) {
+        const filteredAudios = audios.filter(audio => audio !== playedAudio);
+        setIsCorrect(!isCorrect);
+        playAudio('audio/right.mp3');
+        dispatch(setCircle('fill'));
+
+        window.setTimeout(() => {
+          const randomAudio = getRandomAudio(filteredAudios);
+          playAudio(randomAudio);
+          dispatch(setPlayedAudio(randomAudio));
+          dispatch(setAudios(filteredAudios));
+
+          if (audios.length === minAudioLength) {
+            if (circles.indexOf('empty') === -1) {
+              history.push('/win');
+            } else {
+              history.push('/lost');
+            }
+
+            window.setTimeout(() => {
+              history.push('/');
+              dispatch(finishGame());
+            }, 1000);
+          }
+        }, 500);
+      } else {
+        playAudio('audio/wrong.mp3');
+        dispatch(setCircle('empty'));
+      }
+    }
+  }
+
+  function handleFlipping(event: React.MouseEvent<HTMLDivElement, MouseEvent>): void {
+    event.stopPropagation();
+
+    if (!isPlay) {
+      setIsFlipped(true);
+    }
+  }
+
+  function handleMouseLive() {
+    if (!isPlay) {
+      setIsFlipped(false);
+    }
+  }
+
+  return (
+    <div
+      className={`word ${className} ${isFlipped ? 'word--is-flip' : ''} ${isPlay ? 'word--is-play' : ''} ${
+        isCorrect && isPlay ? 'word--is-correct' : ''
+      }`}
+      onMouseLeave={handleMouseLive}
+    >
+      <div
+        className="word__front"
+        onClick={handleClick}
+        onKeyDown={handleClick}
+        onMouseLeave={handleMouseLive}
+        role="button"
+        tabIndex={0}
+      >
+        <div className="word__img">
+          <img src={`${process.env.PUBLIC_URL}/static/${image}`} alt="word" className="word__img-file" />
+        </div>
+        <div className="word__bottom">
+          <p className="word__text">{word}</p>
+        </div>
+      </div>
+      <div className="word__back">
+        <div className="word__img">
+          <img src={`${process.env.PUBLIC_URL}/static/${image}`} alt="word" className="word__img-file" />
+        </div>
+        <div className="word__bottom">
+          <p className="word__text">{translation}</p>
+        </div>
+      </div>
+      <FlipElement className="word__turn" handleFlipping={handleFlipping} />
+    </div>
+  );
+};
+
+export default WordCard;
