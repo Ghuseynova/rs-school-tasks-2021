@@ -1,0 +1,59 @@
+.button {
+  display: inline-block;
+  padding: 1.2rem 1.6rem;
+  border: none;
+  background-color: transparent;
+  border-radius: 0.3rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.4s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--yellow {
+    background-color: rgb(245, 229, 7);
+  }
+
+  &--lightblue {
+    background-color: rgb(31, 199, 236);
+  }
+
+  &--lightgreen {
+    background-color: rgb(31, 236, 96);
+  }
+
+  &--lightviolet {
+    background-color: rgb(214, 37, 253);
+  }
+
+  &--engine {
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.4rem;
+    border: 2px solid rgb(211, 175, 14);
+    color: rgb(211, 175, 14);
+  }
+
+  &--disable {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &--md {
+    padding: 0.6rem 1.4rem;
+  }
+
+  &--sm {
+    padding: 0.4rem 1.2rem;
+  }
+
+  &__text {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}

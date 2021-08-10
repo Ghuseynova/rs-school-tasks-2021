@@ -1,0 +1,31 @@
+.garage {
+  padding: 0rem 4rem;
+
+  &__form {
+    max-width: 40rem;
+  }
+
+  &__inner {
+    margin-top: 5rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    margin-bottom: 2rem;
+  }
+
+  &__item {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__pagination {
+    margin-top: 2rem;
+  }
+}
