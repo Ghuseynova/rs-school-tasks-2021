@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wildlife</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header__inner container">
+          <div class="logo header__logo"><img class="logo__icon" src="assets/img/logo.svg" alt="logo">
+            <div class="logo__text">wildlife</div>
+          </div>
+          <nav class="header__nav">
+            <ul class="nav__menu">
+              <li class="nav__item"><a class="link link--theme-light nav__link" href="#">Blog</a></li>
+              <li class="nav__item"><a class="link link--theme-light nav__link" href="#">Contacts</a></li>
+            </ul>
+          </nav>
+          <h1 class="header__title">Heading</h1>
+          <form class="search header__seach" action="/">
+            <svg class="search__icon">
+              <use href="assets/img/symbol/sprite.svg#icon-search"></use>
+            </svg>
+          </form>
+          <button class="btn btn--theme-default btn--outlined"><span class="btn__text">Sign in</span></button>
+        </div>
+      </header>
+      <section class="survival">
+        <div class="container">
+          <div class="survival-info survival__info">
+            <h2 class="h2 h2--size-m h2--theme-primary survival-info__title">Survival</h2>
+            <p class="text text--theme-light text--size-m survival-info__text">What this means is that we exist to help protect our environment and do in numbers of ways. You can save the planet by donation.</p>
+            <button class="btn btn--theme-primary survival-info__btn"><span class="btn__text">Donate</span></button>
+          </div>
+        </div>
+      </section>
+      <section class="articles">
+        <div class="articles__container container">
+          <h2 class="h2 h2--size-m h2--theme-default articles__title">Latest articles</h2>
+          <p class="text text--size-l text--theme-grey articles__subtitle">Breaking news from the wild</p>
+          <div class="slider articles__slider">
+            <div class="slider__controls">
+              <button class="slider__arrow slider__arrow--prev">
+                <svg class="slider__icon">
+                  <use href="assets/img/symbol/sprite.svg#arrow-prev"></use>
+                </svg>
+              </button>
+              <button class="slider__arrow slider__arrow--next">
+                <svg class="slider__icon">
+                  <use href="assets/img/symbol/sprite.svg#arrow-next"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="slider__wrapper">
+              <div class="slider__item">
+                <div class="article"><a class="article__link" href="#"></a><img class="article__img" src="assets/img/slider-img-1.jpg" alt="deer">
+                  <div class="article__content">
+                    <h3 class="h3 h3--size-m h3--theme-light article__title">Deer</h3>
+                    <p class="article__subtitle">Naturalist investigation</p>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__item">
+                <div class="article"><a class="article__link" href="#"></a><img class="article__img" src="assets/img/slider-img-2.jpg" alt="squirrel">
+                  <div class="article__content">
+                    <h3 class="h3 h3--size-m h3--theme-light article__title">Squirrel</h3>
+                    <p class="article__subtitle">Kamikaze squirrels</p>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__item">
+                <div class="article"><a class="article__link" href="#"></a><img class="article__img" src="assets/img/slider-img-3.jpg" alt="bird">
+                  <div class="article__content">
+                    <h3 class="h3 h3--size-m h3--theme-light article__title">Bird</h3>
+                    <p class="article__subtitle">Birds Fight club</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="get-notify">
+        <div class="container get-notify__container">
+          <h3 class="h3 h3--size-l h3--theme-default get-notify__title">Get notified about new amazing articles</h3>
+          <form class="n-form get-notify__form">
+            <div class="n-form__group">
+              <input class="n-form__input" type="email" placeholder="Email">
+              <input class="btn btn--theme-primary n-form__btn" type="submit" value="Send">
+            </div>
+          </form>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__inner container">
+          <div class="logo footer__logo"><img class="logo__icon" src="assets/img/logo.svg" alt="logo">
+            <div class="logo__text">wildlife</div>
+          </div>
+          <ul class="f-list footer__list">
+            <li class="f-list__item"><a class="link link--theme-light f-list__link" href="#">Articles</a></li>
+            <li class="f-list__item"><a class="link link--theme-light f-list__link" href="#">About us</a></li>
+            <li class="f-list__item"><a class="link link--theme-light f-list__link" href="#">Learn more</a></li>
+          </ul>
+          <ul class="socials footer__socials">
+            <li class="socials__item"><a class="socials__link socials__link--type-facebook" href="#"></a></li>
+            <li class="socials__item"><a class="socials__link socials__link--type-instagram" href="#"></a></li>
+            <li class="socials__item"><a class="socials__link socials__link--type-pinterest" href="#"></a></li>
+            <li class="socials__item"><a class="socials__link socials__link--type-telegram" href="#"></a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
